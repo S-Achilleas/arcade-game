@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Unignore the two specific directories and their contents
+!include/
+!source/
+
+# Ensure files within these directories are not ignored
+include/*
+source/*
