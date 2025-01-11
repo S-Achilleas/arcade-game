@@ -140,6 +140,7 @@
     <ClInclude Include="include\gamestate.h" />
     <ClInclude Include="include\level.h" />
     <ClInclude Include="include\my_stdio.h" />
+    <ClInclude Include="include\platform.h" />
     <ClInclude Include="include\player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
