@@ -7,3 +7,6 @@
 /bin
 /lib
 /arcade-game.vcxproj.user
+/.idea
+/cmake-build-debug
+/CMakeLists.txt
