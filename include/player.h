@@ -13,6 +13,10 @@ class Player:public GameObject,public Box
     int idleCount=1;
     bool walking = false;
     bool facing_left = false;
+    bool jumping = false;
+    int jumpCount = 15;
+    int neg = 1;
+    float initial_y;
     std::vector<std::string>run_array_right;
     std::vector<std::string>run_array_left;
     std::vector<std::string>jump_array_right;

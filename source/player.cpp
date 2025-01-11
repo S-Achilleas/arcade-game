@@ -2,6 +2,7 @@
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include <iostream>
+#include <math.h>
 
 
 void Player::init() {
@@ -18,25 +19,46 @@ void Player::init() {
 
 void Player::update(float dt) {
     const float velocity = 5.0f;
-    float delta_time = dt/1000.0f;
+    float delta_time = dt / 1000.0f;
     if (graphics::getKeyState(graphics::SCANCODE_A))
-        if (m_pos_x >state -> getCanvasWidth() -11.6) {
-            m_pos_x -= delta_time*velocity;
+        if (m_pos_x > state->getCanvasWidth() - 11.6) {
+            m_pos_x -= delta_time * velocity;
             walking = true;
             facing_left = true;
 
         }
     if (graphics::getKeyState(graphics::SCANCODE_D))
-        if (m_pos_x <state->getCanvasWidth()-0.4) {
-            m_pos_x += delta_time*velocity;
+        if (m_pos_x < state->getCanvasWidth() - 0.4) {
+            m_pos_x += delta_time * velocity;
             walking = true;
             facing_left = false;
         }
     if (graphics::getKeyState(graphics::SCANCODE_W))
-
+    {
+        if (!jumping) {
+            jumping = true;
+            facing_left = false;
+            initial_y = m_pos_y;
+        }
+    }
+    if (jumping) {
+        if (jumpCount >= -15) {
+            neg = 1;
+            if (jumpCount < 0) {
+                neg = -1;
+            }
+            m_pos_y -= 0.05 * pow(jumpCount, 3) * velocity * neg * delta_time;
+            jumpCount -= 1;
+        }
+        else {
+            m_pos_y = initial_y;
+            jumping = false;
+            jumpCount = 15;
+        }
+    }
+    std::cout << m_pos_y << std::endl;
     if (graphics::getKeyState(graphics::SCANCODE_S))
-
-    GameObject::update(dt);
+        GameObject::update(dt);
 }
 
 void Player::draw() {
@@ -44,21 +66,23 @@ void Player::draw() {
         if (walkCount > 90) {
             walkCount = 0;
         }
-        if(facing_left) {
-            brush_player.texture = run_array_left[walkCount/10];
-            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
-            walkCount++;
-            walking = false;
-        }else {
-            brush_player.texture = run_array_right[walkCount/10];
+        if (facing_left) {
+            brush_player.texture = run_array_left[walkCount / 10];
             graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
             walkCount++;
             walking = false;
         }
-    }else {
-        if (idleCount > 100)
+        else {
+            brush_player.texture = run_array_right[walkCount / 10];
+            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
+            walkCount++;
+            walking = false;
+        }
+    }
+    else {
+        if (idleCount > 90)
             idleCount = 0;
-        brush_player.texture = idle_array[idleCount/10];
+        brush_player.texture = idle_array[idleCount / 10];
         graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
         idleCount++;
     }
