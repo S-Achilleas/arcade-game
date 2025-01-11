@@ -41,7 +41,7 @@ void Player::update(float dt) {
 
 void Player::draw() {
     if (walking) {
-        if (walkCount > 90) {
+        if (walkCount > 100) {
             walkCount = 0;
         }
         if(facing_left) {
