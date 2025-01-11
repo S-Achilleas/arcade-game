@@ -1,0 +1,8 @@
+# ninja log v6
+546	591	1736600582261750639	/Users/axilleas/Desktop/my_project/bin/my_project	2ec5861a48a20ee3
+6	780	1736597892769755186	CMakeFiles/my_project.dir/source/gamestate.cpp.o	5533290d8928f1bd
+7	781	1736597892771296277	CMakeFiles/my_project.dir/source/level.cpp.o	49f0e799df0a355f
+6	586	1736543897953011401	CMakeFiles/my_project.dir/source/gameobject.cpp.o	55a1d5e631f6fa9b
+5	633	1736543897952027944	CMakeFiles/my_project.dir/source/main.cpp.o	7489cd76741abac8
+4	546	1736600581719161418	CMakeFiles/my_project.dir/source/player.cpp.o	749911aa1b1ba930
+0	56	1736603210485630064	build.ninja	34b6e962c8d56fb8

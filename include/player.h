@@ -9,9 +9,16 @@ class Player:public GameObject,public Box
 {
     graphics::Brush brush_player;
     int health = 10;
-    int walkCount;
+    int walkCount=1;
+    int idleCount=1;
     bool walking = false;
-    std::vector<std::string>run_array ;
+    bool facing_left = false;
+    std::vector<std::string>run_array_right;
+    std::vector<std::string>run_array_left;
+    std::vector<std::string>jump_array_right;
+    std::vector<std::string>jump_array_left;
+    std::vector<std::string>idle_array;
+
 public:
     Player(std::string name): GameObject(name){}
 

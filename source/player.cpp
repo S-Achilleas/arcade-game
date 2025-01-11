@@ -10,8 +10,10 @@ void Player::init() {
 
     brush_player.fill_opacity = 1.0f;
     brush_player.outline_opacity = 0.0f;
-    brush_player.texture = state ->getFullAssetPath("Characters/TerribleKnight/Sprites/Idle/frame1.png");
-    run_array = graphics::preloadBitmaps(state->getFullAssetPath("Characters/TerribleKnight/Sprites/Run"));
+    run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
+    run_array_left = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/left"));
+    idle_array = graphics::preloadBitmaps(state->getFullAssetPath("knight/idle"));
+
 }
 
 void Player::update(float dt) {
@@ -21,11 +23,14 @@ void Player::update(float dt) {
         if (m_pos_x >state -> getCanvasWidth() -11.6) {
             m_pos_x -= delta_time*velocity;
             walking = true;
+            facing_left = true;
+
         }
     if (graphics::getKeyState(graphics::SCANCODE_D))
         if (m_pos_x <state->getCanvasWidth()-0.4) {
             m_pos_x += delta_time*velocity;
             walking = true;
+            facing_left = false;
         }
     if (graphics::getKeyState(graphics::SCANCODE_W))
 
@@ -36,15 +41,25 @@ void Player::update(float dt) {
 
 void Player::draw() {
     if (walking) {
-        if (walkCount > 80) {
-            walkCount = 1;
+        if (walkCount > 90) {
+            walkCount = 0;
         }
-        brush_player.texture = run_array[walkCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
-        walkCount++;
-        walking = false;
+        if(facing_left) {
+            brush_player.texture = run_array_left[walkCount/10];
+            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
+            walkCount++;
+            walking = false;
+        }else {
+            brush_player.texture = run_array_right[walkCount/10];
+            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
+            walkCount++;
+            walking = false;
+        }
     }else {
-        brush_player.texture = state ->getFullAssetPath("Characters/TerribleKnight/Sprites/Idle/frame1.png");
+        if (idleCount > 100)
+            idleCount = 0;
+        brush_player.texture = idle_array[idleCount/10];
         graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
+        idleCount++;
     }
 }
