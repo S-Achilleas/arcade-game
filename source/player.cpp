@@ -21,7 +21,7 @@ void Player::update(float dt) {
     const float velocity = 5.0f;
     float delta_time = dt / 1000.0f;
     if (graphics::getKeyState(graphics::SCANCODE_A))
-        if (m_pos_x > state->getCanvasWidth() - 11.6) {
+        if (m_pos_x > 0.4) {
             m_pos_x -= delta_time * velocity;
             walking = true;
             facing_left = true;
