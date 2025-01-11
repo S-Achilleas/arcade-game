@@ -2,6 +2,7 @@
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include <iostream>
+#include "math.h"
 
 
 void Player::init() {
@@ -33,8 +34,28 @@ void Player::update(float dt) {
             facing_left = false;
         }
     if (graphics::getKeyState(graphics::SCANCODE_W))
-
-    if (graphics::getKeyState(graphics::SCANCODE_S))
+    {
+        if (!jumping) {
+            jumping = true;
+            facing_left = false;
+            initial_y = m_pos_y; //auto 1
+        }
+    }
+    if (jumping) {
+        if (jumpCount >= -15) {
+            neg = 1;
+            if (jumpCount < 0) {
+                neg = -1;
+            }
+            m_pos_y -= 0.05 * pow(jumpCount, 2) * velocity * neg * delta_time;
+            jumpCount -= 1;
+        }
+        else {
+            m_pos_y = initial_y; //auto 2
+            jumping = false;
+            jumpCount = 15;
+        }
+    }
 
     GameObject::update(dt);
 }
@@ -56,8 +77,9 @@ void Player::draw() {
             walkCount++;
             walking = false;
         }
-    }else {
-        if (idleCount > 100)
+    }
+    else {
+        if (idleCount > 90)
             idleCount = 0;
         brush_player.texture = idle_array[idleCount / 10];
         graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
