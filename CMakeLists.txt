@@ -16,8 +16,14 @@ add_executable(my_project
         include/sgg/scancodes.h
         include/box.h              # Headers in include/
         include/gameobject.h
+        include/enemy.h
+        include/healthbar.h
+        include/ObjectWithMovement.h
         include/gamestate.h
         source/gamestate.cpp
+        source/enemy.cpp
+        source/healthbar.cpp
+        source/ObjectWithMovement.cpp
         include/player.h
         include/level.h
         include/my_stdio.h
