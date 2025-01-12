@@ -8,6 +8,10 @@
 
 class Player :public ObjectWithMovement
 {
+
+    std::vector<Box> playerhitbox;
+    graphics::Brush player_brush_debug;
+
     int idleCount = 1;
     int jumpCount = 15;
     int neg = 1;

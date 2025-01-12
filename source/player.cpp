@@ -4,12 +4,21 @@
 #include <iostream>
 #include "math.h"
 #include "healthbar.h"
+#include "box.h"
+#include "my_stdio.h"
 
 void Player::init() {
     m_pos_x = 0.4f;
     m_pos_y = 8.5f;
     width = 3.0f;
     height = 3.0f;
+    
+    //debug init
+    playerhitbox.push_back(Box(m_pos_x, m_pos_y, width, height));
+    player_brush_debug.fill_opacity = 0.1f;
+    SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
+    SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
+    //debug
 
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
@@ -58,7 +67,7 @@ void Player::update(float dt) {
             jumpCount = 15;
         }
     }
-    std::cout << m_pos_x << std::endl << m_pos_y << std::endl;
+    //std::cout << m_pos_x << std::endl << m_pos_y << std::endl;
     //GameObject::update(dt);
 }
 
@@ -72,6 +81,10 @@ void Player::draw() {
         my_brush.texture = idle_array[idleCount / 10];
         graphics::drawRect(m_pos_x, m_pos_y, width, height, my_brush);
         idleCount++;
+    }
+
+    if (state->debugging) { //draw debug
+        graphics::drawRect(m_pos_x, m_pos_y, width, height, player_brush_debug);
     }
 }
 
