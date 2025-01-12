@@ -3,14 +3,16 @@
 #include "gamestate.h"
 #include <iostream>
 #include "math.h"
-
+#include "healthbar.h"
 
 void Player::init() {
     m_pos_x = 0.4f;
     m_pos_y = 8.5f;
+    width = 3.0f;
+    height = 3.0f;
 
-    brush_player.fill_opacity = 1.0f;
-    brush_player.outline_opacity = 0.0f;
+    my_brush.fill_opacity = 1.0f;
+    my_brush.outline_opacity = 0.0f;
     run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
     run_array_left = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/left"));
     idle_array = graphics::preloadBitmaps(state->getFullAssetPath("knight/idle"));
@@ -56,33 +58,23 @@ void Player::update(float dt) {
             jumpCount = 15;
         }
     }
-
-    GameObject::update(dt);
+    std::cout << m_pos_x << std::endl << m_pos_y << std::endl;
+    //GameObject::update(dt);
 }
 
 void Player::draw() {
     if (walking) {
-        if (walkCount > 90) {
-            walkCount = 0;
-        }
-        if (facing_left) {
-            brush_player.texture = run_array_left[walkCount / 10];
-            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
-            walkCount++;
-            walking = false;
-        }
-        else {
-            brush_player.texture = run_array_right[walkCount / 10];
-            graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
-            walkCount++;
-            walking = false;
-        }
+        ObjectWithMovement::draw();
     }
     else {
         if (idleCount > 90)
             idleCount = 0;
-        brush_player.texture = idle_array[idleCount / 10];
-        graphics::drawRect(m_pos_x, m_pos_y, 3.0f, 3.0f, brush_player);
+        my_brush.texture = idle_array[idleCount / 10];
+        graphics::drawRect(m_pos_x, m_pos_y, width, height, my_brush);
         idleCount++;
     }
+}
+
+float Player::getPlayerX() {
+    return m_pos_x;
 }

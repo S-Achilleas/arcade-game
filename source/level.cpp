@@ -11,6 +11,7 @@ Level::~Level() {
 void Level::init() {
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
+    
 };
 
 void Level::draw() {
