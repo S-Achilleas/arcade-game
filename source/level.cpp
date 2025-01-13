@@ -3,19 +3,25 @@
 #include "gamestate.h"
 #include "platform.h"
 
-void Level::checkCollision()
+bool Level::checkCollision()
 {
+    bool collision = false;
     for (auto& box : platform_loader->getPlatforms()) {
-        float vertical_offset = 0.0f;
-        float horizontal_offset = 0.0f;
-
         if (state->getPlayer()->intersect(box)) {
-            vertical_offset = state->getPlayer()->intersectDown(box);
-            if (vertical_offset != 0.0f) {
-                state->getPlayer()->m_pos_y -= vertical_offset;
+            collision = true;
+            if (state -> getPlayer()->getJumping()) {
+                state -> getPlayer()->setCollJumpe(true);
+            }else if (state -> getPlayer()->getLeft()) {
+                state -> getPlayer()->setCollLeft(true);
+            }else {
+                state -> getPlayer()->setCollRight(true);
             }
-
         }
+    }
+    if (!collision) {
+        state -> getPlayer()->setCollJumpe(false);
+        state -> getPlayer()->setCollLeft(false);
+        state -> getPlayer()->setCollRight(false);
     }
 }
 
@@ -32,7 +38,7 @@ void Level::init() {
 
     platform_loader = new Platform(); // platform object
     platform_loader->addPlatform(7.0f, 7.0f, 2.0f, 0.2f, "SOME.png");
-    platform_loader->addPlatform(7.0f, 8.0f, 2.0f, 0.2f, "SOME.png");
+    platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 0.2f, "SOME.png");
     platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 0.2f, "SOME.png");
 
 };
@@ -50,10 +56,8 @@ void Level::draw() {
 
 void Level::update(float dt) {
     if (state ->getPlayer()->isActive())
+        checkCollision();
         state ->getPlayer() ->update(dt);
-
-    checkCollision();
-    
 
     GameObject::update(dt);
 }

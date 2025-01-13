@@ -21,7 +21,7 @@ class Level : public GameObject {
     class Platform* platform_loader = nullptr;
 
     void drawBlock(int i);
-    void checkCollision();
+    bool checkCollision();
 
 public:
     Level(const std::string& name = "Level 0");

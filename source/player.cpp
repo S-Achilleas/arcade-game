@@ -23,19 +23,19 @@ void Player::update(float dt) {
     const float velocity = 5.0f;
     float delta_time = dt / 1000.0f;
     if (graphics::getKeyState(graphics::SCANCODE_A))
-        if (m_pos_x > 0.4) {
+        if (m_pos_x > 0.4 && !coll_left) {
             m_pos_x -= delta_time * velocity;
             walking = true;
             facing_left = true;
 
         }
     if (graphics::getKeyState(graphics::SCANCODE_D))
-        if (m_pos_x < state->getCanvasWidth() - 0.4) {
+        if (m_pos_x < state->getCanvasWidth() - 0.4 && !coll_right) {
             m_pos_x += delta_time * velocity;
             walking = true;
             facing_left = false;
         }
-    if (graphics::getKeyState(graphics::SCANCODE_W))
+    if (graphics::getKeyState(graphics::SCANCODE_W) && !coll_up)
     {
         if (!jumping) {
             jumping = true;

@@ -23,8 +23,10 @@ add_executable(my_project
         source/gamestate.cpp
         source/enemy.cpp
         source/healthbar.cpp
+        source/platform.cpp
         source/ObjectWithMovement.cpp
         include/player.h
+        include/platform.h
         include/level.h
         include/my_stdio.h
         source/player.cpp
