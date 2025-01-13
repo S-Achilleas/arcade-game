@@ -12,3 +12,5 @@
 /.idea
 /cmake-build-debug
 /CMakeLists.txt
+/assets
+/arcade-game/Debug

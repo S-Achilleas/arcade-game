@@ -3,6 +3,7 @@
 #include "gameobject.h"
 #include "list"
 #include "box.h"
+#include "platform.h"
 
 class Level : public GameObject {
     graphics::Brush brush_background;
@@ -16,6 +17,8 @@ class Level : public GameObject {
     std::vector<std::string> m_block_names;
     const float m_block_size = 1.0f;
     graphics::Brush m_block_brush;
+
+    class Platform* platform_loader = nullptr;
 
     void drawBlock(int i);
     void checkCollision();

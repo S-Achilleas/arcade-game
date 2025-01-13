@@ -42,6 +42,8 @@ void GameState::update(float dt) {
         return;
     if (!current_level) return;
     current_level->update(dt);
+
+    debugging = graphics::getKeyState(graphics::SCANCODE_0); //debug key
 }
 
 void GameState::draw() {
