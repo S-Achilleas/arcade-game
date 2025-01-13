@@ -48,7 +48,7 @@ void Player::update(float dt) {
         if (!jumping) {
             jumping = true;
             facing_left = false;
-            initial_y = m_pos_y; //auto 1
+            initial_y = m_pos_y;
         }
     }
     if (jumping) {
@@ -61,7 +61,7 @@ void Player::update(float dt) {
             jumpCount -= 1;
         }
         else {
-            m_pos_y = initial_y; //auto 2
+            m_pos_y = initial_y;
             jumping = false;
             jumpCount = 15;
         }
@@ -75,6 +75,9 @@ void Player::draw() {
     else {
         if (idleCount > 90)
             idleCount = 0;
+
+        // todo left facing idle
+
         my_brush.texture = idle_array[idleCount/10];
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, my_brush);
         idleCount++;
