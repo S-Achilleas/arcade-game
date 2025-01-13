@@ -6,11 +6,19 @@
 void Level::checkCollision()
 {
     for (auto& box : platform_loader->getPlatforms()) {
+        float vertical_offset = 0.0f;
+        float horizontal_offset = 0.0f;
+
         if (state->getPlayer()->intersect(box)) {
-            printf("*");
+            vertical_offset = state->getPlayer()->intersectDown(box);
+            if (vertical_offset != 0.0f) {
+                state->getPlayer()->m_pos_y -= vertical_offset;
+            }
+
         }
     }
 }
+
 
 Level::Level(const std::string &name) {
 }
