@@ -3,7 +3,7 @@
 #include "gamestate.h"
 #include "platform.h"
 
-bool Level::checkCollision()
+void Level::checkCollision()
 {
     bool collision = false;
     for (auto& box : platform_loader->getPlatforms()) {
@@ -55,9 +55,11 @@ void Level::draw() {
 }
 
 void Level::update(float dt) {
-    if (state ->getPlayer()->isActive())
+    if (state->getPlayer()->isActive()) {
+        state->getPlayer()->update(dt);
         checkCollision();
-        state ->getPlayer() ->update(dt);
+        
+    }
 
     GameObject::update(dt);
 }
