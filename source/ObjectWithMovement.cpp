@@ -7,12 +7,12 @@ void ObjectWithMovement::draw() {
     }
     if(facing_left) {
         my_brush.texture = run_array_left[walkCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, width, height, my_brush);
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, my_brush);
         walkCount++;
         walking = false;
     }else {
         my_brush.texture = run_array_right[walkCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, width, height, my_brush);
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, my_brush);
         walkCount++;
         walking = false;
     }

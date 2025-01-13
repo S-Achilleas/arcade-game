@@ -10,8 +10,6 @@ class ObjectWithMovement:virtual public GameObject,virtual public Box{
 protected:
     class HealthBar my_healthbar();
     int frames;
-    float width;
-    float height;
     bool walking = false;
     bool facing_left = false;
     bool attacking = false;

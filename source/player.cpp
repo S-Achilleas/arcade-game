@@ -5,17 +5,25 @@
 #include <iostream>
 #include "math.h"
 
+#include "my_stdio.h"
+
 
 void Player::init() {
     m_pos_x = 0.4f;
     m_pos_y = 8.5f;
-    width = 3.0f;
-    height = 3.0f;
+    m_width = 3.0f;
+    m_height = 3.0f;
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
     run_array_left = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/left"));
     idle_array = graphics::preloadBitmaps(state->getFullAssetPath("knight/idle"));
+
+    //debug init
+    player_brush_debug.fill_opacity = 0.1f;
+    SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
+    SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
+    //debug
 
 }
 
@@ -68,8 +76,12 @@ void Player::draw() {
         if (idleCount > 90)
             idleCount = 0;
         my_brush.texture = idle_array[idleCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, width, height, my_brush);
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, my_brush);
         idleCount++;
+    }
+
+    if (state->debugging) { //draw debug
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
     }
 }
 

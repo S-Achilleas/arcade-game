@@ -6,6 +6,7 @@
 
 class Player:public ObjectWithMovement
 {
+    graphics::Brush player_brush_debug;
     int idleCount=1;
     int jumpCount = 15;
     int neg = 1;

@@ -2,12 +2,14 @@
 #include "player.h"
 #include "gamestate.h"
 #include "platform.h"
+#include <iostream>
 
 void Level::checkCollision()
 {
     bool collision = false;
     for (auto& box : platform_loader->getPlatforms()) {
         if (state->getPlayer()->intersect(box)) {
+            /*
             collision = true;
             if (state -> getPlayer()->getJumping()) {
                 state -> getPlayer()->setCollJumpe(true);
@@ -16,7 +18,10 @@ void Level::checkCollision()
             }else {
                 state -> getPlayer()->setCollRight(true);
             }
+            */
+            printf("*");
         }
+        
     }
     if (!collision) {
         state -> getPlayer()->setCollJumpe(false);
