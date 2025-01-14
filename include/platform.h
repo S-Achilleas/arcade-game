@@ -17,7 +17,7 @@ class Platform : public GameObject
 	graphics::Brush platform_brush;
 	graphics::Brush platform_brush_debug;
 public:
-	Platform() = default; //first platform data used
+	Platform() = default; // default constructor
 	virtual ~Platform() = default; // destructor
 
 	void platformInitHandler();

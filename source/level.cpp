@@ -6,27 +6,22 @@
 
 void Level::checkCollision()
 {
-    bool collision = false;
-    for (auto& box : platform_loader->getPlatforms()) {
-        if (state->getPlayer()->intersect(box)) {
-            /*
-            collision = true;
-            if (state -> getPlayer()->getJumping()) {
-                state -> getPlayer()->setCollJumpe(true);
-            }else if (state -> getPlayer()->getLeft()) {
-                state -> getPlayer()->setCollLeft(true);
-            }else {
-                state -> getPlayer()->setCollRight(true);
-            }
-            */
-            printf("*");
+    for (auto& box : platform_loader->getPlatforms()) 
+    {
+        float offset = state->getPlayer()->intersectDown(box);
+        if (offset < 0.01 && offset !=0)
+        {
+            //state -> getPlayer()->setCollJumpe(true);
+            state->getPlayer()->isOnPlatform = true;
+            state->getPlayer()->m_pos_y += offset;
+            break;
+        }
+        else 
+        {
+            state->getPlayer()->isOnPlatform = false;
+            //state->getPlayer()->setCollJumpe(false);
         }
         
-    }
-    if (!collision) {
-        state -> getPlayer()->setCollJumpe(false);
-        state -> getPlayer()->setCollLeft(false);
-        state -> getPlayer()->setCollRight(false);
     }
 }
 
@@ -42,7 +37,6 @@ void Level::init() {
     brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
 
     platform_loader = new Platform(); // platform object
-    platform_loader->addPlatform(7.0f, 7.0f, 2.0f, 0.2f, "SOME.png");
     platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 0.2f, "SOME.png");
     platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 0.2f, "SOME.png");
 

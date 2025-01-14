@@ -11,6 +11,7 @@ class Player:public ObjectWithMovement
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
+
     bool jumping = false;
     bool coll_up = false;
     std::vector<std::string>jump_array_right;
@@ -23,7 +24,9 @@ public:
     void update(float dt) override;
     void init() override;
     void draw() override;
-    float getPlayerX();
+    float getPlayerX() {return m_pos_x;}
+    float getPlayerY() { return m_pos_y; }
     bool getJumping(){return jumping;}
     void setCollJumpe(bool f){coll_up = f;}
+
 };
