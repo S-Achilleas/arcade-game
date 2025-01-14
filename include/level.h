@@ -18,12 +18,11 @@ class Level : public GameObject {
     const float m_block_size = 1.0f;
     graphics::Brush m_block_brush;
 
-    class Platform* platform_loader = nullptr;
-
-    void checkCollision();
 
 public:
     Level(const std::string& name = "Level 0");
+    //platform loader is public so player can access platforms
+    class Platform* platform_loader = nullptr;
     void update(float dt) override;
     void init() override;
     void draw() override;
