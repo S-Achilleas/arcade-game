@@ -18,6 +18,14 @@ class Player:public ObjectWithMovement
     std::vector<std::string>idle_array;
 
 public:
+    class playerFeetObj : public ObjectWithMovement
+    {
+        graphics::Brush pf_brush_debug;
+    public:
+        graphics::Brush returnbrush() { return pf_brush_debug; }
+    };
+    playerFeetObj* playerfeet = new playerFeetObj;
+
     Player(std::string name) : GameObject(name) {}
 
     void update(float dt) override;

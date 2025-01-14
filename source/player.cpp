@@ -14,8 +14,13 @@ void Player::init() {
     d_width = 3.0f;
     d_height = 3.0f;
 
-    hb_adj(1.0f, 2.0f);
-    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
+    //hitbox offets
+    hb_adj(1.0f, 2.0f); //hitbox width & height
+        //hbp_adj(d_pos_x, d_pos_y, 0, 1.0f); //numbers are player hitbox x, y offsets
+
+    playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
+        //playerfeet->hbp_adj(d_pos_x, d_pos_y, -0.12f, 1.5f); //feet x,y offsets
+    //hitbox offset end
 
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
@@ -79,7 +84,10 @@ void Player::update(float dt) {
 
     d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
 
-    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
+    //hitbox offsets
+    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f); //numbers are player hitbox x, y offsets
+    playerfeet->hbp_adj(d_pos_x, d_pos_y, -0.12f, 1.5f); //feet x,y offsets
+    //hitbox offsets end
 
     checkPlatformCollision();
 }
@@ -99,16 +107,18 @@ void Player::draw() {
         idleCount++;
     }
 
-    if (state->debugging) { //draw debug
+    if (state->debugging) { //draw player and feet debug
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
+        graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
+            playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
     }
 }
 
 void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
-        float offset = intersectDown(box);
-        if (offset < 0.001 && offset != 0)
+        float offset = playerfeet->intersectDown(box);
+        if (offset != 0)
         {
             isOnPlatform = true;
             d_pos_y += offset;
