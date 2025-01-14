@@ -11,7 +11,6 @@ void Level::checkCollision()
         float offset = state->getPlayer()->intersectDown(box);
         if (offset < 0.01 && offset !=0)
         {
-            //state -> getPlayer()->setCollJumpe(true);
             state->getPlayer()->isOnPlatform = true;
             state->getPlayer()->m_pos_y += offset;
             break;
@@ -19,7 +18,6 @@ void Level::checkCollision()
         else 
         {
             state->getPlayer()->isOnPlatform = false;
-            //state->getPlayer()->setCollJumpe(false);
         }
         
     }
