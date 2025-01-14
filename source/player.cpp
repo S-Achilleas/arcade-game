@@ -17,6 +17,9 @@ void Player::init() {
     d_width = 3.0f;
     d_height = 3.0f;
 
+    hb_adj(1.0f, 2.0f);
+    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
+
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
@@ -77,9 +80,11 @@ void Player::update(float dt) {
         m_vy += delta_time * gravity;
     }
     
+    d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
    
+    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
 
-    m_pos_y = std::min(m_pos_y + m_vy * delta_time, 8.5f);
+    checkCollision();
 }
 
 void Player::draw() {
