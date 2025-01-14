@@ -4,7 +4,7 @@
 #include "gameobject.h"
 #include <iostream>
 #include "math.h"
-
+#include "level.h"
 #include "my_stdio.h"
 
 
@@ -101,5 +101,23 @@ void Player::draw() {
 
     if (state->debugging) { //draw debug
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
+    }
+}
+
+void Player::checkCollision() {
+    for (auto& box : state->getLevel()->platform_loader->getPlatforms())
+    {
+        float offset = intersectDown(box);
+        if (offset < 0.001 && offset != 0)
+        {
+            isOnPlatform = true;
+            d_pos_y += offset;
+            break;
+        }
+        else
+        {
+            isOnPlatform = false;
+        }
+
     }
 }
