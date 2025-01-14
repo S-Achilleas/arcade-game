@@ -9,11 +9,8 @@
 
 
 void Player::init() {
-    m_pos_x = 5.5f;
-    m_pos_y = 5.5f;
-    m_width = 1.0f;
-    m_height = 3.0f;
-
+    d_pos_x = 5.5f;
+    d_pos_y = 5.5f;
     d_width = 3.0f;
     d_height = 3.0f;
 
@@ -66,10 +63,10 @@ void Player::update(float dt) {
     }
 
     //if(m_pos_x > 0.4 && m_pos_x < state->getCanvasWidth() - 0.4)
-    m_pos_x += delta_time * m_vx;
+    d_pos_x += delta_time * m_vx;
 
     // Y axis
-    bool isOnGround = (m_pos_y == 8.5);
+    bool isOnGround = (d_pos_y == 8.5);
     if (isOnPlatform || isOnGround) {
         m_vy = 0.0f; // Reset vertical velocity when on the ground.
         if (graphics::getKeyState(graphics::SCANCODE_W)) {
@@ -98,7 +95,7 @@ void Player::draw() {
         // todo left facing idle
 
         my_brush.texture = idle_array[idleCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, d_width, d_height, my_brush);
+        graphics::drawRect(d_pos_x, d_pos_y, d_width, d_height, my_brush);
         idleCount++;
     }
 
