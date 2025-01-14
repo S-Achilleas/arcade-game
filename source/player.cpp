@@ -64,11 +64,9 @@ void Player::update(float dt) {
         m_vx = 0.0f;
     }
 
-    if(m_pos_x > 0.4 && m_vx<0)
+    if(m_pos_x > 0.4 && m_vx<0 || 
+        m_pos_x < state->getCanvasWidth() - 0.4 && m_vx >0)
         d_pos_x += delta_time * m_vx;
-    else if (m_pos_x < state->getCanvasWidth() - 0.4 && m_vx >0) {
-        d_pos_x += delta_time * m_vx;
-    }
 
     // Y axis
     bool isOnGround = (d_pos_y == 8.5);
