@@ -64,8 +64,11 @@ void Player::update(float dt) {
         m_vx = 0.0f;
     }
 
-    //if(m_pos_x > 0.4 && m_pos_x < state->getCanvasWidth() - 0.4)
-    d_pos_x += delta_time * m_vx;
+    if(m_pos_x > 0.4 && m_vx<0)
+        d_pos_x += delta_time * m_vx;
+    else if (m_pos_x < state->getCanvasWidth() - 0.4 && m_vx >0) {
+        d_pos_x += delta_time * m_vx;
+    }
 
     // Y axis
     bool isOnGround = (d_pos_y == 8.5);
@@ -104,7 +107,7 @@ void Player::draw() {
         idleCount++;
     }
 
-    if (state->debugging) { //draw player and feet debug
+    if (state->debugging) { //draw player hit and feet hit (debug)
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
         graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
             playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
