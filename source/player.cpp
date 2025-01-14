@@ -118,7 +118,7 @@ void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = playerfeet->intersectDown(box);
-        if (offset != 0)
+        if (offset != 0 && m_vy>0)
         {
             isOnPlatform = true;
             d_pos_y += offset;
