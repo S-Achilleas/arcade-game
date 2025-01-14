@@ -14,13 +14,10 @@ void Player::init() {
     d_width = 3.0f;
     d_height = 3.0f;
 
-    //hitbox offets
-    hb_adj(1.0f, 2.0f); //hitbox width & height
-        //hbp_adj(d_pos_x, d_pos_y, 0, 1.0f); //numbers are player hitbox x, y offsets
-
+    //hitbox width & height
+    hb_adj(1.0f, 2.0f); //player width & height
     playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
-        //playerfeet->hbp_adj(d_pos_x, d_pos_y, -0.12f, 1.5f); //feet x,y offsets
-    //hitbox offset end
+    //hitbox width & height end
 
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
@@ -117,7 +114,7 @@ void Player::draw() {
 void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
-        float offset = playerfeet->intersectDown(box);
+        float offset = playerfeet->intersectDown(box); //platform to feet offset
         if (offset != 0 && m_vy>0)
         {
             isOnPlatform = true;
