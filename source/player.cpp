@@ -76,9 +76,9 @@ void Player::update(float dt) {
     else {
         m_vy += delta_time * gravity;
     }
-    
+
     d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
-   
+
     hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
 
     checkCollision();
