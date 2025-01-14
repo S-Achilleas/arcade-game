@@ -137,6 +137,7 @@
     <ClCompile Include="source\ObjectWithMovement.cpp" />
     <ClCompile Include="source\platform.cpp" />
     <ClCompile Include="source\player.cpp" />
+    <ClCompile Include="source\projectile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\box.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="include\ObjectWithMovement.h" />
     <ClInclude Include="include\platform.h" />
     <ClInclude Include="include\player.h" />
+    <ClInclude Include="include\projectile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
