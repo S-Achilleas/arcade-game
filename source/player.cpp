@@ -81,7 +81,7 @@ void Player::update(float dt) {
 
     hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
 
-    checkCollision();
+    checkPlatformCollision();
 }
 
 void Player::draw() {
@@ -104,7 +104,7 @@ void Player::draw() {
     }
 }
 
-void Player::checkCollision() {
+void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = intersectDown(box);

@@ -7,7 +7,7 @@
 class Player:public ObjectWithMovement
 {
     graphics::Brush player_brush_debug;
-    void checkCollision();
+    void checkPlatformCollision();
     int idleCount=1;
     int jumpCount = 15;
     int neg = 1;
