@@ -4,26 +4,6 @@
 #include "platform.h"
 #include <iostream>
 
-void Level::checkCollision()
-{
-    for (auto& box : platform_loader->getPlatforms()) 
-    {
-        float offset = state->getPlayer()->intersectDown(box);
-        if (offset < 0.01 && offset !=0)
-        {
-            state->getPlayer()->isOnPlatform = true;
-            state->getPlayer()->m_pos_y += offset;
-            break;
-        }
-        else 
-        {
-            state->getPlayer()->isOnPlatform = false;
-        }
-        
-    }
-}
-
-
 Level::Level(const std::string &name) {
 }
 
@@ -54,7 +34,6 @@ void Level::draw() {
 void Level::update(float dt) {
     if (state->getPlayer()->isActive()) {
         state->getPlayer()->update(dt);
-        checkCollision();
         
     }
 

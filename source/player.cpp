@@ -1,21 +1,21 @@
 #include "player.h"
 #include "sgg/graphics.h"
 #include "gamestate.h"
-#include "gameobject.h""
+#include "gameobject.h"
 #include <iostream>
 #include "math.h"
-
+#include "level.h"
 #include "my_stdio.h"
 
 
 void Player::init() {
-    m_pos_x = 5.5f;
-    m_pos_y = 5.5f;
-    m_width = 1.0f;
-    m_height = 3.0f;
-
+    d_pos_x = 5.5f;
+    d_pos_y = 5.5f;
     d_width = 3.0f;
     d_height = 3.0f;
+
+    hb_adj(1.0f, 2.0f);
+    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
 
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
@@ -63,10 +63,10 @@ void Player::update(float dt) {
     }
 
     //if(m_pos_x > 0.4 && m_pos_x < state->getCanvasWidth() - 0.4)
-    m_pos_x += delta_time * m_vx;
+    d_pos_x += delta_time * m_vx;
 
     // Y axis
-    bool isOnGround = (m_pos_y == 8.5);
+    bool isOnGround = (d_pos_y == 8.5);
     if (isOnPlatform || isOnGround) {
         m_vy = 0.0f; // Reset vertical velocity when on the ground.
         if (graphics::getKeyState(graphics::SCANCODE_W)) {
@@ -76,10 +76,12 @@ void Player::update(float dt) {
     else {
         m_vy += delta_time * gravity;
     }
-    
-   
 
-    m_pos_y = std::min(m_pos_y + m_vy * delta_time, 8.5f);
+    d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
+
+    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f);
+
+    checkPlatformCollision();
 }
 
 void Player::draw() {
@@ -93,11 +95,29 @@ void Player::draw() {
         // todo left facing idle
 
         my_brush.texture = idle_array[idleCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, d_width, d_height, my_brush);
+        graphics::drawRect(d_pos_x, d_pos_y, d_width, d_height, my_brush);
         idleCount++;
     }
 
     if (state->debugging) { //draw debug
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
+    }
+}
+
+void Player::checkPlatformCollision() {
+    for (auto& box : state->getLevel()->platform_loader->getPlatforms())
+    {
+        float offset = intersectDown(box);
+        if (offset < 0.001 && offset != 0)
+        {
+            isOnPlatform = true;
+            d_pos_y += offset;
+            break;
+        }
+        else
+        {
+            isOnPlatform = false;
+        }
+
     }
 }

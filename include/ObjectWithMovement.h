@@ -17,6 +17,8 @@ protected:
     bool coll_right = false;
 
     //draw width & draw height
+    float d_pos_x;
+    float d_pos_y;
     float d_width;
     float d_height;
 
@@ -40,7 +42,7 @@ public:
     void update(float dt){}
     void init(){}
     void draw() override;
+    void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0); //hitbox position adjustment
+    void hb_adj(float width, float height); //hitbox width & height
     bool getLeft(){return facing_left;}
-    void setCollLeft(bool f){coll_left = f;}
-    void setCollRight(bool f){coll_right = f;}
 };
