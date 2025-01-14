@@ -28,5 +28,6 @@ public:
     std::string getFullAssetPath(const std::string& asset_name);
 
     class Player* getPlayer(){return player;}
+    class Level* getLevel() { return current_level; }
 };
 
