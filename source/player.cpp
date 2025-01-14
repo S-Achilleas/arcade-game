@@ -9,10 +9,14 @@
 
 
 void Player::init() {
-    m_pos_x = 0.4f;
-    m_pos_y = 8.5f;
-    m_width = 3.0f;
+    m_pos_x = 5.5f;
+    m_pos_y = 5.5f;
+    m_width = 1.0f;
     m_height = 3.0f;
+
+    d_width = 3.0f;
+    d_height = 3.0f;
+
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
@@ -28,44 +32,54 @@ void Player::init() {
 }
 
 void Player::update(float dt) {
-    const float velocity = 5.0f;
+    //const float velocity = 5.0f;
+    //std::cout << m_pos_y << std::endl;
     float delta_time = dt / 1000.0f;
-    if (graphics::getKeyState(graphics::SCANCODE_A))
-        if (m_pos_x > 0.4 && !coll_left) {
-            m_pos_x -= delta_time * velocity;
-            walking = true;
-            facing_left = true;
-
-        }
-    if (graphics::getKeyState(graphics::SCANCODE_D))
-        if (m_pos_x < state->getCanvasWidth() - 0.4 && !coll_right) {
-            m_pos_x += delta_time * velocity;
-            walking = true;
-            facing_left = false;
-        }
-    if (graphics::getKeyState(graphics::SCANCODE_W) && !coll_up)
+    float move = 0.0f;
+    if (graphics::getKeyState(graphics::SCANCODE_A)) 
     {
-        if (!jumping) {
-            jumping = true;
-            facing_left = false;
-            initial_y = m_pos_y;
+        move -= 1.0f;
+        //m_pos_x -= delta_time * velocity;
+        walking = true;
+        facing_left = true;
+    }
+        
+    if (graphics::getKeyState(graphics::SCANCODE_D))
+    {
+        move += 1.0f;
+        //m_pos_x += delta_time * velocity;
+        walking = true;
+        facing_left = false;
+    }
+
+    // X axis
+    m_vx = std::min(max_velocity, m_vx + delta_time * move * accel_horizontal);
+    m_vx = std::max(-max_velocity, m_vx);
+
+    m_vx -= 0.2f * m_vx/(0.1f + fabs(m_vx));
+
+    if (fabs(m_vx) < 0.01f) {
+        m_vx = 0.0f;
+    }
+
+    //if(m_pos_x > 0.4 && m_pos_x < state->getCanvasWidth() - 0.4)
+    m_pos_x += delta_time * m_vx;
+
+    // Y axis
+    bool isOnGround = (m_pos_y == 8.5);
+    if (isOnPlatform || isOnGround) {
+        m_vy = 0.0f; // Reset vertical velocity when on the ground.
+        if (graphics::getKeyState(graphics::SCANCODE_W)) {
+            m_vy = -accel_vertical; // Jump
         }
     }
-    if (jumping) {
-        if (jumpCount >= -15) {
-            neg = 1;
-            if (jumpCount < 0) {
-                neg = -1;
-            }
-            m_pos_y -= 0.05 * pow(jumpCount, 2) * velocity * neg * delta_time;
-            jumpCount -= 1;
-        }
-        else {
-            m_pos_y = initial_y;
-            jumping = false;
-            jumpCount = 15;
-        }
+    else {
+        m_vy += delta_time * gravity;
     }
+    
+   
+
+    m_pos_y = std::min(m_pos_y + m_vy * delta_time, 8.5f);
 }
 
 void Player::draw() {
@@ -79,15 +93,11 @@ void Player::draw() {
         // todo left facing idle
 
         my_brush.texture = idle_array[idleCount/10];
-        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, my_brush);
+        graphics::drawRect(m_pos_x, m_pos_y, d_width, d_height, my_brush);
         idleCount++;
     }
 
     if (state->debugging) { //draw debug
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
     }
-}
-
-float Player::getPlayerX() {
-    return m_pos_x;
 }

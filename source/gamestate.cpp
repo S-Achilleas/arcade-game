@@ -2,6 +2,9 @@
 #include "level.h"
 #include "player.h"
 #include "sgg/graphics.h"
+#include <thread>
+#include <chrono>
+
 
 GameState* GameState::unique_instance = nullptr;
 
@@ -40,6 +43,11 @@ void GameState::init() {
 void GameState::update(float dt) {
     if (dt>500)
         return;
+
+    float sleep_time = std::max(0.0f, 17.0f - dt);
+
+    std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(sleep_time));
+
     if (!current_level) return;
     current_level->update(dt);
 

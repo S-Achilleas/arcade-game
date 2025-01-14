@@ -20,7 +20,6 @@ class Level : public GameObject {
 
     class Platform* platform_loader = nullptr;
 
-    void drawBlock(int i);
     void checkCollision();
 
 public:
