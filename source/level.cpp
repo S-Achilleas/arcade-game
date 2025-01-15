@@ -20,10 +20,8 @@ void Level::init() {
     brush_background.texture = state->getFullAssetPath("background.png");
     spawn_timer.start();
 
-    platform_loader = new Platform(); // platform object
-    platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 2.0f, "tile.png");
-    platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 2.0f, "tile.png");
-    platform_loader->addPlatform(1.0f, 8.0f, 2.0f, 2.0f, "tile.png");
+    Platform::platformBrushInit();
+    Platform::platformInitHandler(Platform(7.0f, 8.0f, 2.0f, 2.0f, "tile.png")); // platform object
 
 };
 
@@ -32,7 +30,7 @@ void Level::draw() {
     graphics::drawRect(state->getCanvasWidth()/2.0f, state-> getCanvasHeight()/2.0f, 
         state->getCanvasWidth(), state-> getCanvasHeight(), brush_background);
 
-    platform_loader->platformDisplayHandler(); // display platforms
+   Platform::platformDisplayHandler(); // display platforms
 
     if (state ->getPlayer()->isActive())
         state ->getPlayer() ->draw();
