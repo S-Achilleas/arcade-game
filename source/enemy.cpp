@@ -4,29 +4,24 @@
 #include "sgg/graphics.h"
 
 void Enemy::init() {
+    walking = true;
     if (right) {
-        m_pos_x =12.6f;
+        d_pos_x =12.6f;
     }else {
-        m_pos_x = -0.6f;
+        d_pos_x = -0.6f;
     }
-    m_pos_y = 8.5;
+    d_pos_y = 8.5;
     // arxikopioisis ton array me animation
 }
 
 void Enemy::update(float dt) {
     float delta_time = dt/1000.0f;
-    if (m_pos_x < state ->getPlayer()->getPlayerX()) {
-        m_pos_x += delta_time*5.0f;
+    if (d_pos_x < state ->getPlayer()->getPlayerX()) {
+        d_pos_x += delta_time*5.0f;
         facing_left = false;
     }else {
-        m_pos_x -= delta_time*5.0f;
+        d_pos_x -= delta_time*5.0f;
         facing_left = true;
-    }
-}
-
-void Enemy::draw() {
-    if (walking) {
-    }else {
     }
 }
 

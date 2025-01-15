@@ -8,6 +8,7 @@
 
 class Level : public GameObject {
     graphics::Brush brush_background;
+    class Enemy* this_enemy;
 
     float m_center_x = 5.0f;
     float m_center_y = 5.0f;

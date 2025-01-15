@@ -33,8 +33,9 @@ void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,boo
             if (player)
                 state -> getPlayer() -> setWalking(false);
         }
-    }else{if (idleCount > idle.size()*5 -1)
-        idleCount = 0;
+    }else {
+        if (idleCount > idle.size()*5 -1)
+            idleCount = 0;
 
         // todo left facing idle
 

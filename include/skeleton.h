@@ -1,9 +1,9 @@
 #pragma once
 #include "enemy.h"
+class Skeleton: public Enemy {
 
-class Orge: public Enemy {
 public:
-    Orge(bool r);
+    Skeleton(bool r);
     void init() override;
     void update(float dt) override;
     void draw() override;

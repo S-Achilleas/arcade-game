@@ -12,7 +12,7 @@ protected:
 public:
     void init() override;
     void update(float dt) override;
-    void draw() override;
+    void draw() {};
     Enemy(bool r);
     ~Enemy();
 

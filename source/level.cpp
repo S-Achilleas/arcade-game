@@ -3,6 +3,7 @@
 #include "gamestate.h"
 #include "platform.h"
 #include "enemy.h"
+#include "skeleton.h"
 
 Level::Level(const std::string &name) {
 }
@@ -52,7 +53,8 @@ void Level::update(float dt) {
     if (timerValue < 0.1f && spawn_timer.isRunning()) {
         // Spawn a new enemy
         bool spawnRight = rand() % 2 == 0; // Randomize the spawn direction
-        enemies.emplace_back(spawnRight);
+        this_enemy = new Skeleton(spawnRight);
+        enemies.push_back(this_enemy);
     }
 
     for (auto& enemy : enemies) {
