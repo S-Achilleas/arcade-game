@@ -15,7 +15,7 @@ class Player:public ObjectWithMovement
     int neg = 1;
     float initial_y;
 
-    Timer projCooldown = Timer(0.5f, Timer::timer_type_t::TIMER_ONCE);
+    Timer projCooldown = Timer(3.0f, TIMER_LOOPING);
 
     graphics::Brush text;
     std::deque<Projectile> projectiles;

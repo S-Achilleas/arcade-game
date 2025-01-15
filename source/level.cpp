@@ -2,6 +2,7 @@
 #include "player.h"
 #include "gamestate.h"
 #include "platform.h"
+#include "enemy.h"
 #include <iostream>
 
 Level::Level(const std::string &name) {
@@ -16,6 +17,7 @@ Level::~Level() {
 void Level::init() {
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
+    spawn_timer.start();
 
     platform_loader = new Platform(); // platform object
     platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 0.2f, "SOME.png");
@@ -33,12 +35,29 @@ void Level::draw() {
 
     if (state ->getPlayer()->isActive())
         state ->getPlayer() ->draw();
+
+    for (auto& enemy  : enemies) {
+        enemy.draw();
+    }
 }
 
 void Level::update(float dt) {
     if (state->getPlayer()->isActive()) {
         state->getPlayer()->update(dt);
-        
+    }
+
+    // Update the timer value
+    float timerValue = spawn_timer;
+
+    // Check if the timer has looped back to 0
+    if (timerValue < 0.1f && spawn_timer.isRunning()) {
+        // Spawn a new enemy
+        bool spawnRight = rand() % 2 == 0; // Randomize the spawn direction
+        enemies.push_back(Enemy(spawnRight));
+    }
+
+    for (auto& enemy : enemies) {
+        enemy.update(dt);
     }
 
     GameObject::update(dt);
