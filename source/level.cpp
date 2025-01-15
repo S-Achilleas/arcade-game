@@ -49,33 +49,30 @@ void Level::draw() {
 }
 
 void Level::update(float dt) {
+    // Update player
     if (state->getPlayer()->isActive()) {
         state->getPlayer()->update(dt);
     }
 
-    // Update the timer value
-    float timerValue = spawn_timer;
+    float timerProgress = spawn_timer;
 
-    // Check if the timer has looped back to 0
-    if (timerValue < 0.1f && spawn_timer.isRunning()) {
-        bool spawnRight = rand() % 2 == 0; // Randomize the spawn direction
+    if (timerProgress >= 0.9f && !hasSpawnedThisCycle) {
+        bool spawnRight = rand() % 2 == 0;
         enemies.push_back(new Skeleton(spawnRight));
+        hasSpawnedThisCycle = true;
         std::cout << "Spawned new enemy. Total enemies: " << enemies.size() << std::endl;
     }
-
+    if (timerProgress < 0.1f)
+        hasSpawnedThisCycle = false;
 
     for (auto& enemy : enemies) {
         enemy->update(dt);
     }
-    /*
-    for (auto it = enemies.begin(); it != enemies.end(); ) {
-        if (it->isDead()) { // Check if the enemy is killed
-            it = enemies.erase(it); // Remove the enemy from the list
-        } else {
-            ++it; // Move to the next enemy
-        }
-    }
-    */
 
-    GameObject::update(dt);
-}
+    //for (auto it = enemies.begin(); it != enemies.end(); ) {
+       // if (it->isDead()) { // Check if the enemy is killed
+            //it = enemies.erase(it); // Remove the enemy from the list
+        //} else {
+         //   ++it; // Move to the next enemy
+       // }
+   // }

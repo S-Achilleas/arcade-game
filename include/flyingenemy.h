@@ -1,4 +1,4 @@
-#pragmae once
+#pragma once
 #include "enemy.h"
 class FlyingEnemy : public Enemy {
 public:
