@@ -3,7 +3,9 @@
 #include "gamestate.h"
 #include "animation.h"
 
-Skeleton::Skeleton(bool r): side(r) {
+Skeleton::Skeleton(bool r){
+    side = r;
+    init();
 }
 
 void Skeleton::init() {

@@ -11,8 +11,6 @@ protected:
     bool walking = false;
     bool facing_left = false;
     bool attacking = false;
-    class Animation* my_animation;
-    class HealthBar* my_health;
 
     //draw width & draw height
     float d_pos_x;
@@ -26,6 +24,8 @@ protected:
     const float max_velocity = 10.0f;
 
     graphics::Brush my_brush;
+    class HealthBar* my_health;
+    class Animation* my_animation;
 
 public:
     float m_vx = 0.0f;
