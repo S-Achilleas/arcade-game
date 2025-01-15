@@ -14,15 +14,14 @@ void Player::init() {
     d_pos_y = 5.5f;
     d_width = 3.0f;
     d_height = 3.0f;
-
     //hitbox width & height
     hb_adj(1.0f, 2.0f); //player width & height
     playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
     //hitbox width & height end
-
+    
     text.fill_opacity = 1.0f;
     graphics::setFont(state->getFullAssetPath("DefaultSans-Regular.ttf"));
-
+    
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     my_animation = new Animation(true,graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right")),
@@ -35,7 +34,6 @@ void Player::init() {
     //debug
 
     projCooldown.start();
-
 }
 
 void Player::update(float dt) {
