@@ -28,7 +28,7 @@ void Player::init() {
     idle = new Animation(graphics::preloadBitmaps(state->getFullAssetPath("knight/idle")));
     my_animation = new Animation(graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right")),
         graphics::preloadBitmaps(state->getFullAssetPath("knight/run/left")),
-        graphics::preloadBitmaps(state->getFullAssetPath("knight/idle")));
+        graphics::preloadBitmaps(state->getFullAssetPath("knight/idle")),true);
     //debug init
     player_brush_debug.fill_opacity = 0.1f;
     SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);

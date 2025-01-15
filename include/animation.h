@@ -6,6 +6,7 @@
 class Animation : public GameObject {
     int walkCount=0;
     int idleCount =0;
+    bool player;
     std::vector<std::string> run_right;
     std::vector<std::string> run_left;
     std::vector<std::string> attack_right;
@@ -16,7 +17,8 @@ public:
               std::vector<std::string> rl = {},
               std::vector<std::string> id = {},
               std::vector<std::string> ar = {},
-              std::vector<std::string> al = {});
+              std::vector<std::string> al = {},
+              bool p);
 
     void Animate(float x , float y,float w,float h,graphics::Brush b,bool facing,bool walking =false);
 };

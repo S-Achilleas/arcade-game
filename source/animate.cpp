@@ -8,12 +8,13 @@ Animation::Animation(std::vector<std::string> rr,
                      std::vector<std::string> rl,
                      std::vector<std::string> id,
                      std::vector<std::string> ar,
-                     std::vector<std::string> al)
+                     std::vector<std::string> al,
+                     bool p)
     : run_right(std::move(rr)),
       run_left(std::move(rl)),
       idle(std::move(id)),
       attack_right(std::move(ar)),
-      attack_left(std::move(al)){}
+      attack_left(std::move(al)),player(p){}
 
 void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,bool facing , bool walking) {
     if(walking) {
@@ -24,12 +25,14 @@ void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,boo
             b.texture = run_left[walkCount/5];
             graphics::drawRect(x, y, w, h, b);
             walkCount++;
-            state -> getPlayer() -> setWalking(false);
+            if (player)
+                state -> getPlayer() -> setWalking(false);
         }else {
             b.texture = run_right[walkCount/5];
             graphics::drawRect(x, y, w ,h, b);
             walkCount++;
-            state -> getPlayer() -> setWalking(false);
+            if (player)
+                state -> getPlayer() -> setWalking(false);
         }
     }else{if (idleCount > idle.size()*5 -1)
         idleCount = 0;
