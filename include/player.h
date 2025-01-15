@@ -13,6 +13,8 @@ class Player:public ObjectWithMovement
     int neg = 1;
     float initial_y;
 
+    graphics::Brush text;
+
     std::vector<std::string>jump_array_right;
     std::vector<std::string>jump_array_left;
     std::vector<std::string>idle_array;
