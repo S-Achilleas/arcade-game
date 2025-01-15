@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include "ObjectWithMovement.h"
+#include "projectile.h"
 
 class Player:public ObjectWithMovement
 {
@@ -18,6 +19,8 @@ class Player:public ObjectWithMovement
     std::vector<std::string>jump_array_right;
     std::vector<std::string>jump_array_left;
     std::vector<std::string>idle_array;
+
+    std::vector<Projectile> projectiles;
 
 public:
     class playerFeetObj : public ObjectWithMovement

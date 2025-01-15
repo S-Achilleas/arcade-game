@@ -34,6 +34,9 @@ void Player::init() {
     SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
     //debug
 
+    //projectiles
+    std::vector<Projectile>* projectiles = new std::vector<Projectile>;
+
 }
 
 void Player::update(float dt) {
@@ -94,8 +97,13 @@ void Player::update(float dt) {
 
     if (graphics::getKeyState(graphics::SCANCODE_SPACE))
     {
-        printf("8");
+        printf("projectile launched");
+        //projectile
+        projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f));
         
+    }
+    if (graphics::getKeyState(graphics::SCANCODE_4)) {
+        projectiles.clear();
     }
 }
 
@@ -121,6 +129,10 @@ void Player::draw() {
         graphics::drawText(m_pos_x-0.3f, m_pos_y-1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
             + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
 
+    }
+    for (int i = 0; i < projectiles.size(); i++)
+    {
+        (projectiles)[i].draw();
     }
 }
 
