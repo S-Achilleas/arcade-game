@@ -4,6 +4,7 @@
 #include "sgg/graphics.h"
 #include <thread>
 #include <chrono>
+#include "main_menu.h"
 
 
 GameState* GameState::unique_instance = nullptr;
@@ -30,14 +31,18 @@ std::string GameState::getFullAssetPath(const std::string &asset_name) {
 }
 
 void GameState::init() {
-    current_level = new Level();
-    current_level->init ();
-
-    player = new  Player("Player");
-    player->init();
-
-    graphics::preloadBitmaps(getAssetDir());
-
+    if (!menu_skipped)
+    {
+        graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
+        current_level = new main_menu();
+    }
+    else
+    {
+        player = new Player("Player");
+        player->init();
+        current_level = new Level();
+    }
+    current_level->init();
 }
 
 void GameState::update(float dt) {
@@ -55,7 +60,9 @@ void GameState::update(float dt) {
 }
 
 void GameState::draw() {
-    if (!player)
-        return;
+    /* //GameState should draw even when
+    if (!player) //there is not a player
+        return; // eg main menu
+        */
     current_level->draw();
 }

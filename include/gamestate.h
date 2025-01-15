@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
 #include "sgg/graphics.h"
+
 class GameState {
     std::string asset_path = "assets/";
     float canvas_width = 12.0f;
     float canvas_height = 10.0f;
+    bool menu_skipped = false;
 
     static GameState* unique_instance;
     GameState();
@@ -13,6 +15,7 @@ class GameState {
     class Level* current_level = nullptr;
 
 public:
+    void skipped_menu(bool value) { menu_skipped = value; }
     bool debugging = false;
 
     void init();

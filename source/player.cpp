@@ -14,15 +14,14 @@ void Player::init() {
     d_pos_y = 5.5f;
     d_width = 3.0f;
     d_height = 3.0f;
-
     //hitbox width & height
     hb_adj(1.0f, 2.0f); //player width & height
     playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
     //hitbox width & height end
-
+    
     text.fill_opacity = 1.0f;
     graphics::setFont(state->getFullAssetPath("DefaultSans-Regular.ttf"));
-
+    
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     my_animation = new Animation(true,graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right")),
@@ -35,7 +34,6 @@ void Player::init() {
     //debug
 
     projCooldown.start();
-
 }
 
 void Player::update(float dt) {
@@ -143,11 +141,10 @@ void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = playerfeet->intersectDown(box); //platform to feet offset
-        if (offset && m_vy>0)
+        if (offset && m_vy>=0)
         {
             isOnPlatform = true;
-            //if (offset - d_pos_y >= 0.001) <<< FALLING PLATFORMS
-            d_pos_y += offset;
+            d_pos_y += offset+0.000001f;
             break;
         }
         else
