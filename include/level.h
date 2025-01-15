@@ -13,8 +13,10 @@ class Level : public GameObject {
     float m_center_y = 5.0f;
 
     std::vector<class Enemy*> enemies;
+    class Enemy* enemy_pointer;
     bool hasSpawnedThisCycle = false;
     const float m_block_size = 1.0f;
+    int enemyType;
     graphics::Brush m_block_brush;
     Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
 
