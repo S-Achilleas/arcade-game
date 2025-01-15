@@ -28,7 +28,7 @@ public:
     void update(float dt);
 
     static GameState *getInstance();
-    ~GameState();
+    ~GameState() = default;
 
     float getCanvasWidth(){return canvas_width;}
     float getCanvasHeight(){return canvas_height;}
