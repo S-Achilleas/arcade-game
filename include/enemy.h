@@ -5,6 +5,7 @@
 #include "vector"
 
 class Enemy : public ObjectWithMovement{
+protected:
     bool right;
     float height;
     float width;
