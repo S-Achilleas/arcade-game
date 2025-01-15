@@ -143,11 +143,10 @@ void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = playerfeet->intersectDown(box); //platform to feet offset
-        if (offset && m_vy>0)
+        if (offset && m_vy>=0)
         {
             isOnPlatform = true;
-            //if (offset - d_pos_y >= 0.001) <<< FALLING PLATFORMS
-            d_pos_y += offset;
+            d_pos_y += offset+0.000001f;
             break;
         }
         else
