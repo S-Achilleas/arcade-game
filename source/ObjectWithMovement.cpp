@@ -1,4 +1,6 @@
 #include "ObjectWithMovement.h"
+
+#include "healthbar.h"
 #include "sgg/graphics.h"
 
 void ObjectWithMovement::hbp_adj(float d_pos_x, float d_pos_y, float offset_x, float offset_y) {
@@ -9,4 +11,8 @@ void ObjectWithMovement::hbp_adj(float d_pos_x, float d_pos_y, float offset_x, f
 void ObjectWithMovement::hb_adj(float width, float height) {
     m_height = height;
     m_width = width;
+}
+
+bool ObjectWithMovement::isDead() {
+    return my_health->getHealth()== 0;
 }

@@ -25,5 +25,9 @@ void HealthBar::hit(int damage) {
 }
 
 
+int HealthBar::getHealth() {
+    return health_points;
+}
+
 HealthBar::~HealthBar() {
 }
