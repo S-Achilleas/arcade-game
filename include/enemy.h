@@ -5,7 +5,7 @@
 #include "vector"
 
 class Enemy : public ObjectWithMovement{
-    bool right = true;
+    bool right;
     float height;
     float width;
 public:
