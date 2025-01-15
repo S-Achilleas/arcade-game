@@ -1,12 +1,17 @@
 #pragma once
 #include <string>
 #include "sgg/graphics.h"
+#include "timer.h"
 
 class GameState {
     std::string asset_path = "assets/";
     float canvas_width = 12.0f;
     float canvas_height = 10.0f;
     bool menu_skipped = false;
+
+    Timer pauseTimer = Timer(0.5f);
+    graphics::Brush pause_brush;
+    bool game_paused = false;
 
     static GameState* unique_instance;
     GameState();

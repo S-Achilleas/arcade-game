@@ -42,12 +42,22 @@ void GameState::init() {
         player->init();
         current_level = new Level();
     }
+
+    graphics::setFont(getFullAssetPath("ARCADECLASSIC.ttf")); // default font
+    pauseTimer.start();
     current_level->init();
 }
 
 void GameState::update(float dt) {
-    if (dt>500)
-        return;
+    if (dt > 500) return;
+
+    if (graphics::getKeyState(graphics::SCANCODE_P) 
+        && float(pauseTimer)==1 && menu_skipped){
+        pauseTimer.start();
+        if (game_paused) { game_paused = false; pause_brush.fill_opacity = 0.0f; }
+        else { game_paused = true; pause_brush.fill_opacity = 1.0f; }
+    }
+    if (game_paused) return;
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
 
@@ -64,5 +74,11 @@ void GameState::draw() {
     if (!player) //there is not a player
         return; // eg main menu
         */
+    if (game_paused) 
+    { 
+        graphics::drawText(2.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
+            "Game is on Pause", pause_brush);
+        return; //remove this if you want continue drawing on pause
+    }
     current_level->draw();
 }
