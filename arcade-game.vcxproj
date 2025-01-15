@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\animate.cpp" />
     <ClCompile Include="source\enemy.cpp" />
     <ClCompile Include="source\gameobject.cpp" />
     <ClCompile Include="source\gamestate.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="source\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\animation.h" />
     <ClInclude Include="include\box.h" />
     <ClInclude Include="include\enemy.h" />
     <ClInclude Include="include\gameobject.h" />
