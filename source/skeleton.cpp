@@ -9,8 +9,10 @@ Skeleton::Skeleton(bool r){
 }
 
 void Skeleton::init() {
-    d_width = 2.0f;
-    d_height = 2.0f;
+    my_brush.fill_opacity = 1.0f;
+    my_brush.outline_opacity = 0.0f;
+    d_width = 3.5f;
+    d_height = 3.5f;
     Enemy::init();
     my_animation =new Animation(false,graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/right")),
         graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left")));
