@@ -15,6 +15,8 @@ Level::~Level() {
 }
 
 void Level::init() {
+    graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f); //music
+
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
     spawn_timer.start();
