@@ -30,357 +30,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Created orge implemention">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Trying to draw and appear enemies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/PNG/clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/PNG/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/PNG/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/PNG/trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/PSD/day-platformer.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Day-Platformer/preview-day-platformer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Castle-Files/PNG/gothic-castle-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Castle-Files/PNG/layers/gothic-castle-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Castle-Files/PSD/gothic-castle.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Horror-Files/PNG/PREVIEW-gothic-horror.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Horror-Files/PNG/layers/tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Gothic-Horror-Files/PSD/gothic-horror.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/Props/pillars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/Props/woods.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/water-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/water.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/HauntedForest/Layers/water.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/aseprite/env.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/layers/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/layers/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/layers/near.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/layers/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Junk Wastelands Files/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Living-Tissue-Platform-Files/PNG/layers/bakground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Living-Tissue-Platform-Files/PNG/layers/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Living-Tissue-Platform-Files/PNG/preview-living-tissue-platform-x1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Living-Tissue-Platform-Files/PNG/preview-living-tissue-platform-x2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Living-Tissue-Platform-Files/PSD/living-tissue-platform.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Modular-tileset/layers/modular-tileset-sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Modular-tileset/layers/modular-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Modular-tileset/modular-tileset-PREVIEW-HD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Modular-tileset/modular-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/layers/parallax-mountain-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/layers/parallax-mountain-foreground-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/layers/parallax-mountain-montain-far.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/layers/parallax-mountain-mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/layers/parallax-mountain-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Old Version/parallax-mountain.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/Version C/layers/public-license.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Aseprite/Mountain-Dusk.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/far-clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/far-mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/near-clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Layers/trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version A/Previews/Mountain-Dusk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Aseprite/Mountain-Dusk-vb.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/far-mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/far-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/middle-mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/myst.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/near-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/Layers/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Mountain Dusk/version B/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/Back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/Clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/Middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/Tile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/props/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/props/dome-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/props/dome-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Day/props/tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/Back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/Clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/Middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/Tile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/props/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/props/dome-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/props/dome-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Night/props/tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/Back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/Clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/Middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/Tile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/props/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/props/dome-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/props/dome-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Layers/Noon/props/tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Previews/day.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Previews/night.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/Previews/noon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Ocean View Files/aseprite/env.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Old-dark-Castle-tileset-Files/PNG/preview-old-dark-castle-interior-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Old-dark-Castle-tileset-Files/PSD/old-dark-castle-interior-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Overworld Files/Tileset/overworld.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Overworld Files/previews/beaches-export.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Overworld Files/previews/beaches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Overworld Files/previews/tiles-export.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Overworld Files/previews/tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/Rocky-Tileset-HD-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/Rocky-Tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/layers/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/layers/mountain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/layers/tiles-example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Beach environment/layers/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/Aseprite/env.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/Props/crystal-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/Props/crystal-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/Props/plant-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/Props/plant-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/near.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/PNG/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/Preview/rocky-pass-big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky Pass Files/Preview/rocky-pass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky-Tileset/PNG/layers/rocky-tileset-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky-Tileset/PNG/layers/rocky-tileset-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky-Tileset/PNG/layers/rocky-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky-Tileset/PNG/preview-rocky-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Rocky-Tileset/PSD/rocky-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/aseprite/env.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/Props/support.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/Props/tank-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/Props/tank-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/Props/tank-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/layers/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Scifi lab Files/previews/scifi-lab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 1/PNG/cyberpunk-street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 1/PNG/layers/back-buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 1/PNG/layers/far-buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 1/PNG/layers/foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 1/PSD/cyberpunk-street.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 2/Layers/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 2/Layers/foreground-empty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 2/Layers/foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 2/Layers/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/Version 2/Previews/city.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/city skyline/Layers/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/city skyline/Layers/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/city skyline/Layers/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/city skyline/cyberpunk-street.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Synth City/city skyline/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Tiny RPG Mountain Files/Preview/mountain-preview-Big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Tiny RPG Mountain Files/Preview/mountain-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Tiny RPG Mountain Files/aseprite/mountain.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Tiny RPG Mountain Files/png/bridge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Tiny RPG Mountain Files/png/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Forest/PNG/top-down-forest-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Forest/PSD/top-down-forest.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Forest/top-down-forest-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Town/PNG/top-down-town-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Town/PSD/tiles-temp.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Town/PSD/top-down-town.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Top-Down-Town/top-down-town-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/layers/far.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/layers/foregound-merged.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/layers/foreground-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/layers/foreground-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/layers/sand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PNG/underwater-fantasy-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Underwater Fantasy/PSD/underwater-fantasy.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Urban-landscape-files/layers/Sky-layer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Urban-landscape-files/layers/buildings-layer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Urban-landscape-files/urban-landscape-background-Preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Urban-landscape-files/urban-landscape-background.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/Zone-202.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/back-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/previews/Zone-202-big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/previews/Zone-202.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/Warped Zone 202/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/alien-environment/PNG/layers/back-structures.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/alien-environment/PNG/layers/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/alien-environment/PNG/layers/tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/alien-environment/PNG/preview-alien-environment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/alien-environment/PSD/alien-environment.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PNG/another-world-PREVIEW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PNG/layered/another-world-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PNG/layered/back-towers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PNG/layered/composed-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PNG/layered/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/another-world/PSD/another-world.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/bulkhead-walls.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/bulkhead-wallsx1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/bulkhead-wallsx3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/layers/bulkhead-walls-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/layers/bulkhead-walls-pipes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/layers/bulkhead-walls-platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v1/layers/cols.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PNG/bg-wall-with-supports.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PNG/bg-wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PNG/floor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PNG/foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PNG/preview-bulkhead-walls-v2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/bulkhead-walls/v2/PSD/bulkhead-walls-v2.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/Caverns-preview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/Caverns-x1-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/Caverns.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/layers/back-walls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/layers/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/caverns-files-web/layers/tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PNG/layers/back-vegetation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PNG/layers/background-sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PNG/layers/cloud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PNG/layers/tile-set.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PNG/preview-colorful-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/colorful-tileset/PSD/colorful-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/country-platform-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/country-platform.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/layers/country-platform-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/layers/country-platform-forest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/layers/country-platform-tiles-example.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/country-platform-files/layers/country-platform-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-corridor-files/PNG/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-corridor-files/PNG/cyberpunk-corridor-foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-corridor-files/PNG/cyberpunk-corridor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-corridor-files/PSD/cyberpunk-corridor.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-corridor-files/cyberpunk-corridor-PREVIEW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/big-computer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/cryo-pod.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/cyberpunk-props-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/elevator-track.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/elevator.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/hanging-terminal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/server-gabinetes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PNG/small-terminal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-1.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-2.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-3.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-4.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-5.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-6.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/cyberpunk-detective-props/PSD/cyberpunk-props-preview.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/forest-road-background/PNG/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/forest-road-background/PNG/forest-road-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/forest-road-background/PNG/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/forest-road-background/PNG/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/forest-road-background/PSD/forest-road.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/grunge-tileset-files-web/grunge-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/grunge-tileset-files-web/grunge-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/lava-background/PNG/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/lava-background/PNG/lava-background-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/lava-background/PNG/lava-tile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/lava-background/PNG/middle-rocks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/lava-background/PSD/lava-background.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/layers/mist-forest-background-back-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/layers/mist-forest-background-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/layers/mist-forest-background-rocks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/layers/mist-forest-background-tiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/layers/mist-forest-background-tree.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/mist-forest-background-Working-File.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/mist-forest-background-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/mist-forest-background/mist-forest-background-previewx2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-far-buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-forest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-mountains-lights.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-mountains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/layers/night-town-background-town.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/night-town-background-preview-LOW-RES.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/night-town-background-previewx1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/night-town-background-previewx2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/night-town-background-files/night-town-background.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax-industrial-web/Layers/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax-industrial-web/Layers/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax-industrial-web/Layers/far-buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax-industrial-web/Layers/skill-foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax-industrial-web/parallax-industrial.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/layers/parallax-forest-back-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/layers/parallax-forest-front-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/layers/parallax-forest-lights.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/layers/parallax-forest-middle-trees.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/parallax-forest-back-trees.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/parallax-forest.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v1/previewpng.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v2/layers/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v2/layers/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v2/layers/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v2/parallax-forest-back-trees.ase" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/parallax_forest/v2/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-environment-background-files/PNG/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-environment-background-files/PNG/sci-fi-environment-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-environment-background-files/PNG/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-environment-background-files/PSD/sci-fi-environment-tileset.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-environment-background-files/preview-sci-fi-environment-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-interior-platform/PNG/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-interior-platform/PNG/tile-set-sci-fi-interior-platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-interior-platform/PSD/sci-fi-interior-platform.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/sci-fi-interior-platform/preview-sci-fi-interior-platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/back-sand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/boat-far.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/boat-front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/boat-middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/middle-sand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/layers/water.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/mockup/back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/mockup/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/mockup/front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/mockup/middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PNG/underwater-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/ships-graveyard/PSD/ships-graveyard.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler-objects/PNG/dungeon-crawler-objects-transparent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler-objects/PNG/dungeon-crawler-objects.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler-objects/PSD/dungeon-crawler-objects.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler/PNG/dungeon-tileset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler/PNG/preview-simple-dungeon-crawler-set1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/single-dungeon-crawler/PSD/single-dungeon-crawler-s1.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/blue-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/asteroid-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/asteroid-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/blue-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/blue-stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/blue-with-stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/prop-planet-big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Blue Version/layered/prop-planet-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/PSD/parallax-space-backgound.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/layers/parallax-space-backgound.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/layers/parallax-space-big-planet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/layers/parallax-space-far-planets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/layers/parallax-space-ring-planet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/layers/parallax-space-stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/space_background_pack/Old Version/preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-dungeon-sci-fi/PNG/preview-top-down-sci-fi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-dungeon-sci-fi/PNG/tileset-top-down-sci-fi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-dungeon-sci-fi/PSD/top-down-sci-fi.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/asteroid-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/asteroid-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/asteroid-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/asteroid-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/asteroid-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/eclipse-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/eclipse-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/cut-out-sprites/planet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/sprites.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/layers/stage-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PNG/stage-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/top-down-space-environment/PSD/stage.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PNG/back-gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PNG/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PNG/gold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PNG/ground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PNG/treasure-hoard-background-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/Environments/treasure-hoard-platform/PSD/treasure-hoard-background.psd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/enemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/level.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/level.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,6 +50,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -440,6 +103,34 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -456,28 +147,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;CMake Application.my_project.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/axilleas/Desktop/arcade-game αντίγραφο&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "CMake Application.my_project.executor": "Debug",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "animation",
+    "last_opened_file_path": "/Users/axilleas/Desktop/arcade-game αντίγραφο",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/source" />
@@ -519,7 +210,7 @@
       <workItem from="1736862439282" duration="2675000" />
       <workItem from="1736909180801" duration="772000" />
       <workItem from="1736910019664" duration="8661000" />
-      <workItem from="1736944043977" duration="9063000" />
+      <workItem from="1736944043977" duration="13747000" />
     </task>
     <task id="LOCAL-00001" summary="improved the draw function">
       <option name="closed" value="true" />
@@ -649,7 +340,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736946921616</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="removed all the useless backgrounds and added some new sprites">
+      <option name="closed" value="true" />
+      <created>1736958768394</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1736958768394</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Trying to draw and appear enemies">
+      <option name="closed" value="true" />
+      <created>1736962696465</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736962696465</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,6 +394,8 @@
     <MESSAGE value="Added a method to check if a moving object is dead.Also implemented a loop when the enemies are killed they will be removed from the enemy vector and free the memory" />
     <MESSAGE value="Created orge.h" />
     <MESSAGE value="Created orge implemention" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created orge implemention" />
+    <MESSAGE value="removed all the useless backgrounds and added some new sprites" />
+    <MESSAGE value="Trying to draw and appear enemies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to draw and appear enemies" />
   </component>
 </project>

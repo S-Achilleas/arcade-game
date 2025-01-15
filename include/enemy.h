@@ -1,8 +1,6 @@
 #pragma once
-#include "gameobject.h"
-#include "box.h"
+
 #include "ObjectWithMovement.h"
-#include "vector"
 
 class Enemy : public ObjectWithMovement{
 protected:
@@ -12,8 +10,8 @@ protected:
 public:
     void init() override;
     void update(float dt) override;
-    void draw() {};
-    Enemy(bool r);
+    void draw(){}
+    Enemy();
     ~Enemy();
 
 };

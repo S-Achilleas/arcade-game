@@ -3,15 +3,15 @@
 #include "gamestate.h"
 #include "animation.h"
 
-Skeleton::Skeleton(bool r): Enemy(r) {
+Skeleton::Skeleton(bool r): side(r) {
 }
 
 void Skeleton::init() {
     d_width = 2.0f;
     d_height = 2.0f;
     Enemy::init();
-    my_animation =new Animation(false,graphics::preloadBitmaps(state->getFullAssetPath("skeleton/run/right")),
-        graphics::preloadBitmaps(state->getFullAssetPath("skeleton/run/left")));
+    my_animation =new Animation(false,graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/right")),
+        graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left")));
 }
 
 void Skeleton::update(float dt) {

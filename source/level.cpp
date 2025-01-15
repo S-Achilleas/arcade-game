@@ -4,15 +4,19 @@
 #include "platform.h"
 #include "enemy.h"
 #include "skeleton.h"
-
+#include "iostream"
 Level::Level(const std::string &name) {
 }
 
 Level::~Level() {
+    for (auto enemy : enemies) {
+        delete enemy;
+    }
     if (platform_loader) {
         delete platform_loader;
     }
 }
+
 
 void Level::init() {
     graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f); //music
@@ -20,6 +24,9 @@ void Level::init() {
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("background.png");
     spawn_timer.start();
+    std::cout << "Spawn timer started." << std::endl;
+
+
 
     Platform::platformBrushInit();
     Platform::platformInitHandler(Platform(7.0f, 8.0f, 2.0f, 2.0f, "tile.png")); // platform object
@@ -37,7 +44,7 @@ void Level::draw() {
         state ->getPlayer() ->draw();
 
     for (auto& enemy  : enemies) {
-        enemy.draw();
+        enemy->draw();
     }
 }
 
@@ -51,14 +58,14 @@ void Level::update(float dt) {
 
     // Check if the timer has looped back to 0
     if (timerValue < 0.1f && spawn_timer.isRunning()) {
-        // Spawn a new enemy
         bool spawnRight = rand() % 2 == 0; // Randomize the spawn direction
-        this_enemy = new Skeleton(spawnRight);
-        enemies.push_back(this_enemy);
+        enemies.push_back(new Skeleton(spawnRight));
+        std::cout << "Spawned new enemy. Total enemies: " << enemies.size() << std::endl;
     }
 
+
     for (auto& enemy : enemies) {
-        enemy.update(dt);
+        enemy->update(dt);
     }
     /*
     for (auto it = enemies.begin(); it != enemies.end(); ) {
