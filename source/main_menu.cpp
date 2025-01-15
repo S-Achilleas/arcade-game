@@ -1,17 +1,18 @@
 #include "main_menu.h"
-#include <iostream>
 #include "my_stdio.h"
+#include <iostream>
 
 void main_menu::update(float dt)
 {
-	if (graphics::getKeyState(graphics::SCANCODE_SPACE) && !killTime.isRunning()) {
+	graphics::MouseState mouse;
+	graphics::getMouseState(mouse);
+	if ((graphics::getKeyState(graphics::SCANCODE_SPACE) && !killTime.isRunning()) || mouse.button_left_pressed) {
 		
 		killTime.start();
 	}
 	if (float(killTime) < 1 && float(killTime) != 0) {
 		text.fill_opacity -= 0.03f;
 		brush_background.fill_opacity += 0.008;
-		std::cout << brush_background.fill_opacity << std::endl;
 	}
 	else if (float(killTime) == 1){
 		main_menu::~main_menu();
@@ -22,6 +23,7 @@ void main_menu::update(float dt)
 
 void main_menu::init()
 {
+	graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f);
 	graphics::setFont(state->getFullAssetPath("ARCADECLASSIC.ttf"));
 	text.fill_opacity = 1.0f;
 	brush_background.outline_opacity = 0.0f;
