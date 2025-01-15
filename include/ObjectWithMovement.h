@@ -2,10 +2,8 @@
 #include <vector>
 #include <string>
 #include "box.h"
-#include "gamestate.h"
 #include "gameobject.h"
 #include "sgg/graphics.h"
-#include "animation.h"
 
 class ObjectWithMovement:virtual public GameObject,virtual public Box{
 protected:
@@ -13,7 +11,8 @@ protected:
     bool walking = false;
     bool facing_left = false;
     bool attacking = false;
-    Animation* my_animation;
+    class Animation* my_animation;
+    class HealthBar* my_health;
 
     //draw width & draw height
     float d_pos_x;
@@ -26,12 +25,7 @@ protected:
     const float accel_horizontal = 20.0f;
     const float max_velocity = 10.0f;
 
-    int walkCount = 1;
     graphics::Brush my_brush;
-    std::vector<std::string>run_array_right;
-    std::vector<std::string>run_array_left;
-    std::vector<std::string>attack_array_right;
-    std::vector<std::string>attack_array_left;
 
 public:
     float m_vx = 0.0f;
