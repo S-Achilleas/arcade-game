@@ -1,6 +1,5 @@
 #include "main_menu.h"
 #include "my_stdio.h"
-#include <iostream>
 
 void main_menu::update(float dt)
 {
