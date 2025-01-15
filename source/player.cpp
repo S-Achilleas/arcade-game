@@ -19,6 +19,9 @@ void Player::init() {
     playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
     //hitbox width & height end
 
+    text.fill_opacity = 1.0f;
+    graphics::setFont(state->getFullAssetPath("DefaultSans-Regular.ttf"));
+
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
     run_array_right = graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right"));
@@ -88,6 +91,12 @@ void Player::update(float dt) {
     //hitbox offsets end
 
     checkPlatformCollision();
+
+    if (graphics::getKeyState(graphics::SCANCODE_SPACE))
+    {
+        printf("8");
+        
+    }
 }
 
 void Player::draw() {
@@ -109,6 +118,9 @@ void Player::draw() {
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
         graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
             playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
+        graphics::drawText(m_pos_x-0.3f, m_pos_y-1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
+            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
+
     }
 }
 
@@ -116,9 +128,10 @@ void Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = playerfeet->intersectDown(box); //platform to feet offset
-        if (offset != 0 && m_vy>0)
+        if (offset && m_vy>0)
         {
             isOnPlatform = true;
+            //if (offset - d_pos_y >= 0.001) <<< FALLING PLATFORMS
             d_pos_y += offset;
             break;
         }
