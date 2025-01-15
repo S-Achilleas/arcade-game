@@ -45,4 +45,5 @@ public:
     void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0); //hitbox position adjustment
     void hb_adj(float width, float height); //hitbox width & height
     bool getLeft(){return facing_left;}
+    int getID() { return id; }
 };
