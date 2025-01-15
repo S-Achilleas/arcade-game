@@ -17,6 +17,7 @@ void Level::init() {
     platform_loader = new Platform(); // platform object
     platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 0.2f, "SOME.png");
     platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 0.2f, "SOME.png");
+    platform_loader->addPlatform(1.0f, 8.0f, 2.0f, 0.2f, "SOME.png");
 
 };
 
