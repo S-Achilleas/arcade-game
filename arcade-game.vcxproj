@@ -138,6 +138,7 @@
     <ClCompile Include="source\platform.cpp" />
     <ClCompile Include="source\player.cpp" />
     <ClCompile Include="source\projectile.cpp" />
+    <ClCompile Include="source\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\box.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="include\platform.h" />
     <ClInclude Include="include\player.h" />
     <ClInclude Include="include\projectile.h" />
+    <ClInclude Include="include\timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
