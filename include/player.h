@@ -1,9 +1,10 @@
 #pragma once
 #include "gameobject.h"
-#include <vector>
+#include <deque>
 #include <string>
 #include "ObjectWithMovement.h"
 #include "projectile.h"
+#include "timer.h"
 
 class Player:public ObjectWithMovement
 {
@@ -14,13 +15,15 @@ class Player:public ObjectWithMovement
     int neg = 1;
     float initial_y;
 
+    Timer projCooldown = Timer(0.5f, Timer::timer_type_t::TIMER_ONCE);
+
     graphics::Brush text;
 
     std::vector<std::string>jump_array_right;
     std::vector<std::string>jump_array_left;
     std::vector<std::string>idle_array;
 
-    std::vector<Projectile> projectiles;
+    std::deque<Projectile> projectiles;
 
 public:
     class playerFeetObj : public ObjectWithMovement

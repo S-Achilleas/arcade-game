@@ -34,8 +34,7 @@ void Player::init() {
     SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
     //debug
 
-    //projectiles
-    std::vector<Projectile>* projectiles = new std::vector<Projectile>;
+    projCooldown.start();
 
 }
 
@@ -95,16 +94,26 @@ void Player::update(float dt) {
 
     checkPlatformCollision();
 
-    if (graphics::getKeyState(graphics::SCANCODE_SPACE))
+    //projectiles
+    if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f) 
     {
-        printf("projectile launched");
-        //projectile
-        projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f));
-        
+        //projectiles should be killed after a certain time for obvious reasons
+        projectiles.push_back(Projectile(m_pos_x, m_pos_y, 0.5f, 0.2f, facing_left));
+        projCooldown.start();
     }
-    if (graphics::getKeyState(graphics::SCANCODE_4)) {
+    if (graphics::getKeyState(graphics::SCANCODE_4)) 
         projectiles.clear();
+    for (int i = 0; i < projectiles.size(); i++) {
+        (projectiles)[i].update(dt);
+
+        //kills projectiles after set time
+        float a = projectiles[i].getactiveTime();
+        if (a == 1.0f) {
+            projectiles.pop_front();
+        }
     }
+        
+    //projectiles
 }
 
 void Player::draw() {
@@ -128,6 +137,11 @@ void Player::draw() {
             playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
         graphics::drawText(m_pos_x-0.3f, m_pos_y-1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
             + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
+
+        //projectiles ID print on debug (maybe move this to projectile draw)
+        for (int i = 0; i < projectiles.size(); i++)
+            graphics::drawText(projectiles[i].m_pos_x, projectiles[i].m_pos_y, 0.4f, "ID: " +
+                std::to_string(projectiles[i].getID()), text);
 
     }
     for (int i = 0; i < projectiles.size(); i++)
