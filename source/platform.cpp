@@ -46,6 +46,8 @@ Platform::Platform(float dpos_x, float dpos_y, float dwidth,
 
 	m_pos_x = dpos_x + offsetX; m_pos_y = dpos_y + offsetY;
 	m_width = dwidth + offset_width; m_height = dheight + offset_height;
+
+	image_name = imageName;
 }
 
 void Platform::platformDisplayHandler() {

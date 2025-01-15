@@ -8,10 +8,6 @@ class Platform : public GameObject, public Box
 {
 	static std::vector<Platform> platforms;
 	std::string image_name;
-	float pos_x = 0.0f;
-	float pos_y = 0.0f;
-	float height = 0.0f;
-	float width = 0.0f;
 
 	float offset_x;
 	float offset_y;
