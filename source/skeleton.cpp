@@ -3,11 +3,9 @@
 #include "gamestate.h"
 #include "animation.h"
 
-Skeleton::Skeleton(bool r){
-    side = r;
+Skeleton::Skeleton(bool r) : Enemy(r) {
     init();
 }
-
 void Skeleton::init() {
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;

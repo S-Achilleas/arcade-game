@@ -1,8 +1,9 @@
 #include "flyingenemy.h"
 #include "animation.h"
 #include "gamestate.h"
-FlyingEnemy::FlyingEnemy(bool r) {
-    side = r;
+
+
+FlyingEnemy::FlyingEnemy(bool r) : Enemy(r) {
     init();
 }
 

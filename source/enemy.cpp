@@ -5,7 +5,7 @@
 
 void Enemy::init() {
     walking = true;
-    if (right) {
+    if (right_side) {
         d_pos_x =12.6f;
     }else {
         d_pos_x = -0.6f;
@@ -25,9 +25,10 @@ void Enemy::update(float dt) {
     }
 }
 
-Enemy::Enemy() {
+Enemy::Enemy(bool r) : right_side(r) {
     init();
 }
+
 
 Enemy::~Enemy() {
 }

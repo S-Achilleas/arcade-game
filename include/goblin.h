@@ -1,7 +1,6 @@
 #pragmae once
 #include "enemy.h"
 class Goblin : public Enemy {
-    bool side;
 public:
     Goblin(bool r);
     void init() override;
