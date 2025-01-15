@@ -33,7 +33,7 @@ std::string GameState::getFullAssetPath(const std::string &asset_name) {
 void GameState::init() {
     if (!menu_skipped)
     {
-        graphics::preloadBitmaps(getAssetDir());
+        graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
         current_level = new main_menu();
     }
     else
