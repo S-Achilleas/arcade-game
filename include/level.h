@@ -11,8 +11,7 @@ class Level : public GameObject {
     float m_center_x = 5.0f;
     float m_center_y = 5.0f;
 
-    std::vector<GameObject*> m_static_objects;
-    std::list<GameObject*> m_dynamic_objects;
+    std::list<GameObject*> enemies;
     const float m_block_size = 1.0f;
     graphics::Brush m_block_brush;
 

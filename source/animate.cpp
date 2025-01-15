@@ -4,17 +4,16 @@
 #include "gamestate.h"
 #include "player.h"
 
-Animation::Animation(std::vector<std::string> rr,
+Animation::Animation(bool p,std::vector<std::string> rr,
                      std::vector<std::string> rl,
                      std::vector<std::string> id,
                      std::vector<std::string> ar,
-                     std::vector<std::string> al,
-                     bool p)
-    : run_right(std::move(rr)),
+                     std::vector<std::string> al)
+    : player(p),run_right(std::move(rr)),
       run_left(std::move(rl)),
       idle(std::move(id)),
       attack_right(std::move(ar)),
-      attack_left(std::move(al)),player(p){}
+      attack_left(std::move(al)){}
 
 void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,bool facing , bool walking) {
     if(walking) {

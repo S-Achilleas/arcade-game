@@ -13,12 +13,11 @@ class Animation : public GameObject {
     std::vector<std::string> attack_left;
     std::vector<std::string> idle;
 public:
-    Animation(std::vector<std::string> rr = {},
+    Animation(bool p,std::vector<std::string> rr = {},
               std::vector<std::string> rl = {},
               std::vector<std::string> id = {},
               std::vector<std::string> ar = {},
-              std::vector<std::string> al = {},
-              bool p);
+              std::vector<std::string> al = {});
 
     void Animate(float x , float y,float w,float h,graphics::Brush b,bool facing,bool walking =false);
 };

@@ -26,7 +26,6 @@ void Enemy::update(float dt) {
 
 void Enemy::draw() {
     if (walking) {
-        ObjectWithMovement::draw();
     }else {
     }
 }

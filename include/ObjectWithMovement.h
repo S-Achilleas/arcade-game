@@ -34,7 +34,7 @@ public:
 
     void update(float dt){}
     void init(){}
-    void draw() override;
+    void draw(){}
     void setWalking(bool w){walking = w;}
     void setFacingLeft(bool f){facing_left = f;}
     void setAttacking(bool a){attacking = a;}
