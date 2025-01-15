@@ -3,7 +3,6 @@
 #include "gamestate.h"
 #include "platform.h"
 #include "enemy.h"
-#include <iostream>
 
 Level::Level(const std::string &name) {
 }
@@ -16,13 +15,13 @@ Level::~Level() {
 
 void Level::init() {
     brush_background.outline_opacity = 0.0f;
-    brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
+    brush_background.texture = state->getFullAssetPath("background.png");
     spawn_timer.start();
 
     platform_loader = new Platform(); // platform object
-    platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 0.2f, "SOME.png");
-    platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 0.2f, "SOME.png");
-    platform_loader->addPlatform(1.0f, 8.0f, 2.0f, 0.2f, "SOME.png");
+    platform_loader->addPlatform(7.0f, 9.0f, 2.0f, 2.0f, "tile.png");
+    platform_loader->addPlatform(1.0f, 6.0f, 2.0f, 2.0f, "tile.png");
+    platform_loader->addPlatform(1.0f, 8.0f, 2.0f, 2.0f, "tile.png");
 
 };
 
@@ -60,13 +59,13 @@ void Level::update(float dt) {
         enemy.update(dt);
     }
 
-    for (auto it = enemies.begin(); it != enemies.end(); ) {
-        if (it->isDead()) { // Check if the enemy is killed
-            it = enemies.erase(it); // Remove the enemy from the list
-        } else {
-            ++it; // Move to the next enemy
-        }
-    }
+    //for (auto it = enemies.begin(); it != enemies.end(); ) {
+       // if (it->isDead()) { // Check if the enemy is killed
+            //it = enemies.erase(it); // Remove the enemy from the list
+        //} else {
+         //   ++it; // Move to the next enemy
+       // }
+   // }
 
     GameObject::update(dt);
 }
