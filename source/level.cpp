@@ -14,6 +14,8 @@ Level::~Level() {
 }
 
 void Level::init() {
+    graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f); //music
+
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("background.png");
     spawn_timer.start();
@@ -58,14 +60,15 @@ void Level::update(float dt) {
     for (auto& enemy : enemies) {
         enemy.update(dt);
     }
-
-    //for (auto it = enemies.begin(); it != enemies.end(); ) {
-       // if (it->isDead()) { // Check if the enemy is killed
-            //it = enemies.erase(it); // Remove the enemy from the list
-        //} else {
-         //   ++it; // Move to the next enemy
-       // }
-   // }
+    /*
+    for (auto it = enemies.begin(); it != enemies.end(); ) {
+        if (it->isDead()) { // Check if the enemy is killed
+            it = enemies.erase(it); // Remove the enemy from the list
+        } else {
+            ++it; // Move to the next enemy
+        }
+    }
+    */
 
     GameObject::update(dt);
 }
