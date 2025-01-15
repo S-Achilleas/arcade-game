@@ -53,11 +53,19 @@ void Level::update(float dt) {
     if (timerValue < 0.1f && spawn_timer.isRunning()) {
         // Spawn a new enemy
         bool spawnRight = rand() % 2 == 0; // Randomize the spawn direction
-        enemies.push_back(Enemy(spawnRight));
+        enemies.emplace_back(spawnRight);
     }
 
     for (auto& enemy : enemies) {
         enemy.update(dt);
+    }
+
+    for (auto it = enemies.begin(); it != enemies.end(); ) {
+        if (it->isDead()) { // Check if the enemy is killed
+            it = enemies.erase(it); // Remove the enemy from the list
+        } else {
+            ++it; // Move to the next enemy
+        }
     }
 
     GameObject::update(dt);

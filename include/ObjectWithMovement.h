@@ -42,4 +42,5 @@ public:
     void hb_adj(float width, float height); //hitbox width & height
     bool getLeft(){return facing_left;}
     int getID() { return id; }
+    bool isDead();
 };

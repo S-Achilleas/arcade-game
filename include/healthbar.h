@@ -20,6 +20,7 @@ class HealthBar : virtual public GameObject {
     void update(float dt) override;
     void draw() override;
     void hit(int damage);
+    int getHealth();
     ~HealthBar();
 };
 
