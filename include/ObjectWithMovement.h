@@ -5,16 +5,15 @@
 #include "gamestate.h"
 #include "gameobject.h"
 #include "sgg/graphics.h"
+#include "animation.h"
 
 class ObjectWithMovement:virtual public GameObject,virtual public Box{
 protected:
-    class HealthBar my_healthbar();
     int frames;
     bool walking = false;
     bool facing_left = false;
     bool attacking = false;
-    bool coll_left = false;
-    bool coll_right = false;
+    Animation* my_animation;
 
     //draw width & draw height
     float d_pos_x;
@@ -42,6 +41,9 @@ public:
     void update(float dt){}
     void init(){}
     void draw() override;
+    void setWalking(bool w){walking = w;}
+    void setFacingLeft(bool f){facing_left = f;}
+    void setAttacking(bool a){attacking = a;}
     void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0); //hitbox position adjustment
     void hb_adj(float width, float height); //hitbox width & height
     bool getLeft(){return facing_left;}

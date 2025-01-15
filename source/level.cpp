@@ -8,6 +8,9 @@ Level::Level(const std::string &name) {
 }
 
 Level::~Level() {
+    if (platform_loader) {
+        delete platform_loader;
+    }
 }
 
 void Level::init() {

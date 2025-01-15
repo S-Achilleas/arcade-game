@@ -5,6 +5,7 @@
 #include "ObjectWithMovement.h"
 #include "projectile.h"
 #include "timer.h"
+#include "animation.h"
 
 class Player:public ObjectWithMovement
 {
@@ -18,11 +19,6 @@ class Player:public ObjectWithMovement
     Timer projCooldown = Timer(0.5f, Timer::timer_type_t::TIMER_ONCE);
 
     graphics::Brush text;
-
-    std::vector<std::string>jump_array_right;
-    std::vector<std::string>jump_array_left;
-    std::vector<std::string>idle_array;
-
     std::deque<Projectile> projectiles;
 
 public:
