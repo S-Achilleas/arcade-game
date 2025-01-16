@@ -1,5 +1,6 @@
 #include "enemy.h"
 #include "gamestate.h"
+#include "healthbar.h"
 #include "player.h"
 #include "sgg/graphics.h"
 
@@ -13,6 +14,7 @@ void Enemy::init() {
     d_pos_y = 9.35f;
     width = 3.0f;   // Set a default value for width
     height = 3.0f;
+    my_health = new HealthBar(10,d_pos_x,d_pos_y,"enemy_health",1.0f,1.0f);
 }
 void Enemy::update(float dt) {
     float delta_time = dt / 1000.0f;
@@ -40,6 +42,10 @@ Enemy::Enemy(bool r) : right_side(r) {
 
 
 Enemy::~Enemy() {
+}
+
+void Enemy::draw() {
+    my_health->draw();
 }
 
 void Enemy::patrol(float delta_time) {

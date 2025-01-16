@@ -21,5 +21,6 @@ void Goblin::update(float dt) {
 }
 
 void Goblin::draw() {
+    Enemy::draw();
     my_animation -> Animate(d_pos_x, d_pos_y, d_width, d_height, my_brush,facing_left,walking);
 }

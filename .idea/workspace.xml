@@ -30,7 +30,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="." />
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="removed iostream">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/enemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/goblin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/goblin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,18 +78,32 @@
     <setting file="file://$PROJECT_DIR$/include/platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/player.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/ObjectWithMovement.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/enemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gameobject.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gamestate.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/level.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -101,7 +123,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.my_project.executor": "Run",
+    "CMake Application.my_project.executor": "Debug",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -331,7 +353,55 @@
       <option name="project" value="LOCAL" />
       <updated>1737010926469</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="updated the flying enemy pngs">
+      <option name="closed" value="true" />
+      <created>1737011976752</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1737011976752</updated>
+    </task>
+    <task id="LOCAL-00023" summary="change the update function in enemy so the enemies stnad till when close to player">
+      <option name="closed" value="true" />
+      <created>1737012858443</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737012858443</updated>
+    </task>
+    <task id="LOCAL-00024" summary="made the enemies patrol when close to the player istead of standing">
+      <option name="closed" value="true" />
+      <created>1737016135921</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1737016135921</updated>
+    </task>
+    <task id="LOCAL-00025" summary="put a limit on how many enemies are spawned">
+      <option name="closed" value="true" />
+      <created>1737016658429</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1737016658429</updated>
+    </task>
+    <task id="LOCAL-00026" summary="removed comments in level.cpp">
+      <option name="closed" value="true" />
+      <created>1737016729818</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1737016729818</updated>
+    </task>
+    <task id="LOCAL-00027" summary="removed iostream">
+      <option name="closed" value="true" />
+      <created>1737016768021</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1737016768021</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +443,12 @@
     <MESSAGE value="Trying to draw and appear enemies" />
     <MESSAGE value="Ficed the goblin bug" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="updated the flying enemy pngs" />
+    <MESSAGE value="change the update function in enemy so the enemies stnad till when close to player" />
+    <MESSAGE value="made the enemies patrol when close to the player istead of standing" />
+    <MESSAGE value="put a limit on how many enemies are spawned" />
+    <MESSAGE value="removed comments in level.cpp" />
+    <MESSAGE value="removed iostream" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed iostream" />
   </component>
 </project>

@@ -10,9 +10,10 @@ protected:
 public:
     void init() override;
     void update(float dt) override;
-    void draw(){}
+    void draw() override;
     Enemy(bool r);
     ~Enemy();
     void patrol(float dt);
 
 };
+
