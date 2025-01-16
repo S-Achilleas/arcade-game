@@ -47,6 +47,9 @@ Enemy::Enemy(bool r) : right_side(r) {
 
 
 Enemy::~Enemy() {
+    if (my_health) {
+        delete my_health;
+    }
 }
 
 void Enemy::draw() {

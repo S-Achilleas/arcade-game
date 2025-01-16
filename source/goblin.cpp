@@ -12,7 +12,7 @@ Goblin::Goblin(bool r) : Enemy(r) {
     Enemy::init();
 }
 
-void Goblin::init() {
+void Goblin::initt() {
     Goblin::my_brush.fill_opacity = 1.0f;
     Goblin::my_brush.outline_opacity = 0.0f;
 }

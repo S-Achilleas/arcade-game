@@ -57,9 +57,12 @@ void Level::draw() {
 void Level::checkEnemiesCollisions() {
     for (auto& enemy :  enemies) {
         if (state->getPlayer() -> intersect(*(enemy))) {
-            enemy -> setActive(true);
+            std::cout<<"collision detected"<<std::endl;
+            enemy -> setAttacking(true);
             state -> getPlayer() -> getHealthBar() -> hit(1);
             std::cout<<"Health points "<<state->getPlayer() -> getHealthBar() -> getHealth()<<std::endl;
+        }else {
+            enemy -> setAttacking(false);
         }
     }
 }
@@ -70,6 +73,7 @@ void Level::update(float dt) {
     if (state->getPlayer()->isActive()) {
         state->getPlayer()->update(dt);
     }
+    checkEnemiesCollisions();
 
     float timerProgress = spawn_timer;
 
@@ -123,15 +127,15 @@ void Level::enemyInit()
     //Skeleton init
     Skeleton::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/right"));
     Skeleton::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left"));
-    Skeleton::init();
+    Skeleton::initt();
 
     //goblin init
     Goblin::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/right"));
     Goblin::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/left"));
-    Goblin::init();
+    Goblin::initt();
 
     //flyingenemy init
     FlyingEnemy::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/right"));
     FlyingEnemy::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/left"));
-    FlyingEnemy::init();
+    FlyingEnemy::initt();
 }

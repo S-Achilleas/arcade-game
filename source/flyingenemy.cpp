@@ -12,7 +12,7 @@ FlyingEnemy::FlyingEnemy(bool r) : Enemy(r) {
     Enemy::init();
 }
 
-void FlyingEnemy::init() {
+void FlyingEnemy::initt() {
     FlyingEnemy::my_brush.fill_opacity = 1.0f;
     FlyingEnemy::my_brush.outline_opacity = 0.0f;
 }
