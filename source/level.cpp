@@ -6,7 +6,6 @@
 #include "skeleton.h"
 #include "flyingenemy.h"
 #include "goblin.h"
-#include "iostream"
 #include <random>
 Level::Level(const std::string &name) {
 }
@@ -70,22 +69,18 @@ void Level::update(float dt) {
         switch (enemyType) {
             case 0:
                 enemy_pointer = new Skeleton(rand() % 2 == 0);
-                std::cout << "Spawned Skeleton" << std::endl;
                 break;
             case 1:
                 enemy_pointer = new Goblin(rand() % 2 == 0);
-                std::cout << "Spawned Goblin" << std::endl;
                 break;
             case 2:
                 enemy_pointer = new FlyingEnemy(rand() % 2 == 0);
-                std::cout << "Spawned FlyingEnemy" << std::endl;
                 break;
         }
 
         if (enemy_pointer) {
             enemies.push_back(enemy_pointer);
             hasSpawnedThisCycle = true;
-            std::cout << "Total enemies: " << enemies.size() << std::endl;
         }
     }
 
