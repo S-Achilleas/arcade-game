@@ -22,6 +22,7 @@ class Player:public ObjectWithMovement
     void projectileHandler(float dt);
     void brushesInit();
     bool checkPlatformCollision();
+    void drawDebug();
 public:
     Player(std::string name) : GameObject(name) {}
     //playerfeet class | used only once as *playerfeet

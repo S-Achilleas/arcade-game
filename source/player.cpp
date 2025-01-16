@@ -9,7 +9,8 @@
 #include "animation.h"
 
 
-void Player::init() {
+void Player::init() 
+{
     //player draw hitbox pos_x, pos_y
     // & its width, height
     d_pos_x = 5.5f; d_pos_y = 8.5f;
@@ -20,9 +21,10 @@ void Player::init() {
     //feet hitbox width & height
     playerfeet->hb_adj(0.4f, 0.15f);
     
-    my_animation = new Animation(true, graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
-        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_left"))
-        , graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
+    my_animation = new Animation(true, 
+        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
+        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_left")), 
+        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
 
     my_health = new HealthBar(10, 10.0f, 10.0f, "whatever", 3.0f, 3.0f);
@@ -32,41 +34,34 @@ void Player::init() {
     projCooldown.start();
 }
 
-void Player::update(float dt) {
-    Player::playerMovement(dt);
+void Player::update(float dt) 
+{
+    playerMovement(dt);
 
     //hitbox offsets
     hbp_adj(d_pos_x, d_pos_y, 0, 0.6f);
     //feet hitbox offsets
     playerfeet->hbp_adj(m_pos_x, m_pos_y, 0.0f, 0.8f);
 
-    Player::projectileHandler(dt);
+    projectileHandler(dt);
 }
 
-void Player::draw() {
+void Player::draw() 
+{
+    //Draw player
     my_animation -> Animate(d_pos_x, d_pos_y, d_width, d_height, my_brush,facing_left,walking);
 
-
-    if (state->debugging) { //draw player hit and feet hit (debug)
-        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
-        graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
-            playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
-        graphics::drawText(m_pos_x-0.3f, m_pos_y-1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
-            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
-
-        //projectiles ID print on debug (maybe move this to projectile draw)
-        for (int i = 0; i < projectiles.size(); i++)
-            graphics::drawText(projectiles[i].m_pos_x, projectiles[i].m_pos_y, 0.4f, "ID: " +
-                std::to_string(projectiles[i].getID()), text);
-
-    }
+    //Draw projectiles
     for (int i = 0; i < projectiles.size(); i++)
     {
         (projectiles)[i].draw(facing_left);
     }
+
+    drawDebug();
 }
 
-void Player::playerMovement(float dt) {
+void Player::playerMovement(float dt) 
+{
     float delta_time = dt / 1000.0f;
     float move = 0.0f;
 
@@ -104,7 +99,7 @@ void Player::playerMovement(float dt) {
 
     // Y axis change
     bool isOnGround = (d_pos_y == 8.5f);
-    //Jump only if playerfeet collide with a platform or player is on ground
+    // Jump only if playerfeet collide with a platform or player is on ground
     if (checkPlatformCollision() || isOnGround) {
         m_vy = 0.0f; // reset vertical velocity when on the ground
         if (graphics::getKeyState(graphics::SCANCODE_W)) {
@@ -119,13 +114,16 @@ void Player::playerMovement(float dt) {
 }
 
 //Returns true if player feet collide with a platform 
-bool Player::checkPlatformCollision() {
+bool Player::checkPlatformCollision() 
+{
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
-        float offset = playerfeet->intersectDown(box); //platform to feet offset
+        //platform to feet offset
+        float offset = playerfeet->intersectDown(box); 
+        // if offset (!=0) then there is a collision with offset to feet = offset
+        // if m_vy>=0 the player is falling (y accelaration down)
         if (offset && m_vy >= 0)
         {
-            isOnPlatform = true;
             d_pos_y += offset + 0.000001f;
             return true;
         }
@@ -171,4 +169,27 @@ void Player::brushesInit()
     player_brush_debug.fill_opacity = 0.1f;
     SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
     SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
+}
+
+//Draws debug elements
+void Player::drawDebug()
+{
+    if (state->debugging) { 
+        //draw player hitbox
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
+
+        //draw feet hitbox
+        graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
+            playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
+
+        //draw text: player position
+        graphics::drawText(m_pos_x - 0.3f, m_pos_y - 1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
+            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
+
+        //print projectiles GameObject::ID (maybe move this to projectile draw)
+        for (int i = 0; i < projectiles.size(); i++)
+            graphics::drawText(projectiles[i].m_pos_x, projectiles[i].m_pos_y, 0.4f, "ID: " +
+                std::to_string(projectiles[i].getID()), text);
+
+    }
 }
