@@ -19,10 +19,4 @@ bool ObjectWithMovement::isDead() {
 }
 
 ObjectWithMovement::~ObjectWithMovement() {
-    if (my_health) {
-        delete my_health;
-    }
-    if (my_animation) {
-        delete my_animation;
-    }
 }
