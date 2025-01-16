@@ -16,7 +16,7 @@ void HealthBar::update(float dt) {
 }
 
 void HealthBar::draw() {
-    healthBarBrush.texture = display_health_bar[health_points];
+    healthBarBrush.texture = full_path + "/" + std::to_string(health_points) + ".png";
     graphics::drawRect(h_pos_x, h_pos_y, width, height, healthBarBrush);
 }
 

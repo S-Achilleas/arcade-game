@@ -27,7 +27,7 @@ void Player::init()
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
 
-    my_health = new HealthBar(10, 10.0f, 10.0f, "whatever", 3.0f, 3.0f);
+    my_health = new HealthBar(9, 1.6f, 0.3f, "healthbars/green_health", 1.0f, 3.0f);
 
     brushesInit();
 
@@ -50,7 +50,7 @@ void Player::draw()
 {
     //Draw player
     my_animation -> Animate(d_pos_x, d_pos_y, d_width, d_height, my_brush,facing_left,walking);
-
+    my_health -> draw();
     //Draw projectiles
     for (int i = 0; i < projectiles.size(); i++)
     {

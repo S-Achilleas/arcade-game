@@ -6,7 +6,7 @@ public:
     static std::vector<std::string> right_assets;
     static std::vector<std::string> left_assets;
     Goblin(bool r);
-    static void init();
+    static void initt();
     void update(float dt) override;
     void draw() override;
     ~Goblin();

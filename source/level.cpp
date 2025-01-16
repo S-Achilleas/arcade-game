@@ -130,17 +130,17 @@ void Level::enemyInit()
     //Skeleton init
     Skeleton::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/right"));
     Skeleton::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left"));
-    Skeleton::init();
+    Skeleton::initt();
 
     //goblin init
     Goblin::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/right"));
     Goblin::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/left"));
-    Goblin::init();
+    Goblin::initt();
 
     //flyingenemy init
     FlyingEnemy::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/right"));
     FlyingEnemy::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/left"));
-    FlyingEnemy::init();
+    FlyingEnemy::initt();
 }
 
 void Level::checkCollisionProjectiles()
