@@ -62,7 +62,7 @@ void Player::draw() {
     }
     for (int i = 0; i < projectiles.size(); i++)
     {
-        (projectiles)[i].draw();
+        (projectiles)[i].draw(facing_left);
     }
 }
 

@@ -33,14 +33,8 @@
     <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/flyingenemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/flyingenemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/goblin.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/goblin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/goblin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/goblin.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="idk" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +88,8 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -113,7 +109,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.my_project.executor": "Run",
+    "CMake Application.my_project.executor": "Debug",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -122,7 +118,7 @@
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "idk",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/axilleas/Desktop/arcade-game αντίγραφο",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
