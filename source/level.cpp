@@ -61,7 +61,7 @@ void Level::update(float dt) {
     float timerProgress = spawn_timer;
 
     // Check if it's time to spawn an enemy
-    if (timerProgress >= 0.9f && !hasSpawnedThisCycle) {
+    if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 6) {
         // Randomly choose an enemy type (0 = Skeleton, 1 = Goblin, 2 = FlyingEnemy)
         static std::random_device rd;  // Seed for randomness
         static std::mt19937 gen(rd()); // Random number generator
