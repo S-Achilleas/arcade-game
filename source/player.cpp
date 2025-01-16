@@ -152,7 +152,7 @@ void Player::projectileHandler(float dt)
 
         //projectile kill when out of canvas
         if (projectiles[i].getX() <= 0.0f || projectiles[i].getX() > 12.0f) {
-            projectiles.pop_front();
+            projectiles.erase(projectiles.begin() + i);
         }
     }
 }
