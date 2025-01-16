@@ -4,6 +4,13 @@
 #include "player.h"
 #include "sgg/graphics.h"
 
+//Class static definitions
+graphics::Brush Enemy::my_brush = {};
+float Enemy::d_width = 3.5f;
+float Enemy::d_height = 3.5f;
+//Static definitions end
+
+
 void Enemy::init() {
     walking = true;
     if (right_side) {
@@ -12,8 +19,6 @@ void Enemy::init() {
         d_pos_x = -0.6f;
     }
     d_pos_y = 9.35f;
-    width = 3.0f;   // Set a default value for width
-    height = 3.0f;
     my_health = new HealthBar(10,d_pos_x,d_pos_y,"enemy_health",1.0f,1.0f);
 }
 void Enemy::update(float dt) {

@@ -2,19 +2,19 @@
 #include "animation.h"
 #include "gamestate.h"
 
+//Class static definitions
+std::vector<std::string> FlyingEnemy::right_assets = {};
+std::vector<std::string> FlyingEnemy::left_assets = {};
+//Static definitions end
 
 FlyingEnemy::FlyingEnemy(bool r) : Enemy(r) {
-    init();
+    my_animation = new Animation(false, right_assets, left_assets);
+    Enemy::init();
 }
 
 void FlyingEnemy::init() {
-    my_brush.fill_opacity = 1.0f;
-    my_brush.outline_opacity = 0.0f;
-    d_width = 3.5f;
-    d_height = 3.5f;
-    Enemy::init();
-    my_animation =new Animation(false,graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/right")),
-        graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/left")));
+    FlyingEnemy::my_brush.fill_opacity = 1.0f;
+    FlyingEnemy::my_brush.outline_opacity = 0.0f;
 }
 
 void FlyingEnemy::update(float dt) {
@@ -23,5 +23,6 @@ void FlyingEnemy::update(float dt) {
 
 void FlyingEnemy::draw() {
     Enemy::draw();
-    my_animation -> Animate(d_pos_x, d_pos_y, d_width, d_height, my_brush,facing_left,walking);
+    my_animation->Animate(d_pos_x, d_pos_y, FlyingEnemy::d_width,
+        FlyingEnemy::d_height, FlyingEnemy::my_brush, facing_left, walking);
 }

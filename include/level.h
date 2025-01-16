@@ -20,6 +20,7 @@ class Level : public GameObject {
     graphics::Brush m_block_brush;
     Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
 
+    void enemyInit();
 public:
     Level(const std::string& name = "Level 0");
     //platform loader is public so player can access platforms
