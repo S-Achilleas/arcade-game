@@ -13,5 +13,6 @@ public:
     void draw(){}
     Enemy(bool r);
     ~Enemy();
+    void patrol(float dt);
 
 };
