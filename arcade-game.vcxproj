@@ -130,8 +130,10 @@
   <ItemGroup>
     <ClCompile Include="source\animate.cpp" />
     <ClCompile Include="source\enemy.cpp" />
+    <ClCompile Include="source\flyingenemy.cpp" />
     <ClCompile Include="source\gameobject.cpp" />
     <ClCompile Include="source\gamestate.cpp" />
+    <ClCompile Include="source\goblin.cpp" />
     <ClCompile Include="source\healthbar.cpp" />
     <ClCompile Include="source\level.cpp" />
     <ClCompile Include="source\main.cpp" />
@@ -140,14 +142,17 @@
     <ClCompile Include="source\platform.cpp" />
     <ClCompile Include="source\player.cpp" />
     <ClCompile Include="source\projectile.cpp" />
+    <ClCompile Include="source\skeleton.cpp" />
     <ClCompile Include="source\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\animation.h" />
     <ClInclude Include="include\box.h" />
     <ClInclude Include="include\enemy.h" />
+    <ClInclude Include="include\flyingenemy.h" />
     <ClInclude Include="include\gameobject.h" />
     <ClInclude Include="include\gamestate.h" />
+    <ClInclude Include="include\goblin.h" />
     <ClInclude Include="include\healthbar.h" />
     <ClInclude Include="include\level.h" />
     <ClInclude Include="include\main_menu.h" />
@@ -156,6 +161,7 @@
     <ClInclude Include="include\platform.h" />
     <ClInclude Include="include\player.h" />
     <ClInclude Include="include\projectile.h" />
+    <ClInclude Include="include\skeleton.h" />
     <ClInclude Include="include\timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
