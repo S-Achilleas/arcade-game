@@ -147,8 +147,19 @@ void Level::checkCollisionProjectiles()
 {
     for (auto& enemy : enemies) {
         for (auto& projectile : *state->getPlayer()->getProjectiles()) {
-            if (enemy->intersect(projectile))
-                std::cout << "collision detected" << std::endl;
+            if (enemy->intersect(projectile)) {
+                float found_id = projectile.getID();
+                int i = 0;
+                for (auto& projectile_2 : *state->getPlayer()->getProjectiles()) 
+                {
+                    if (projectile == projectile_2) {
+                        auto& projectiles = *state->getPlayer()->getProjectiles();
+                        projectiles.erase(
+                            std::remove(projectiles.begin(), projectiles.end(), projectile),
+                            projectiles.end());
+                    }
+                }
+            }
         }
     }
 }

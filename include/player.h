@@ -16,7 +16,7 @@ class Player:public ObjectWithMovement
     
     graphics::Brush text;
     graphics::Brush player_brush_debug;
-    std::deque<Projectile> projectiles;
+    std::vector<Projectile> projectiles;
 
     void playerMovement(float dt);
     void projectileHandler(float dt);
@@ -39,5 +39,5 @@ public:
     void draw() override;
     float getPlayerX() { return m_pos_x; }
     float getPlayerY() { return m_pos_y; }
-    std::deque<Projectile>* getProjectiles() { return &projectiles; }
+    std::vector<Projectile>* getProjectiles() { return &projectiles; }
 };
