@@ -5,6 +5,10 @@ class Projectile : public ObjectWithMovement {
 	float dir;
 	Timer activeTime;
 public:
+
+	bool operator==(const Projectile& other) const {
+		return id == other.id;
+	}
 	graphics::Brush projectile_brush;
 	Projectile(float x, float y, float w, float h, bool left);
 	void update(float dt) override;

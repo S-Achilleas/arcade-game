@@ -152,8 +152,11 @@ void Level::checkCollisionProjectiles()
                 int i = 0;
                 for (auto& projectile_2 : *state->getPlayer()->getProjectiles()) 
                 {
-                    i += 1;
-                    if (projectile.getID() == projectile_2.getID()) {
+                    if (projectile == projectile_2) {
+                        auto& projectiles = *state->getPlayer()->getProjectiles();
+                        projectiles.erase(
+                            std::remove(projectiles.begin(), projectiles.end(), projectile),
+                            projectiles.end());
                     }
                 }
             }

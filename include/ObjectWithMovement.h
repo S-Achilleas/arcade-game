@@ -18,10 +18,10 @@ protected:
     float d_width;
     float d_height;
 
-    const float gravity = 15.0f;
-    const float accel_vertical = 8.0f;
-    const float accel_horizontal = 20.0f;
-    const float max_velocity = 10.0f;
+    float gravity = 15.0f;
+    float accel_vertical = 8.0f;
+    float accel_horizontal = 20.0f;
+    float max_velocity = 10.0f;
 
     graphics::Brush my_brush;
     class HealthBar* my_health;
