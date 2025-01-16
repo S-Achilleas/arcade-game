@@ -76,11 +76,11 @@ void Level::update(float dt) {
                 std::cout << "Spawned Skeleton" << std::endl;
                 break;
             case 1:
-                //enemy_pointer = new Goblin(rand() % 2 == 0); // Spawn Goblin
+                enemy_pointer = new Goblin(rand() % 2 == 0); // Spawn Goblin
                 std::cout << "Spawned Goblin" << std::endl;
                 break;
             case 2:
-                //enemy_pointer = new FlyingEnemy(rand() % 2 == 0); // Spawn FlyingEnemy
+                enemy_pointer = new FlyingEnemy(rand() % 2 == 0); // Spawn FlyingEnemy
                 std::cout << "Spawned FlyingEnemy" << std::endl;
                 break;
         }
