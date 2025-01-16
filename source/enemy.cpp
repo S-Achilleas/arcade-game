@@ -3,6 +3,7 @@
 #include "healthbar.h"
 #include "player.h"
 #include "sgg/graphics.h"
+#include "my_stdio.h"
 
 //Class static definitions
 graphics::Brush Enemy::my_brush = {};
@@ -38,6 +39,10 @@ void Enemy::update(float dt) {
     } else {
         patrol(delta_time);
     }
+    m_pos_x = d_pos_x;
+    m_pos_y = d_pos_y;
+    m_height = d_height;
+    m_width = d_width;
 }
 
 
@@ -76,4 +81,26 @@ void Enemy::patrol(float delta_time) {
         }
     }
 
+}
+
+
+void Enemy::drawDebug()
+{
+    debug_text.fill_opacity = 1.0f;
+    my_brush.fill_opacity = 1.0f;
+    my_brush.outline_opacity = 0.0f;
+
+    enemy_brush_debug.fill_opacity = 0.1f;
+    SETCOLOR(enemy_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
+    SETCOLOR(enemy_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
+
+    if (state->debugging) {
+        //draw player hitbox
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, enemy_brush_debug);
+
+        //draw text: player position
+        graphics::drawText(m_pos_x , m_pos_y , 0.4f, "X: " + std::to_string(m_pos_x)
+            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), debug_text);
+
+    }
 }

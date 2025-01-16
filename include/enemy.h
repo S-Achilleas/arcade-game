@@ -2,6 +2,8 @@
 #include "ObjectWithMovement.h"
 
 class Enemy : public ObjectWithMovement{
+    graphics::Brush debug_text;
+    graphics::Brush enemy_brush_debug;
 protected:
     bool right_side;
     static graphics::Brush my_brush;
@@ -14,6 +16,7 @@ public:
     Enemy(bool r);
     ~Enemy();
     void patrol(float dt);
+    void drawDebug();
 
 };
 
