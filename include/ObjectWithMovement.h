@@ -38,8 +38,10 @@ public:
     void setWalking(bool w){walking = w;}
     void setFacingLeft(bool f){facing_left = f;}
     void setAttacking(bool a){attacking = a;}
-    void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0); //hitbox position adjustment
-    void hb_adj(float width, float height); //hitbox width & height
+    //numbers are hitbox position x, y offsets
+    void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0);
+    //feet x,y offsets
+    void hb_adj(float width, float height);
     bool getLeft(){return facing_left;}
     int getID() { return id; }
     bool isDead();
