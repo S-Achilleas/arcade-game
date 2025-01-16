@@ -30,13 +30,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="changed the music">
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="chaanged the ways projectiles work in player.cpp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/animation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/animation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/ObjectWithMovement.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ObjectWithMovement.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/flyingenemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/flyingenemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/goblin.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/goblin.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/projectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/projectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/projectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/projectile.cpp" afterDir="false" />
     </list>
@@ -107,28 +110,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.my_project.executor": "Run",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.west.config.association.type.startup.service": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/axilleas/Desktop/arcade-game αντίγραφο",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;CMake Application.my_project.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/axilleas/Desktop/arcade-game αντίγραφο&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bin/assets" />
@@ -167,7 +170,7 @@
       <workItem from="1736909180801" duration="772000" />
       <workItem from="1736910019664" duration="8661000" />
       <workItem from="1736944043977" duration="13747000" />
-      <workItem from="1737028943787" duration="7992000" />
+      <workItem from="1737028943787" duration="10048000" />
     </task>
     <task id="LOCAL-00001" summary="improved the draw function">
       <option name="closed" value="true" />
@@ -449,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737047487451</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="chaanged the ways projectiles work in player.cpp">
+      <option name="closed" value="true" />
+      <created>1737051356687</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1737051356687</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Corrected the animation logic" />
     <MESSAGE value="Corrected the bug of the new animation class" />
     <MESSAGE value="Modified the level.h and level.cpp so that enemiew spawn every 3 seconds" />
     <MESSAGE value="Fixed bug about timer_looping" />
@@ -497,6 +507,7 @@
     <MESSAGE value="Made a proper destructor when the enemies die" />
     <MESSAGE value="changed players animation and also added the right side idle" />
     <MESSAGE value="changed the music" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the music" />
+    <MESSAGE value="chaanged the ways projectiles work in player.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="chaanged the ways projectiles work in player.cpp" />
   </component>
 </project>

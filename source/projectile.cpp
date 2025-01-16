@@ -31,7 +31,11 @@ void Projectile::update(float dt) {
 }
 
 // draw function implementation
-void Projectile::draw() {
-    projectile_brush.texture = state -> getFullAssetPath("katana.png");
+void Projectile::draw(bool facing_left) {
+    if (facing_left) {
+        projectile_brush.texture = state -> getFullAssetPath("katanal.png");
+    }else {
+        projectile_brush.texture = state -> getFullAssetPath("katanar.png");
+    }
     graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, projectile_brush);
 }

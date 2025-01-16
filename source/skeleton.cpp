@@ -25,3 +25,9 @@ void Skeleton::draw() {
     my_animation -> Animate(d_pos_x, d_pos_y, Skeleton::d_width, 
         Skeleton::d_height, Skeleton::my_brush, facing_left, walking);
 }
+
+Skeleton::~Skeleton() {
+    if (my_animation)
+        delete my_animation;
+    // kai gia healthbar
+}

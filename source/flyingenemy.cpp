@@ -26,3 +26,9 @@ void FlyingEnemy::draw() {
     my_animation->Animate(d_pos_x, d_pos_y, FlyingEnemy::d_width,
         FlyingEnemy::d_height, FlyingEnemy::my_brush, facing_left, walking);
 }
+
+FlyingEnemy::~FlyingEnemy() {
+    if (my_animation)
+        delete my_animation;
+    // kai gia healthbar
+}

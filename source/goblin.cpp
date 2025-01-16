@@ -26,3 +26,9 @@ void Goblin::draw() {
     my_animation -> Animate(d_pos_x, d_pos_y, Goblin::d_width,
         Goblin::d_height, Goblin::my_brush,facing_left,walking);
 }
+
+Goblin::~Goblin() {
+    if (my_animation)
+        delete my_animation;
+    // kai gia healthbar
+}

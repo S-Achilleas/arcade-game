@@ -9,4 +9,5 @@ public:
     static void init();
     void update(float dt) override;
     void draw() override;
+    ~Goblin();
 };

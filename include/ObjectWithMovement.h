@@ -45,4 +45,5 @@ public:
     bool getLeft(){return facing_left;}
     int getID() { return id; }
     bool isDead();
+    ~ObjectWithMovement();
 };
