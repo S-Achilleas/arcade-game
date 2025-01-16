@@ -22,7 +22,7 @@ Level::~Level() {
 
 
 void Level::init() {
-    graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f); //music
+    graphics::playMusic(state->getFullAssetPath("samurai.mp3"), 0.4f); //music
 
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("background.png");

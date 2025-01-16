@@ -19,7 +19,7 @@ void draw() {
 }
 
 int main() {
-    graphics::createWindow(800,800,"Boing Stage1");
+    graphics::createWindow(800,800,"Samurai");
 
     init();
     graphics::setDrawFunction(draw);

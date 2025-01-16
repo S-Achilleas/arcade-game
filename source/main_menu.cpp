@@ -22,7 +22,7 @@ void main_menu::update(float dt)
 
 void main_menu::init()
 {
-	graphics::playMusic(state->getFullAssetPath("menu_music.mp3"), 0.4f);
+	graphics::playMusic(state->getFullAssetPath("samurai.mp3"), 0.4f);
 	graphics::setFont(state->getFullAssetPath("ARCADECLASSIC.ttf"));
 	text.fill_opacity = 1.0f;
 	brush_background.outline_opacity = 0.0f;
