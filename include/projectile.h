@@ -11,5 +11,6 @@ public:
 	void init() override;
 	void draw() override;
 	Timer getactiveTime() { return activeTime; }
+	float getX() { return m_pos_x;}
 	~Projectile() = default;
 };

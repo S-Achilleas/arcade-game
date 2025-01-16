@@ -11,7 +11,7 @@
 
 void Player::init() {
     d_pos_x = 5.5f;
-    d_pos_y = 5.5f;
+    d_pos_y = 8.5f;
     d_width = 3.0f;
     d_height = 3.0f;
     //hitbox width & height
@@ -97,18 +97,15 @@ void Player::update(float dt) {
     //projectiles
     if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f) 
     {
+        if (projectiles.size() <5) {
+            projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
+        }
         //projectiles should be killed after a certain time for obvious reasons
-        projectiles.push_back(Projectile(m_pos_x, m_pos_y, 0.5f, 0.2f, facing_left));
-        projCooldown.start();
     }
-    if (graphics::getKeyState(graphics::SCANCODE_4)) 
-        projectiles.clear();
     for (int i = 0; i < projectiles.size(); i++) {
         (projectiles)[i].update(dt);
 
-        //kills projectiles after set time
-        float a = projectiles[i].getactiveTime();
-        if (a == 1.0f) {
+        if (projectiles[i].getX() <= 0.0f || projectiles[i].getX() > 12.0f ) {
             projectiles.pop_front();
         }
     }

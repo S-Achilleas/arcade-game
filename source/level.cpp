@@ -31,7 +31,7 @@ void Level::init() {
 
 
     Platform::platformBrushInit();
-    Platform::platformInitHandler(Platform(7.0f, 8.0f, 2.0f, 2.0f, "tile.png")); // platform object
+    Platform::platformInitHandler(Platform(7.0f, 7.8f, 2.0f, 0.4f, "tile.png")); // platform object
 
     enemyInit();
 

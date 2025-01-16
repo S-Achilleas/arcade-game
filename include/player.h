@@ -14,7 +14,6 @@ class Player:public ObjectWithMovement
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
-
     Timer projCooldown = Timer(3.0f);
 
     graphics::Brush text;

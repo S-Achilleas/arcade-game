@@ -1,5 +1,7 @@
 #include "projectile.h"
 #include <iostream>
+
+#include "gamestate.h"
 #include "timer.h"
 
 // Constructor
@@ -25,10 +27,11 @@ void Projectile::init() {
 // update function implementation
 void Projectile::update(float dt) {
     // Update projectile's position or state
-    m_pos_x += dir * 0.02f;
+    m_pos_x += dir * 0.2f;
 }
 
 // draw function implementation
 void Projectile::draw() {
+    projectile_brush.texture = state -> getFullAssetPath("katana.png");
     graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, projectile_brush);
 }

@@ -30,41 +30,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Made a proper destructor when the enemies die">
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="changed the music">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/idle/frame9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/left/frame9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/assets/knight/run/right/frame9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/animation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/animation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/animate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/animate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/projectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/projectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/projectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/projectile.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +85,9 @@
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -190,7 +167,7 @@
       <workItem from="1736909180801" duration="772000" />
       <workItem from="1736910019664" duration="8661000" />
       <workItem from="1736944043977" duration="13747000" />
-      <workItem from="1737028943787" duration="3560000" />
+      <workItem from="1737028943787" duration="7992000" />
     </task>
     <task id="LOCAL-00001" summary="improved the draw function">
       <option name="closed" value="true" />
@@ -456,7 +433,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737028844830</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="changed players animation and also added the right side idle">
+      <option name="closed" value="true" />
+      <created>1737046723457</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1737046723457</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changed the music">
+      <option name="closed" value="true" />
+      <created>1737047487451</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1737047487451</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,8 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made a seperate class for animations . The animate.cpp and animation.h were created and ObjectWithMovement.h, level.h , player.h were changed.Also added a level destructor." />
-    <MESSAGE value="Cleaned these header files" />
     <MESSAGE value="Corrected the animation logic" />
     <MESSAGE value="Corrected the bug of the new animation class" />
     <MESSAGE value="Modified the level.h and level.cpp so that enemiew spawn every 3 seconds" />
@@ -504,6 +495,8 @@
     <MESSAGE value="changed the main menu backrgiund" />
     <MESSAGE value="xml" />
     <MESSAGE value="Made a proper destructor when the enemies die" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a proper destructor when the enemies die" />
+    <MESSAGE value="changed players animation and also added the right side idle" />
+    <MESSAGE value="changed the music" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the music" />
   </component>
 </project>

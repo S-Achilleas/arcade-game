@@ -22,5 +22,6 @@ public:
               std::vector<std::string> ar = {},
               std::vector<std::string> al = {});
 
-    void Animate(float x , float y,float w,float h,graphics::Brush b,bool facing,bool walking =false,bool attacking =false);
+    void Animate(float x , float y,float w,float h,graphics::Brush b,bool facing,bool
+        walking =false,bool attacking =false);
 };
