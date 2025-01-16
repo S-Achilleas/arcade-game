@@ -138,7 +138,7 @@ bool Player::checkPlatformCollision()
 //Spawns, updates and kills spawned projectiles
 void Player::projectileHandler(float dt)
 {
-    //projectile spawn
+
     if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f)
     {
         if (projectiles.size() < 5) {

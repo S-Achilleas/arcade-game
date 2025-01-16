@@ -113,9 +113,10 @@ void Level::update(float dt) {
     }
 
     enemies.erase(std::remove_if(enemies.begin(), enemies.end(),
-              [](Enemy* enemy) {
+              [this](Enemy* enemy) {
                   if (enemy->isDead()) {
                       delete enemy;
+                      state -> getPlayer() -> setScoreUp();
                       return true;
                   }
                   return false;

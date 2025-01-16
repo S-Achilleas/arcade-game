@@ -13,7 +13,8 @@ class Player:public ObjectWithMovement
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
-    
+    int score = 0;
+
     graphics::Brush text;
     graphics::Brush player_brush_debug;
     std::vector<Projectile> projectiles;
@@ -40,4 +41,5 @@ public:
     float getPlayerX() { return m_pos_x; }
     float getPlayerY() { return m_pos_y; }
     std::vector<Projectile>* getProjectiles() { return &projectiles; }
+    void setScoreUp() { score += 100; }
 };
