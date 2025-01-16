@@ -33,8 +33,6 @@
     <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,10 @@
     <setting file="file://$PROJECT_DIR$/include/level.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/player.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/ObjectWithMovement.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/ObjectWithMovement.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/ObjectWithMovement.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/enemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gameobject.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gamestate.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/level.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -82,6 +83,9 @@
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/player.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -109,7 +113,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.my_project.executor": "Debug",
+    "CMake Application.my_project.executor": "Run",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -472,7 +476,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737055249027</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="solved the bug in the destructor">
+      <option name="closed" value="true" />
+      <created>1737057001371</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1737057001371</updated>
+    </task>
+    <task id="LOCAL-00040" summary="solved the bug in the destructor">
+      <option name="closed" value="true" />
+      <created>1737057055039</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737057055039</updated>
+    </task>
+    <task id="LOCAL-00041" summary="...">
+      <option name="closed" value="true" />
+      <created>1737058962161</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1737058962161</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bug about timer_looping" />
     <MESSAGE value="Added a method to check if a moving object is dead.Also implemented a loop when the enemies are killed they will be removed from the enemy vector and free the memory" />
     <MESSAGE value="Created orge.h" />
     <MESSAGE value="Created orge implemention" />
@@ -519,6 +546,7 @@
     <MESSAGE value="changed the music" />
     <MESSAGE value="chaanged the ways projectiles work in player.cpp" />
     <MESSAGE value="implemented the destructor in all subclasses of enemies" />
+    <MESSAGE value="solved the bug in the destructor" />
     <MESSAGE value="..." />
     <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
