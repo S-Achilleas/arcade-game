@@ -30,11 +30,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Added the attacking animation in animation class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main_menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/main_menu.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="changed the main menu backrgiund" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -421,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737026316522</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="changed the main menu backrgiund">
+      <option name="closed" value="true" />
+      <created>1737027811785</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1737027811785</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chanegd player" />
     <MESSAGE value="Added the jump logic" />
     <MESSAGE value="checking collisions" />
     <MESSAGE value="Made a seperate class for animations . The animate.cpp and animation.h were created and ObjectWithMovement.h, level.h , player.h were changed.Also added a level destructor." />
@@ -469,6 +472,7 @@
     <MESSAGE value="Added the use of healthbars in enemis" />
     <MESSAGE value="Commented the line of the bug in healbar::draw until we find healthbar assets" />
     <MESSAGE value="Added the attacking animation in animation class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the attacking animation in animation class" />
+    <MESSAGE value="changed the main menu backrgiund" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the main menu backrgiund" />
   </component>
 </project>
