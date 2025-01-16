@@ -11,11 +11,11 @@ Level::Level(const std::string &name) {
 }
 
 Level::~Level() {
-    for (auto enemy : enemies) {
-        delete enemy;
-    }
     if (platform_loader) {
         delete platform_loader;
+    }
+    for (auto* enemy : enemies) {
+        delete enemy;
     }
 }
 
@@ -91,4 +91,14 @@ void Level::update(float dt) {
     for (auto& enemy : enemies) {
         enemy->update(dt);
     }
+
+    enemies.erase(std::remove_if(enemies.begin(), enemies.end(),
+              [](Enemy* enemy) {
+                  if (enemy->isDead()) {
+                      delete enemy;
+                      return true;
+                  }
+                  return false;
+              }),
+              enemies.end());
 }

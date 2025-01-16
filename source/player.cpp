@@ -21,6 +21,7 @@ void Player::init() {
     
     text.fill_opacity = 1.0f;
     graphics::setFont(state->getFullAssetPath("DefaultSans-Regular.ttf"));
+    my_health = new HealthBar(10,10.0f,10.0f,"whatever",3.0f,3.0f);
     
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
