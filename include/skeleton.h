@@ -6,7 +6,7 @@ public:
     static std::vector<std::string> right_assets;
     static std::vector<std::string> left_assets;
     Skeleton(bool r);
-    static void initt();
+    static void init();
     void update(float dt) override;
     void draw() override;
     ~Skeleton();

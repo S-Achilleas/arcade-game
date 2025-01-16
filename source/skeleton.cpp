@@ -11,7 +11,7 @@ Skeleton::Skeleton(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets);
     Enemy::init();
 }
-void Skeleton::initt() {
+void Skeleton::init() {
     Skeleton::my_brush.fill_opacity = 1.0f;
     Skeleton::my_brush.outline_opacity = 0.0f;
 }
