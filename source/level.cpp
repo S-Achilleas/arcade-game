@@ -159,6 +159,8 @@ void Level::checkCollisionProjectiles()
                             projectiles.end());
                     }
                 }
+                enemy -> getHealthBar() -> hit(1);
+                std::cout<< "Health: " << enemy -> getHealthBar() -> getHealth() << std::endl;
             }
         }
     }
