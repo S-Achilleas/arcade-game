@@ -15,15 +15,25 @@ void Enemy::init() {
     height = 3.0f;
 }
 void Enemy::update(float dt) {
-    float delta_time = dt/1000.0f;
-    if (d_pos_x < state ->getPlayer()->getPlayerX()) {
-        d_pos_x += delta_time*1.0f;
-        facing_left = false;
-    }else {
-        d_pos_x -= delta_time*1.0f;
-        facing_left = true;
+    float delta_time = dt / 1000.0f;
+    float player_x = state->getPlayer()->getPlayerX();
+    float distance = std::abs(d_pos_x - player_x);
+
+    const float stop_threshold = 0.5f;
+
+    if (distance > stop_threshold) {
+        if (d_pos_x < player_x) {
+            d_pos_x += delta_time * 1.0f;
+            facing_left = false;
+        } else {
+            d_pos_x -= delta_time * 1.0f;
+            facing_left = true;
+        }
+    } else {
+        //walking = false;
     }
 }
+
 
 Enemy::Enemy(bool r) : right_side(r) {
     init();
