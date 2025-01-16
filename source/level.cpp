@@ -40,7 +40,7 @@ void Level::draw() {
     graphics::drawRect(state->getCanvasWidth()/2.0f, state-> getCanvasHeight()/2.0f, 
         state->getCanvasWidth(), state-> getCanvasHeight(), brush_background);
 
-   Platform::platformDisplayHandler(); // display platforms
+   Platform::platformDisplayHandler();
 
     if (state ->getPlayer()->isActive())
         state ->getPlayer() ->draw();
@@ -50,7 +50,6 @@ void Level::draw() {
     }
 }
 
-#include <random> // For random number generation
 
 void Level::update(float dt) {
     // Update player
@@ -60,45 +59,40 @@ void Level::update(float dt) {
 
     float timerProgress = spawn_timer;
 
-    // Check if it's time to spawn an enemy
     if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 6) {
-        // Randomly choose an enemy type (0 = Skeleton, 1 = Goblin, 2 = FlyingEnemy)
-        static std::random_device rd;  // Seed for randomness
-        static std::mt19937 gen(rd()); // Random number generator
-        static std::uniform_int_distribution<> dis(0, 2); // Range: 0 to 2
+        static std::random_device rd;
+        static std::mt19937 gen(rd());
+        static std::uniform_int_distribution<> dis(0, 2);
 
         int enemyType = dis(gen);
         Enemy* enemy_pointer = nullptr;
 
         switch (enemyType) {
             case 0:
-                enemy_pointer = new Skeleton(rand() % 2 == 0); // Spawn Skeleton
+                enemy_pointer = new Skeleton(rand() % 2 == 0);
                 std::cout << "Spawned Skeleton" << std::endl;
                 break;
             case 1:
-                enemy_pointer = new Goblin(rand() % 2 == 0); // Spawn Goblin
+                enemy_pointer = new Goblin(rand() % 2 == 0);
                 std::cout << "Spawned Goblin" << std::endl;
                 break;
             case 2:
-                enemy_pointer = new FlyingEnemy(rand() % 2 == 0); // Spawn FlyingEnemy
+                enemy_pointer = new FlyingEnemy(rand() % 2 == 0);
                 std::cout << "Spawned FlyingEnemy" << std::endl;
                 break;
         }
 
-        // Add the spawned enemy to the list
         if (enemy_pointer) {
             enemies.push_back(enemy_pointer);
-            hasSpawnedThisCycle = true; // Prevent another spawn in the current cycle
+            hasSpawnedThisCycle = true;
             std::cout << "Total enemies: " << enemies.size() << std::endl;
         }
     }
 
-    // Reset the spawn flag when the timer loops back
     if (timerProgress < 0.1f) {
         hasSpawnedThisCycle = false;
     }
 
-    // Update all enemies
     for (auto& enemy : enemies) {
         enemy->update(dt);
     }
