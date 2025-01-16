@@ -45,7 +45,7 @@ Enemy::~Enemy() {
 }
 
 void Enemy::draw() {
-    my_health->draw();
+    //my_health->draw();  comment until we find healthbar assets
 }
 
 void Enemy::patrol(float delta_time) {
