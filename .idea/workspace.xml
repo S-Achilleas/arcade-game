@@ -30,15 +30,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="removed iostream">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/enemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/goblin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/goblin.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Commented the line of the bug in healbar::draw until we find healthbar assets" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -401,7 +393,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737016768021</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added the use of healthbars in enemis">
+      <option name="closed" value="true" />
+      <created>1737025245707</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1737025245707</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Commented the line of the bug in healbar::draw until we find healthbar assets">
+      <option name="closed" value="true" />
+      <created>1737025346131</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1737025346131</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,8 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="improved the draw function" />
-    <MESSAGE value="improved the players animation" />
     <MESSAGE value="changed gitignore" />
     <MESSAGE value="chanegd player" />
     <MESSAGE value="Added the jump logic" />
@@ -449,6 +455,8 @@
     <MESSAGE value="put a limit on how many enemies are spawned" />
     <MESSAGE value="removed comments in level.cpp" />
     <MESSAGE value="removed iostream" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed iostream" />
+    <MESSAGE value="Added the use of healthbars in enemis" />
+    <MESSAGE value="Commented the line of the bug in healbar::draw until we find healthbar assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented the line of the bug in healbar::draw until we find healthbar assets" />
   </component>
 </project>

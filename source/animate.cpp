@@ -15,7 +15,7 @@ Animation::Animation(bool p,std::vector<std::string> rr,
       attack_right(std::move(ar)),
       attack_left(std::move(al)){}
 
-void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,bool facing , bool walking) {
+void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,bool facing , bool walking,bool attacking) {
     if(walking) {
         if (walkCount > run_left.size() *5 -1) {
             walkCount = 0;
@@ -33,7 +33,7 @@ void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,boo
             if (player)
                 state -> getPlayer() -> setWalking(false);
         }
-    }else {
+    }else if (!attacking) {
         if (idleCount > idle.size()*5 -1)
             idleCount = 0;
 
@@ -42,6 +42,23 @@ void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,boo
         b.texture = idle[idleCount/5];
         graphics::drawRect(x, y, w, h, b);
         idleCount++;
+    }else {
+        if (attackCount > idle.size()*5 -1)
+            attackCount = 0;
+
+        if(facing) {
+            b.texture = attack_left[attackCount/5];
+            graphics::drawRect(x, y, w, h, b);
+            attackCount++;
+            if (player)
+                state -> getPlayer() -> setWalking(false);
+        }else {
+            b.texture = attack_right[attackCount/5];
+            graphics::drawRect(x, y, w ,h, b);
+            attackCount++;
+            if (player)
+                state -> getPlayer() -> setWalking(false);
+        }
     }
 }
 
