@@ -28,5 +28,6 @@ public:
     void update(float dt) override;
     void init() override;
     void draw() override;
+    void checkEnemiesCollisions();
     ~Level();
 };

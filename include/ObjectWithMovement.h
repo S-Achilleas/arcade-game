@@ -45,5 +45,6 @@ public:
     bool getLeft(){return facing_left;}
     int getID() { return id; }
     bool isDead();
+    class HealthBar* getHealthBar(){return my_health;}
     ~ObjectWithMovement();
 };

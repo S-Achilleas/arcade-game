@@ -7,6 +7,8 @@
 #include "flyingenemy.h"
 #include "goblin.h"
 #include <random>
+#include "iostream"
+#include "healthbar.h"
 
 Level::Level(const std::string &name) {
 }
@@ -49,6 +51,16 @@ void Level::draw() {
 
     for (auto& enemy  : enemies) {
         enemy->draw();
+    }
+}
+
+void Level::checkEnemiesCollisions() {
+    for (auto& enemy :  enemies) {
+        if (state->getPlayer() -> intersect(*(enemy))) {
+            enemy -> setActive(true);
+            state -> getPlayer() -> getHealthBar() -> hit(1);
+            std::cout<<"Health points "<<state->getPlayer() -> getHealthBar() -> getHealth()<<std::endl;
+        }
     }
 }
 

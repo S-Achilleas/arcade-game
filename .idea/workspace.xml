@@ -30,18 +30,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="chaanged the ways projectiles work in player.cpp">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="implemented the destructor in all subclasses of enemies">
       <change beforePath="$PROJECT_DIR$/include/ObjectWithMovement.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ObjectWithMovement.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/flyingenemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/flyingenemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/goblin.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/goblin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/projectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/projectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/projectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/projectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/level.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/level.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +80,7 @@
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/player.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -170,7 +163,7 @@
       <workItem from="1736909180801" duration="772000" />
       <workItem from="1736910019664" duration="8661000" />
       <workItem from="1736944043977" duration="13747000" />
-      <workItem from="1737028943787" duration="10048000" />
+      <workItem from="1737028943787" duration="11551000" />
     </task>
     <task id="LOCAL-00001" summary="improved the draw function">
       <option name="closed" value="true" />
@@ -460,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737051356687</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="implemented the destructor in all subclasses of enemies">
+      <option name="closed" value="true" />
+      <created>1737054000429</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1737054000429</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Corrected the bug of the new animation class" />
     <MESSAGE value="Modified the level.h and level.cpp so that enemiew spawn every 3 seconds" />
     <MESSAGE value="Fixed bug about timer_looping" />
     <MESSAGE value="Added a method to check if a moving object is dead.Also implemented a loop when the enemies are killed they will be removed from the enemy vector and free the memory" />
@@ -508,6 +508,7 @@
     <MESSAGE value="changed players animation and also added the right side idle" />
     <MESSAGE value="changed the music" />
     <MESSAGE value="chaanged the ways projectiles work in player.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="chaanged the ways projectiles work in player.cpp" />
+    <MESSAGE value="implemented the destructor in all subclasses of enemies" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented the destructor in all subclasses of enemies" />
   </component>
 </project>
