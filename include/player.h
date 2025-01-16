@@ -9,17 +9,22 @@
 
 class Player:public ObjectWithMovement
 {
-    graphics::Brush player_brush_debug;
-    void checkPlatformCollision();
+    Timer projCooldown = Timer(3.0f);
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
-    Timer projCooldown = Timer(3.0f);
-
+    
     graphics::Brush text;
+    graphics::Brush player_brush_debug;
     std::deque<Projectile> projectiles;
 
+    void playerMovement(float dt);
+    void projectileHandler(float dt);
+    void brushesInit();
+    bool checkPlatformCollision();
 public:
+    Player(std::string name) : GameObject(name) {}
+    //playerfeet class | used only once as *playerfeet
     class playerFeetObj : public ObjectWithMovement
     {
         graphics::Brush pf_brush_debug;
@@ -28,11 +33,9 @@ public:
     };
     playerFeetObj* playerfeet = new playerFeetObj;
 
-    Player(std::string name) : GameObject(name) {}
-
     void update(float dt) override;
     void init() override;
     void draw() override;
-    float getPlayerX() {return m_pos_x;}
+    float getPlayerX() { return m_pos_x; }
     float getPlayerY() { return m_pos_y; }
 };

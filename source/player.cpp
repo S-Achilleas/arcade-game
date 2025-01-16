@@ -10,107 +10,37 @@
 
 
 void Player::init() {
-    d_pos_x = 5.5f;
-    d_pos_y = 8.5f;
-    d_width = 3.0f;
-    d_height = 3.0f;
-    //hitbox width & height
-    hb_adj(1.0f, 2.0f); //player width & height
-    playerfeet->hb_adj(0.4f, 0.1f); //feet width & height
-    //hitbox width & height end
+    //player draw hitbox pos_x, pos_y
+    // & its width, height
+    d_pos_x = 5.5f; d_pos_y = 8.5f;
+    d_width = 3.0f; d_height = 4.3f;
+
+    //player hitbox width & height
+    hb_adj(1.0f, 1.8f);
+    //feet hitbox width & height
+    playerfeet->hb_adj(0.4f, 0.15f);
     
-    text.fill_opacity = 1.0f;
-    graphics::setFont(state->getFullAssetPath("DefaultSans-Regular.ttf"));
-    my_health = new HealthBar(10,10.0f,10.0f,"whatever",3.0f,3.0f);
-    
-    my_brush.fill_opacity = 1.0f;
-    my_brush.outline_opacity = 0.0f;
-    my_animation = new Animation(true,graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
+    my_animation = new Animation(true, graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_left"))
-        ,graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
+        , graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
-    //debug init
-    player_brush_debug.fill_opacity = 0.1f;
-    SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
-    SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
-    //debug
+
+    my_health = new HealthBar(10, 10.0f, 10.0f, "whatever", 3.0f, 3.0f);
+
+    brushesInit();
 
     projCooldown.start();
 }
 
 void Player::update(float dt) {
-    //const float velocity = 5.0f;
-    //std::cout << m_pos_y << std::endl;
-    float delta_time = dt / 1000.0f;
-    float move = 0.0f;
-    if (graphics::getKeyState(graphics::SCANCODE_A)) 
-    {
-        move -= 1.0f;
-        //m_pos_x -= delta_time * velocity;
-        walking = true;
-        facing_left = true;
-    }
-        
-    if (graphics::getKeyState(graphics::SCANCODE_D))
-    {
-        move += 1.0f;
-        //m_pos_x += delta_time * velocity;
-        walking = true;
-        facing_left = false;
-    }
-
-    // X axis
-    m_vx = std::min(max_velocity, m_vx + delta_time * move * accel_horizontal);
-    m_vx = std::max(-max_velocity, m_vx);
-
-    m_vx -= 0.2f * m_vx/(0.1f + fabs(m_vx));
-
-    if (fabs(m_vx) < 0.01f) {
-        m_vx = 0.0f;
-    }
-
-    if(m_pos_x > 0.4 && m_vx<0 || 
-        m_pos_x < state->getCanvasWidth() - 0.4 && m_vx >0)
-        d_pos_x += delta_time * m_vx;
-
-    // Y axis
-    bool isOnGround = (d_pos_y == 8.5);
-    if (isOnPlatform || isOnGround) {
-        m_vy = 0.0f; // Reset vertical velocity when on the ground.
-        if (graphics::getKeyState(graphics::SCANCODE_W)) {
-            m_vy = -accel_vertical; // Jump
-        }
-    }
-    else {
-        m_vy += delta_time * gravity;
-    }
-
-    d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
+    Player::playerMovement(dt);
 
     //hitbox offsets
-    hbp_adj(d_pos_x, d_pos_y, 0, 1.0f); //numbers are player hitbox x, y offsets
-    playerfeet->hbp_adj(d_pos_x, d_pos_y, -0.12f, 1.5f); //feet x,y offsets
-    //hitbox offsets end
+    hbp_adj(d_pos_x, d_pos_y, 0, 0.6f);
+    //feet hitbox offsets
+    playerfeet->hbp_adj(m_pos_x, m_pos_y, 0.0f, 0.8f);
 
-    checkPlatformCollision();
-
-    //projectiles
-    if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f) 
-    {
-        if (projectiles.size() <5) {
-            projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
-        }
-        //projectiles should be killed after a certain time for obvious reasons
-    }
-    for (int i = 0; i < projectiles.size(); i++) {
-        (projectiles)[i].update(dt);
-
-        if (projectiles[i].getX() <= 0.0f || projectiles[i].getX() > 12.0f ) {
-            projectiles.pop_front();
-        }
-    }
-        
-    //projectiles
+    Player::projectileHandler(dt);
 }
 
 void Player::draw() {
@@ -136,20 +66,109 @@ void Player::draw() {
     }
 }
 
-void Player::checkPlatformCollision() {
+void Player::playerMovement(float dt) {
+    float delta_time = dt / 1000.0f;
+    float move = 0.0f;
+
+    //Keyboard input check
+    if (graphics::getKeyState(graphics::SCANCODE_A))
+    {
+        move -= 1.0f;
+        walking = true;
+        facing_left = true;
+    }
+
+    if (graphics::getKeyState(graphics::SCANCODE_D))
+    {
+        move += 1.0f;
+        walking = true;
+        facing_left = false;
+    }
+
+    // X axis change
+    m_vx = std::min(max_velocity, m_vx + delta_time * move * accel_horizontal);
+    m_vx = std::max(-max_velocity, m_vx);
+
+    m_vx -= 0.2f * m_vx / (0.1f + fabs(m_vx));
+
+    if (fabs(m_vx) < 0.01f) {
+        m_vx = 0.0f;
+    }
+
+    // Prevents hitbox from getting out of canvas
+    if (m_pos_x > 0.4 && m_vx < 0 ||
+        m_pos_x < state->getCanvasWidth() - 0.4 && m_vx >0)
+        // draw pos_x change
+        d_pos_x += delta_time * m_vx;
+
+
+    // Y axis change
+    bool isOnGround = (d_pos_y == 8.5f);
+    //Jump only if playerfeet collide with a platform or player is on ground
+    if (checkPlatformCollision() || isOnGround) {
+        m_vy = 0.0f; // reset vertical velocity when on the ground
+        if (graphics::getKeyState(graphics::SCANCODE_W)) {
+            m_vy = -accel_vertical; // Jump
+        }
+    }
+    else {
+        m_vy += delta_time * gravity;
+    }
+    // draw pos_y change, where 8.5f is the ground
+    d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
+}
+
+//Returns true if player feet collide with a platform 
+bool Player::checkPlatformCollision() {
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         float offset = playerfeet->intersectDown(box); //platform to feet offset
-        if (offset && m_vy>=0)
+        if (offset && m_vy >= 0)
         {
             isOnPlatform = true;
-            d_pos_y += offset+0.000001f;
-            break;
+            d_pos_y += offset + 0.000001f;
+            return true;
         }
         else
         {
-            isOnPlatform = false;
+            return false;
         }
 
     }
+}
+
+//Spawns, updates and kills spawned projectiles
+void Player::projectileHandler(float dt)
+{
+    //projectile spawn
+    if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f)
+    {
+        if (projectiles.size() < 5) {
+            projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
+        }
+    }
+
+    //projectile update
+    for (int i = 0; i < projectiles.size(); i++) {
+        (projectiles)[i].update(dt);
+
+        //projectile kill when out of canvas
+        if (projectiles[i].getX() <= 0.0f || projectiles[i].getX() > 12.0f) {
+            projectiles.pop_front();
+        }
+    }
+}
+
+//Initializes player brushes
+void Player::brushesInit()
+{
+    //text brushes and player brush init
+    text.fill_opacity = 1.0f;
+    my_brush.fill_opacity = 1.0f;
+    my_brush.outline_opacity = 0.0f;
+
+    //debug brush init
+    player_brush_debug.fill_opacity = 0.1f;
+    SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
+    SETCOLOR(player_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
 }
