@@ -18,7 +18,7 @@ class HealthBar : virtual public GameObject {
     HealthBar(int health, float pos_x, float pos_y , std::string path,float h,float w);
     void init() override;
     void update(float dt) override;
-    void draw() override;
+    void draw(bool follow=false,float x=0.0f,float y=0.0f);
     void hit(int damage);
     int getHealth();
     ~HealthBar();

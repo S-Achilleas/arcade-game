@@ -27,7 +27,7 @@ void Player::init()
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
 
-    my_health = new HealthBar(9, 1.6f, 0.3f, "healthbars/green_health", 1.0f, 3.0f);
+    my_health = new HealthBar(9, 1.6f, 0.5f, "healthbars/green_health", 1.0f, 3.0f);
 
     brushesInit();
 

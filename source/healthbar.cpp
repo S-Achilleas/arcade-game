@@ -3,7 +3,7 @@
 
 
 HealthBar::HealthBar(int health, float pos_x, float pos_y, std::string path,float h,float w)
-: health_points(health), h_pos_x(pos_x), h_pos_y(pos_y + 0.5f),full_path(state->getFullAssetPath(path)),height(h),width(w) {}
+: health_points(health), h_pos_x(pos_x), h_pos_y(pos_y),full_path(state->getFullAssetPath(path)),height(h),width(w) {}
 
 
 void HealthBar::init() {
@@ -15,9 +15,13 @@ void HealthBar::update(float dt) {
 
 }
 
-void HealthBar::draw() {
+void HealthBar::draw(bool follow,float x,float y) {
     healthBarBrush.texture = full_path + "/" + std::to_string(health_points) + ".png";
-    graphics::drawRect(h_pos_x, h_pos_y, width, height, healthBarBrush);
+    if(follow) {
+        graphics::drawRect(x, y-0.8f, width, height, healthBarBrush);
+    }else {
+        graphics::drawRect(h_pos_x, h_pos_y, width, height, healthBarBrush);
+    }
 }
 
 void HealthBar::hit(int damage) {

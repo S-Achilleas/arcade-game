@@ -20,7 +20,7 @@ void Enemy::init() {
         d_pos_x = -0.6f;
     }
     d_pos_y = 9.35f;
-    my_health = new HealthBar(9,d_pos_x,d_pos_y,"red_health",1.0f,1.0f);
+    my_health = new HealthBar(9,d_pos_x,d_pos_y,"healthbars/red_health",0.2f,0.8f);
 }
 void Enemy::update(float dt) {
     float delta_time = dt / 1000.0f;
@@ -58,7 +58,7 @@ Enemy::~Enemy() {
 }
 
 void Enemy::draw() {
-    //my_health->draw();
+    my_health->draw(true,m_pos_x,m_pos_y);
 }
 
 void Enemy::patrol(float delta_time) {
