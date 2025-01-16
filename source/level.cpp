@@ -121,6 +121,8 @@ void Level::update(float dt) {
                   return false;
               }),
               enemies.end());
+
+    checkCollisionProjectiles();
 }
 
 void Level::enemyInit()
@@ -139,4 +141,14 @@ void Level::enemyInit()
     FlyingEnemy::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/right"));
     FlyingEnemy::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/left"));
     FlyingEnemy::initt();
+}
+
+void Level::checkCollisionProjectiles()
+{
+    for (auto& enemy : enemies) {
+        for (auto& projectile : *state->getPlayer()->getProjectiles()) {
+            if (enemy->intersect(projectile))
+                std::cout << "collision detected" << std::endl;
+        }
+    }
 }

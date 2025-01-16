@@ -39,4 +39,5 @@ public:
     void draw() override;
     float getPlayerX() { return m_pos_x; }
     float getPlayerY() { return m_pos_y; }
+    std::deque<Projectile>* getProjectiles() { return &projectiles; }
 };

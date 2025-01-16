@@ -29,5 +29,6 @@ public:
     void init() override;
     void draw() override;
     void checkEnemiesCollisions();
+    void checkCollisionProjectiles();
     ~Level();
 };
