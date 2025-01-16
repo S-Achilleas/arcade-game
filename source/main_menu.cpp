@@ -27,7 +27,7 @@ void main_menu::init()
 	text.fill_opacity = 1.0f;
 	brush_background.outline_opacity = 0.0f;
 	brush_background.fill_opacity = 0.3f;
-	brush_background.texture = state->getFullAssetPath("Environments/parallax_forest/v1/previewpng.png");
+	brush_background.texture = state->getFullAssetPath("background.png");
 }
 
 void main_menu::draw()
