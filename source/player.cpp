@@ -25,9 +25,10 @@ void Player::init() {
     
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
-    my_animation = new Animation(true,graphics::preloadBitmaps(state->getFullAssetPath("knight/run/right")),
-        graphics::preloadBitmaps(state->getFullAssetPath("knight/run/left")),
-        graphics::preloadBitmaps(state->getFullAssetPath("knight/idle")));
+    my_animation = new Animation(true,graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
+        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_left"))
+        ,graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
+        graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
     //debug init
     player_brush_debug.fill_opacity = 0.1f;
     SETCOLOR(player_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);

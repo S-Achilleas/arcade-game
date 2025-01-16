@@ -12,11 +12,13 @@ class Animation : public GameObject {
     std::vector<std::string> run_left;
     std::vector<std::string> attack_right;
     std::vector<std::string> attack_left;
-    std::vector<std::string> idle;
+    std::vector<std::string> idle_right;
+    std::vector<std::string> idle_left;
 public:
     Animation(bool p,std::vector<std::string> rr = {},
               std::vector<std::string> rl = {},
-              std::vector<std::string> id = {},
+              std::vector<std::string> idr = {},
+              std::vector<std::string> idl = {},
               std::vector<std::string> ar = {},
               std::vector<std::string> al = {});
 
