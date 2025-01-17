@@ -136,6 +136,7 @@ void Level::enemyInit()
     Skeleton::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left"));
     Skeleton::right_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/attack/right"));
     Skeleton::left_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/attack/left"));
+    Skeleton::sproj_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/proj"));
     Skeleton::initt();
 
     //goblin init

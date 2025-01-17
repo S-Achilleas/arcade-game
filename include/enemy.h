@@ -4,8 +4,6 @@
 
 class Enemy : public ObjectWithMovement{
     void brushInit();
-    graphics::Brush debug_text;
-    graphics::Brush enemy_brush_debug;
 protected:
     bool right_side;
     static graphics::Brush my_brush;
@@ -19,6 +17,11 @@ protected:
     float attackCooldownPeriod = 1.0f; // Cooldown duration in seconds (default:)
 
 public:
+    //these brushes are public so enemies can
+    //use them if they need to draw any
+    //object of theirs
+    graphics::Brush debug_text;
+    graphics::Brush enemy_brush_debug;
     void init() override;
     void update(float dt) override;
     void draw() override;
