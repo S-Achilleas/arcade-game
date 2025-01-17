@@ -29,9 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Added the soundeffects">
-      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
-    </list>
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,14 +184,6 @@
       <workItem from="1737028943787" duration="12190000" />
       <workItem from="1737109491531" duration="12570000" />
       <workItem from="1737127713784" duration="694000" />
-    </task>
-    <task id="LOCAL-00005" summary="chanegd player">
-      <option name="closed" value="true" />
-      <created>1736607321138</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1736607321138</updated>
     </task>
     <task id="LOCAL-00006" summary="Added the jump logic">
       <option name="closed" value="true" />
@@ -579,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737137517621</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary=".">
+      <option name="closed" value="true" />
+      <created>1737138600179</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1737138600179</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,11 +620,11 @@
     <MESSAGE value="Changed the health bar animation because for some reason preloadbitmaps wont work" />
     <MESSAGE value="Found the problem in helathbar logic and adjusted the appearance of the healthbars" />
     <MESSAGE value="Added a score counter" />
-    <MESSAGE value="." />
     <MESSAGE value="the enemy::init() was called twice" />
     <MESSAGE value="corrected enemy attacking and projectiles" />
     <MESSAGE value="removed the Skeleton:: bug" />
     <MESSAGE value="Added the soundeffects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the soundeffects" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
