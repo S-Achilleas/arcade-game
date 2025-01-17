@@ -127,12 +127,8 @@ bool Player::checkPlatformCollision()
             d_pos_y += offset + 0.000001f;
             return true;
         }
-        else
-        {
-            return false;
-        }
-
     }
+    return false;
 }
 
 //Spawns, updates and kills spawned projectiles
