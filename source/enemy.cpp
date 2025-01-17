@@ -108,16 +108,14 @@ void Enemy::brushInit() {
     }
 }
 bool Enemy::canAttack() {
+    std:: cout <<  attackCooldownTimer << std::endl;
     if (!attackCooldownTimer.isRunning()){
-        resetAttackCooldown();
+        std::cout<< "yes" <<  std::endl;
+        attackCooldownTimer = Timer(attackCooldownPeriod, Timer::TIMER_ONCE);
+        attackCooldownTimer.start();
         return true;
     }
     return false;
 }
 
-void Enemy::resetAttackCooldown() {
-    // Restart the timer for the next attack
-    attackCooldownTimer = Timer(attackCooldownPeriod, Timer::TIMER_ONCE);
-    attackCooldownTimer.start();
-}
 
