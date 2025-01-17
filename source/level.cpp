@@ -146,24 +146,30 @@ void Level::enemyInit()
 
 void Level::checkCollisionProjectiles()
 {
-    if (state->getPlayer()->getProjectiles()->size() > 0) //avoids unnecessary loops
-        for (auto& enemy : enemies) {
-            for (auto& projectile : *state->getPlayer()->getProjectiles()) {
-                if (enemy->intersect(projectile)) {
-                    float found_id = projectile.getID();
-                    int i = 0;
-                    for (auto& projectile_2 : *state->getPlayer()->getProjectiles())
-                    {
-                        if (projectile == projectile_2) {
-                            auto& projectiles = *state->getPlayer()->getProjectiles();
-                            projectiles.erase(
-                                std::remove(projectiles.begin(), projectiles.end(), projectile),
-                                projectiles.end());
-                        }
-                    }
-                    enemy->getHealthBar()->hit(1);
-                    std::cout << "Health: " << enemy->getHealthBar()->getHealth() << std::endl;
-                }
+    std::vector<Projectile>* playerProjectiles = state->getPlayer()->getProjectiles();
+
+    //if no projectiles dont loop
+    if (playerProjectiles->empty()) {
+        return;
+    }
+
+    // loop through all enemies
+    for (auto& enemy : enemies) {
+        std::vector<Projectile> remainingProjectiles;
+        // loop through all projectiles
+        for (auto& projectile : *playerProjectiles) {
+            if (enemy->intersect(projectile)) { 
+                // if there is collision reduce enemy's health
+                enemy->getHealthBar()->hit(1);
+                std::cout << "Health: " << enemy->getHealthBar()->getHealth() << std::endl;
+                // dont add this projectile to the remaining list
+            }
+            else {
+                //keep projectiles that did not collide
+                remainingProjectiles.push_back(projectile);
             }
         }
+        //update projectiles list to only include the remaining ones
+        *playerProjectiles = remainingProjectiles;
+    }
 }
