@@ -146,23 +146,24 @@ void Level::enemyInit()
 
 void Level::checkCollisionProjectiles()
 {
-    for (auto& enemy : enemies) {
-        for (auto& projectile : *state->getPlayer()->getProjectiles()) {
-            if (enemy->intersect(projectile)) {
-                float found_id = projectile.getID();
-                int i = 0;
-                for (auto& projectile_2 : *state->getPlayer()->getProjectiles()) 
-                {
-                    if (projectile == projectile_2) {
-                        auto& projectiles = *state->getPlayer()->getProjectiles();
-                        projectiles.erase(
-                            std::remove(projectiles.begin(), projectiles.end(), projectile),
-                            projectiles.end());
+    if (state->getPlayer()->getProjectiles()->size() > 0) //avoids unnecessary loops
+        for (auto& enemy : enemies) {
+            for (auto& projectile : *state->getPlayer()->getProjectiles()) {
+                if (enemy->intersect(projectile)) {
+                    float found_id = projectile.getID();
+                    int i = 0;
+                    for (auto& projectile_2 : *state->getPlayer()->getProjectiles())
+                    {
+                        if (projectile == projectile_2) {
+                            auto& projectiles = *state->getPlayer()->getProjectiles();
+                            projectiles.erase(
+                                std::remove(projectiles.begin(), projectiles.end(), projectile),
+                                projectiles.end());
+                        }
                     }
+                    enemy->getHealthBar()->hit(1);
+                    std::cout << "Health: " << enemy->getHealthBar()->getHealth() << std::endl;
                 }
-                enemy -> getHealthBar() -> hit(1);
-                std::cout<< "Health: " << enemy -> getHealthBar() -> getHealth() << std::endl;
             }
         }
-    }
 }
