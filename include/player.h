@@ -9,7 +9,12 @@
 
 class Player:public ObjectWithMovement
 {
+    bool isOnGround;
+    bool skeletonShootProj = false;
+    bool collideWithPlatforms = true;
     Timer projCooldown = Timer(3.0f);
+    Timer timeNotOnGround = Timer(5.0f);
+    Timer resetPlatformCollision;
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
@@ -21,6 +26,7 @@ class Player:public ObjectWithMovement
 
     void playerMovement(float dt);
     void projectileHandler(float dt);
+    void skeletonProjectilePlayer(float dt);
     void brushesInit();
     bool checkPlatformCollision();
     void drawDebug();
@@ -42,4 +48,6 @@ public:
     float getPlayerY() { return m_pos_y; }
     std::vector<Projectile>* getProjectiles() { return &projectiles; }
     void setScoreUp() { score += 100; }
+    bool shouldShootProj() { return skeletonShootProj; }
+    void platformColToggle(bool input) { collideWithPlatforms = input; }
 };

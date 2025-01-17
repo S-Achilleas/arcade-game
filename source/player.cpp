@@ -7,6 +7,7 @@
 #include "my_stdio.h"
 #include "healthbar.h"
 #include "animation.h"
+#include <iostream>
 
 
 void Player::init() 
@@ -30,6 +31,8 @@ void Player::init()
     my_health = new HealthBar(9, 1.6f, 0.5f, "healthbars/green_health", 1.0f, 3.0f);
 
     brushesInit();
+    resetPlatformCollision = Timer(3.0f, Timer::TIMER_ONCE);
+    resetPlatformCollision.start();
 
     projCooldown.start();
 }
@@ -44,6 +47,7 @@ void Player::update(float dt)
     playerfeet->hbp_adj(m_pos_x, m_pos_y, 0.0f, 0.8f);
 
     projectileHandler(dt);
+    skeletonProjectilePlayer(dt);
 }
 
 void Player::draw() 
@@ -98,7 +102,7 @@ void Player::playerMovement(float dt)
 
 
     // Y axis change
-    bool isOnGround = (d_pos_y == 8.5f);
+    isOnGround = (d_pos_y == 8.5f);
     // Jump only if playerfeet collide with a platform or player is on ground
     if (checkPlatformCollision() || isOnGround) {
         m_vy = 0.0f; // reset vertical velocity when on the ground
@@ -116,6 +120,7 @@ void Player::playerMovement(float dt)
 //Returns true if player feet collide with a platform 
 bool Player::checkPlatformCollision() 
 {
+    if (collideWithPlatforms)
     for (auto& box : state->getLevel()->platform_loader->getPlatforms())
     {
         //platform to feet offset
@@ -180,6 +185,31 @@ void Player::drawDebug()
         for (int i = 0; i < projectiles.size(); i++)
             graphics::drawText(projectiles[i].m_pos_x, projectiles[i].m_pos_y, 0.4f, "ID: " +
                 std::to_string(projectiles[i].getID()), text);
-
     }
+}
+
+void Player::skeletonProjectilePlayer(float dt)
+{
+    if (skeletonShootProj)
+        skeletonShootProj = false;
+    if (float(timeNotOnGround) == 1) {
+        skeletonShootProj = true;
+        resetPlatformCollision.stop();
+    }
+
+    if (!isOnGround && !timeNotOnGround.isRunning())
+        timeNotOnGround.start();
+    else if (isOnGround && timeNotOnGround.isRunning()) {
+        timeNotOnGround.stop();
+    }
+
+    
+    if (float(!resetPlatformCollision.isRunning())) //needs fixing
+    {
+        printf("*");
+        platformColToggle(true);
+        resetPlatformCollision = Timer(3.0f, Timer::TIMER_ONCE);
+        resetPlatformCollision.start();
+    }
+    std::cout << resetPlatformCollision << std::endl;
 }
