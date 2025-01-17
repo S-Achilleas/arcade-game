@@ -27,7 +27,6 @@ void Player::init()
     playerfeet->hb_adj(0.4f, 0.15f);
     projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
     projectileCooldownTimer.start();
-    std::cout << projectileCooldownTimer<< std::endl;
     
     my_animation = new Animation(true, 
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
@@ -148,7 +147,7 @@ void Player::projectileHandler(float dt)
 
     if (graphics::getKeyState(graphics::SCANCODE_SPACE))
     {
-        std::cout << projectileCooldownTimer<< std::endl;
+        float timerValue = projectileCooldownTimer;
         if (projectiles.size() < 5 && !projectileCooldownTimer.isRunning()) {
             projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
             projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
@@ -220,5 +219,4 @@ void Player::skeletonProjectilePlayer(float dt)
         resetPlatformCollision = Timer(3.0f, Timer::TIMER_ONCE);
         resetPlatformCollision.start();
     }
-    std::cout << resetPlatformCollision << std::endl;
 }

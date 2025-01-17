@@ -64,9 +64,10 @@ void Level::checkEnemiesCollisions() {
             if (enemy -> canAttack()) {
                 enemy -> setAttacking(true);
                 state -> getPlayer() -> getHealthBar() -> hit(1);
-            }else {
-                enemy -> setAttacking(false);
             }
+        }
+        else {
+            enemy->setAttacking(false);
         }
     }
 }

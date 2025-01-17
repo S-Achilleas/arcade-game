@@ -106,9 +106,8 @@ void Enemy::brushInit() {
     }
 }
 bool Enemy::canAttack() {
-    std:: cout <<  attackCooldownTimer << std::endl;
+    float cooldowntime = attackCooldownTimer;
     if (!attackCooldownTimer.isRunning()){
-        std::cout<< "yes" <<  std::endl;
         attackCooldownTimer = Timer(attackCooldownPeriod, Timer::TIMER_ONCE);
         attackCooldownTimer.start();
         return true;
