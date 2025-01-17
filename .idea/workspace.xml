@@ -32,7 +32,12 @@
     <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="corrected enemy attacking and projectiles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/ObjectWithMovement.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ObjectWithMovement.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ObjectWithMovement.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +55,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -73,18 +77,18 @@
     <setting file="file://$PROJECT_DIR$/include/platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/player.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/ObjectWithMovement.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/flyingenemy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/flyingenemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gameobject.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gamestate.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/goblin.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/goblin.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/level.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://diff.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
