@@ -16,7 +16,7 @@ class Platform : public GameObject, public Box
 
 	static void drawPlatform(int i);
 
-	static graphics::Brush platform_brush;
+	
 	static graphics::Brush platform_brush_debug;
 
 public:
@@ -32,6 +32,7 @@ public:
 	virtual ~Platform() = default; // destructor
 	static void platformInitHandler(Platform platform);
 	static void platformBrushInit();
+	static graphics::Brush platform_brush;
 
 	void static platformDisplayHandler();
 	std::vector<Platform> getPlatforms();

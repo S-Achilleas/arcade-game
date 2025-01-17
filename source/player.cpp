@@ -34,11 +34,10 @@ void Player::init()
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
 
-    my_health = new HealthBar(9, 1.8f, 0.5f, "healthbars/green_health", 0.6f, 3.2f);
+    my_health = new HealthBar(9, 10.0f, 0.5f, "healthbars/green_health", 0.6f, 3.2f);
 
     brushesInit();
-    resetPlatformCollision = Timer(3.0f, Timer::TIMER_ONCE);
-    resetPlatformCollision.start();
+    resetPlatformCollision = Timer(7.0f, Timer::TIMER_ONCE);
 
 }
 
@@ -64,6 +63,11 @@ void Player::draw()
     for (int i = 0; i < projectiles.size(); i++)
     {
         (projectiles)[i].draw();
+    }
+    graphics::drawText(0.3f, 0.8f, 1.0f, std::to_string(score), text);
+    if (!collideWithPlatforms) {
+        graphics::drawText(d_pos_x, m_pos_y - 0.5f, 0.7f, std::to_string(9-(int)(resetPlatformCollision*10)), text);
+        graphics::drawText(d_pos_x - 2.0f, m_pos_y - 1.2f, 0.5f, "Cant use platforms!", text);
     }
 
     drawDebug();
@@ -125,18 +129,24 @@ void Player::playerMovement(float dt)
 //Returns true if player feet collide with a platform 
 bool Player::checkPlatformCollision() 
 {
-    if (collideWithPlatforms)
-    for (auto& box : state->getLevel()->platform_loader->getPlatforms())
-    {
-        //platform to feet offset
-        float offset = playerfeet->intersectDown(box); 
-        // if offset (!=0) then there is a collision with offset to feet = offset
-        // if m_vy>=0 the player is falling (y accelaration down)
-        if (offset && m_vy >= 0)
+    if (collideWithPlatforms){
+        Platform::platform_brush.fill_opacity = 1.0f;
+        for (auto& box : state->getLevel()->platform_loader->getPlatforms())
         {
-            d_pos_y += offset + 0.000001f;
-            return true;
+            //platform to feet offset
+            float offset = playerfeet->intersectDown(box);
+            // if offset (!=0) then there is a collision with offset to feet = offset
+            // if m_vy>=0 the player is falling (y accelaration down)
+            if (offset && m_vy >= 0)
+            {
+                d_pos_y += offset + 0.000001f;
+                return true;
+            }
         }
+    }
+    else 
+    {
+        Platform::platform_brush.fill_opacity = 0.4;
     }
     return false;
 }
@@ -147,7 +157,7 @@ void Player::projectileHandler(float dt)
 
     if (graphics::getKeyState(graphics::SCANCODE_SPACE))
     {
-        float timerValue = projectileCooldownTimer;
+        float timerValue = projectileCooldownTimer; //random fix
         if (projectiles.size() < 5 && !projectileCooldownTimer.isRunning()) {
             projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
             projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
@@ -198,7 +208,10 @@ void Player::drawDebug()
 
 void Player::skeletonProjectilePlayer(float dt)
 {
-    if (skeletonShootProj)
+    if (skeletonShootProj && resetPlatformCollision == 0) {
+        skeletonShootProj = false;
+        resetPlatformCollision.start();
+    }
         skeletonShootProj = false;
     if (float(timeNotOnGround) == 1) {
         skeletonShootProj = true;
@@ -211,12 +224,11 @@ void Player::skeletonProjectilePlayer(float dt)
         timeNotOnGround.stop();
     }
 
-    
-    if (float(!resetPlatformCollision.isRunning())) //needs fixing
+    float cv = resetPlatformCollision; //random fix
+    if (!resetPlatformCollision.isRunning()) //needs fixing
     {
-        printf("*");
         platformColToggle(true);
-        resetPlatformCollision = Timer(3.0f, Timer::TIMER_ONCE);
-        resetPlatformCollision.start();
+        if (resetPlatformCollision!=0)
+            resetPlatformCollision = Timer(7.0f, Timer::TIMER_ONCE);
     }
 }

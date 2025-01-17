@@ -66,7 +66,7 @@ float Skeleton::calculateProjectileVelocityX()
     float p_y = state->getPlayer()->getPlayerY();
     Proj->m_pos_x = m_pos_x;
     Proj->m_pos_y = m_pos_y;
-    float speed = 0.2f;
+    float speed = 0.4f;
 
     float direction_x = p_x - m_pos_x;
     float direction_y = p_y - m_pos_y;
@@ -86,7 +86,7 @@ float Skeleton::calculateProjectileVelocityY()
     float p_y = state->getPlayer()->getPlayerY();
     Proj->m_pos_x = m_pos_x;
     Proj->m_pos_y = m_pos_y;
-    float speed = 0.2f;
+    float speed = 0.4f;
 
     float direction_x = p_x - m_pos_x;
     float direction_y = p_y - m_pos_y;
@@ -102,16 +102,19 @@ float Skeleton::calculateProjectileVelocityY()
 
 void Skeleton::ProjCollisionHandler()
 {
+
     if (Proj) {
         Proj->m_pos_x += projVelX;
         Proj->m_pos_y += projVelY;
         checkPlayerProjCollision();
     }
     else if (state->getPlayer()->shouldShootProj()) {
+        delete Proj;
         Proj = new ObjectWithMovement();
         projVelX = calculateProjectileVelocityX();
         projVelY = calculateProjectileVelocityY();
     }
+    
 }
 
 void Skeleton::checkPlayerProjCollision()

@@ -13,7 +13,7 @@ void Platform::platformInitHandler(Platform platform) {
 
 void Platform::platformBrushInit()
 {
-	Platform::platform_brush.outline_opacity = 1.0f;
+	Platform::platform_brush.outline_opacity = 0.0f;
 	Platform::platform_brush.fill_opacity = 1.0f;
 	SETCOLOR(Platform::platform_brush.outline_color, 0.0f, 0.0f, 1.0f);
 
