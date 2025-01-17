@@ -29,19 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="removed the Skeleton:: bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/enemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/flyingenemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/flyingenemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/goblin.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/goblin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/goblin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/goblin.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Added the soundeffects" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,21 +64,30 @@
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/ObjectWithMovement.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/ObjectWithMovement.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/box.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/enemy.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/flyingenemy.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/gameobject.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/gamestate.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/goblin.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/level.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/player.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/skeleton.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/skeleton.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/ObjectWithMovement.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/ObjectWithMovement.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/flyingenemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gameobject.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gamestate.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/goblin.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/level.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/level.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/player.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/player.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/skeleton.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -187,14 +184,6 @@
       <workItem from="1737028943787" duration="12190000" />
       <workItem from="1737109491531" duration="12570000" />
       <workItem from="1737127713784" duration="694000" />
-    </task>
-    <task id="LOCAL-00003" summary="changed gitignore">
-      <option name="closed" value="true" />
-      <created>1736604194224</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1736604194224</updated>
     </task>
     <task id="LOCAL-00004" summary="changed gitignore">
       <option name="closed" value="true" />
@@ -580,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737133422151</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added the soundeffects">
+      <option name="closed" value="true" />
+      <created>1737136839195</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1737136839195</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change the update function in enemy so the enemies stnad till when close to player" />
     <MESSAGE value="made the enemies patrol when close to the player istead of standing" />
     <MESSAGE value="put a limit on how many enemies are spawned" />
     <MESSAGE value="removed comments in level.cpp" />
@@ -628,6 +624,7 @@
     <MESSAGE value="the enemy::init() was called twice" />
     <MESSAGE value="corrected enemy attacking and projectiles" />
     <MESSAGE value="removed the Skeleton:: bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the Skeleton:: bug" />
+    <MESSAGE value="Added the soundeffects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the soundeffects" />
   </component>
 </project>
