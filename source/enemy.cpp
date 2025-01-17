@@ -45,8 +45,6 @@ void Enemy::update(float dt) {
     }
     m_pos_x = d_pos_x;
     m_pos_y = d_pos_y;
-    m_height = d_height;
-    m_width = d_width;
 }
 
 
