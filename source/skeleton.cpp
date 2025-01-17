@@ -125,3 +125,7 @@ void Skeleton::checkPlayerProjCollision()
         player->platformColToggle(false);
     }
 }
+
+void Skeleton::playSound() {
+    graphics::playSound("assets/music/skelton_s.wav",0.3f);
+}

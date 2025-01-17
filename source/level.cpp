@@ -63,6 +63,7 @@ void Level::checkEnemiesCollisions() {
         if (state->getPlayer() -> intersect(*(enemy))) {
             if (enemy -> canAttack()) {
                 enemy -> setAttacking(true);
+                enemy -> playSound();
                 state -> getPlayer() -> getHealthBar() -> hit(1);
             }
         }
@@ -173,6 +174,7 @@ void Level::checkCollisionProjectiles()
                 // if there is collision reduce enemy's health
                 enemy->getHealthBar()->hit(1);
                 std::cout << "Health: " << enemy->getHealthBar()->getHealth() << std::endl;
+                graphics::playSound("assets/music/enemy_hit.wav",0.3);
                 // dont add this projectile to the remaining list
             }
             else {

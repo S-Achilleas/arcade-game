@@ -32,6 +32,10 @@ void Goblin::draw() {
         Goblin::d_height, Goblin::my_brush,facing_left,walking,attacking);
 }
 
+void Goblin::playSound() {
+    graphics::playSound("assets/music/goblin_s.wav",0.3f);
+}
+
 Goblin::~Goblin() {
     if (my_animation)
         delete my_animation;

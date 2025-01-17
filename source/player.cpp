@@ -160,6 +160,7 @@ void Player::projectileHandler(float dt)
         float timerValue = projectileCooldownTimer; //random fix
         if (projectiles.size() < 5 && !projectileCooldownTimer.isRunning()) {
             projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
+            graphics::playSound("assets/music/samurai_s.wav",0.3);
             projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
             projectileCooldownTimer.start();
         }

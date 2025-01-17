@@ -46,6 +46,10 @@ void FlyingEnemy::draw() {
         FlyingEnemy::d_height, FlyingEnemy::my_brush, facing_left, walking,attacking);
 }
 
+void FlyingEnemy::playSound() {
+    graphics::playSound("assets/music/flying_enemy.mp3", 0.3f);
+}
+
 FlyingEnemy::~FlyingEnemy() {
     if (my_animation)
         delete my_animation;

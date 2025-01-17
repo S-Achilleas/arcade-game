@@ -31,6 +31,7 @@ public:
     void drawDebug();
     bool canAttack();
     void resetAttackCooldown();
+    virtual void playSound(){}
 
 };
 

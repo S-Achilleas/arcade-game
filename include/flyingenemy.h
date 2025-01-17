@@ -11,5 +11,6 @@ public:
     static void initt();
     void update(float dt) override;
     void draw() override;
+    void playSound() override;
     ~FlyingEnemy();
 };
