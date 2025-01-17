@@ -1,6 +1,7 @@
 #include "flyingenemy.h"
 #include "animation.h"
 #include "gamestate.h"
+#include "player.h"
 
 //Class static definitions
 std::vector<std::string> FlyingEnemy::right_assets = {};
@@ -18,6 +19,19 @@ void FlyingEnemy::initt() {
 }
 
 void FlyingEnemy::update(float dt) {
+    //flying enemy Y updates
+    float delta_time = dt / 1000.0f;
+    float distanceY = std::abs(d_pos_y - state->getPlayer()->getPlayerY());
+    if (distanceY > 0.5f) {
+        // Chase the player in Y
+        if (d_pos_y < state->getPlayer()->getPlayerY()) {
+            d_pos_y += delta_time * 0.5f;
+        }
+        else {
+            d_pos_y -= delta_time * 0.5f;
+        }
+    }
+    //flying enemy X updates
     Enemy::update(dt);
 }
 
