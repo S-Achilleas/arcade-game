@@ -34,10 +34,22 @@ void GameState::init() {
     if (!menu_skipped)
     {
         graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
+        if (current_level)
+            current_level->~Level();
+            delete current_level;
         current_level = new main_menu();
     }
     else
     {
+        if (current_level)
+        {
+            current_level->~Level();
+            delete current_level;
+        }
+        if (player) {
+            player->~Player();
+            delete player;
+        }
         player = new Player("Player");
         player->init();
         current_level = new Level();
@@ -63,21 +75,15 @@ void GameState::update(float dt) {
         if (graphics::getKeyState(graphics::SCANCODE_M)) {
             game_paused = false;
             menu_skipped = false;
-            delete player;
-            delete current_level;
+            playerDead = false;
             GameState::init();
         }
         return; 
     }
-    if(player)
-        if (getPlayer()->isDead()) {
-            if (graphics::getKeyState(graphics::SCANCODE_M)) {
-                game_paused = false;
-                menu_skipped = false;
-                GameState::init();
-            }
+    if (player)
+        if (getPlayer()->isDead() && menu_skipped) {
             playerDead = true;
-            return;
+            game_paused = true;
         }
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
@@ -95,7 +101,7 @@ void GameState::draw() {
     if (!player) //there is not a player
         return; // eg main menu
         */
-    if (game_paused) 
+    if (game_paused && !playerDead) 
     { 
         graphics::drawText(2.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
             "Game is on Pause", pause_brush);
