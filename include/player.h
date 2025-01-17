@@ -52,4 +52,5 @@ public:
     void setScoreUp() { score += 100; }
     bool shouldShootProj() { return skeletonShootProj; }
     void platformColToggle(bool input) { collideWithPlatforms = input; }
+    ~Player();
 };

@@ -53,5 +53,4 @@ void FlyingEnemy::playSound() {
 FlyingEnemy::~FlyingEnemy() {
     if (my_animation)
         delete my_animation;
-    // kai gia healthbar
 }

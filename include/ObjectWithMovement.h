@@ -47,5 +47,5 @@ public:
     int getID() { return id; }
     bool isDead();
     class HealthBar* getHealthBar(){return my_health;}
-    ~ObjectWithMovement();
+    virtual ~ObjectWithMovement();
 };

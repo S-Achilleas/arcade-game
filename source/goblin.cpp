@@ -39,5 +39,4 @@ void Goblin::playSound() {
 Goblin::~Goblin() {
     if (my_animation)
         delete my_animation;
-    // kai gia healthbar
 }

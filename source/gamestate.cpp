@@ -9,7 +9,7 @@
 
 GameState* GameState::unique_instance = nullptr;
 
-GameState::GameState() {
+GameState::~GameState() {
     if (player)
         delete player;
     if (current_level)
