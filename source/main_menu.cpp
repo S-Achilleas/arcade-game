@@ -36,4 +36,15 @@ void main_menu::draw()
         state->getCanvasWidth(), state->getCanvasHeight(), brush_background);
 	graphics::drawText(3.5f, state->getCanvasHeight() / 2.0f - 1.0f, 1.0f, "Main Menu", text);
 	graphics::drawText(1.0f, state->getCanvasHeight() / 2.0f + 1.0f, 1.0f, "Press Space to start", text);
+
+	graphics::drawText(0.5f, state->getCanvasHeight() / 2.0f + 3.0f, 0.5f, "Movement Keys", text);
+	graphics::drawText(0.5f, state->getCanvasHeight() / 2.0f + 3.3f, 0.5f, "W A D", text);
+	graphics::drawText(0.5f, state->getCanvasHeight() / 2.0f + 4.0f, 0.5f, "Throw Projectile", text);
+	graphics::drawText(0.5f, state->getCanvasHeight() / 2.0f + 4.3f, 0.5f, "Space", text);
+
+	graphics::drawText(8.5f, state->getCanvasHeight() / 2.0f + 3.0f, 0.5f, "Kill Enemies", text);
+	graphics::drawText(6.15f, state->getCanvasHeight() / 2.0f + 3.3f, 0.5f, "To increase your score", text);
+
+	graphics::drawText(7.8f, state->getCanvasHeight() / 2.0f + 4.0f, 0.5f, "And dont stay in", text);
+	graphics::drawText(6.15f, state->getCanvasHeight() / 2.0f + 4.3f, 0.5f, "platforms for too long", text);
 }
