@@ -9,6 +9,8 @@ std::vector<std::string> Goblin::left_assets = {};
 
 Goblin::Goblin(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets);
+    m_height = 0.8f;
+    m_width = 0.85f;
     Enemy::init();
 }
 
@@ -19,6 +21,7 @@ void Goblin::initt() {
 
 void Goblin::update(float dt) {
     Enemy::update(dt);
+    m_pos_y += 0.2f; //offset
 }
 
 void Goblin::draw() {

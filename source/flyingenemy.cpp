@@ -10,6 +10,8 @@ std::vector<std::string> FlyingEnemy::left_assets = {};
 
 FlyingEnemy::FlyingEnemy(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets);
+    m_height = 0.7f;
+    m_width = 1.1f;
     Enemy::init();
 }
 
@@ -33,6 +35,7 @@ void FlyingEnemy::update(float dt) {
     }
     //flying enemy X updates
     Enemy::update(dt);
+    m_pos_y += 0.05f; //offset
 }
 
 void FlyingEnemy::draw() {
