@@ -9,6 +9,8 @@
 //Class static definitions
 std::vector<std::string> Skeleton::right_assets = {};
 std::vector<std::string> Skeleton::left_assets = {};
+std::vector<std::string> Skeleton::right_attack_assets = {};
+std::vector<std::string> Skeleton::left_attack_assets = {};
 std::vector<std::string> Skeleton::sproj_assets = {};
 graphics::Brush Skeleton::sprojBrush = {};
 //Static definitions end
@@ -16,7 +18,7 @@ graphics::Brush Skeleton::sprojBrush = {};
 
 
 Skeleton::Skeleton(bool r) : Enemy(r) {
-    my_animation = new Animation(false, right_assets, left_assets);
+    my_animation = new Animation(false, right_assets, left_assets,idr,idl,right_attack_assets,left_attack_assets);
     m_height = 1.1f;
     m_width = 1.4f;
 
@@ -38,7 +40,7 @@ void Skeleton::update(float dt) {
 void Skeleton::draw() {
     Enemy::draw();
     my_animation -> Animate(d_pos_x, d_pos_y, Skeleton::d_width, 
-        Skeleton::d_height, Skeleton::my_brush, facing_left, walking);
+        Skeleton::d_height, Skeleton::my_brush, facing_left, walking,attacking);
 
     //projectile draw
     if (Proj){

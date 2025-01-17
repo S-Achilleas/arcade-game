@@ -61,12 +61,12 @@ void Level::draw() {
 void Level::checkEnemiesCollisions() {
     for (auto& enemy :  enemies) {
         if (state->getPlayer() -> intersect(*(enemy))) {
-            std::cout<<"collision detected"<<std::endl;
-            enemy -> setAttacking(true);
-            state -> getPlayer() -> getHealthBar() -> hit(1);
-            std::cout<<"Health points "<<state->getPlayer() -> getHealthBar() -> getHealth()<<std::endl;
-        }else {
-            enemy -> setAttacking(false);
+            if (enemy -> canAttack()) {
+                enemy -> setAttacking(true);
+                state -> getPlayer() -> getHealthBar() -> hit(1);
+            }else {
+                enemy -> setAttacking(false);
+            }
         }
     }
 }
@@ -134,17 +134,23 @@ void Level::enemyInit()
     //Skeleton init
     Skeleton::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/right"));
     Skeleton::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/walk/left"));
+    Skeleton::right_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/attack/right"));
+    Skeleton::left_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/attack/left"));
     Skeleton::sproj_assets = graphics::preloadBitmaps(state->getFullAssetPath("skeleton/proj"));
     Skeleton::initt();
 
     //goblin init
     Goblin::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/right"));
     Goblin::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/run/left"));
+    Goblin::right_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/attack/right"));
+    Goblin:: left_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("goblin/attack/left"));
     Goblin::initt();
 
     //flyingenemy init
     FlyingEnemy::right_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/right"));
     FlyingEnemy::left_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/Flight/left"));
+    FlyingEnemy::right_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/attack/Right"));
+    FlyingEnemy:: left_attack_assets = graphics::preloadBitmaps(state->getFullAssetPath("flyingEye/attack/Left"));
     FlyingEnemy::initt();
 }
 

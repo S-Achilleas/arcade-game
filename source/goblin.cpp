@@ -5,10 +5,12 @@
 //Class static definitions
 std::vector<std::string> Goblin::right_assets = {};
 std::vector<std::string> Goblin::left_assets = {};
+std::vector<std::string> Goblin::right_attack_assets = {};
+std::vector<std::string> Goblin::left_attack_assets = {};
 //Static definitions end
 
 Goblin::Goblin(bool r) : Enemy(r) {
-    my_animation = new Animation(false, right_assets, left_assets);
+    my_animation = new Animation(false, right_assets, left_assets,idr,idl,right_attack_assets,left_attack_assets);
     m_height = 0.8f;
     m_width = 0.85f;
     Enemy::init();
@@ -27,7 +29,7 @@ void Goblin::update(float dt) {
 void Goblin::draw() {
     Enemy::draw();
     my_animation -> Animate(d_pos_x, d_pos_y, Goblin::d_width,
-        Goblin::d_height, Goblin::my_brush,facing_left,walking);
+        Goblin::d_height, Goblin::my_brush,facing_left,walking,attacking);
 }
 
 Goblin::~Goblin() {

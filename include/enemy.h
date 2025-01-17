@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjectWithMovement.h"
+#include "timer.h"
 
 class Enemy : public ObjectWithMovement{
     void brushInit();
@@ -8,6 +9,13 @@ protected:
     static graphics::Brush my_brush;
     static float d_width;
     static float d_height;
+    std::vector<std::string> idr;
+    std::vector<std::string> idl;
+
+
+    Timer attackCooldownTimer;  // Timer for attack cooldown
+    float attackCooldownPeriod = 1.0f; // Cooldown duration in seconds (default:)
+
 public:
     //these brushes are public so enemies can
     //use them if they need to draw any
@@ -21,6 +29,8 @@ public:
     ~Enemy();
     void patrol(float dt);
     void drawDebug();
+    bool canAttack();
+    void resetAttackCooldown();
 
 };
 
