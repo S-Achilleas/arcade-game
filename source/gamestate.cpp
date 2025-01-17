@@ -13,10 +13,10 @@ GameState::GameState() {
 }
 
 GameState::~GameState() {
-    if (player)
-        delete player;
     if (current_level)
         delete current_level;
+    if (player)
+        delete player;
 }
 
 GameState* GameState::getInstance() {
@@ -34,22 +34,23 @@ std::string GameState::getFullAssetPath(const std::string &asset_name) {
 }
 
 void GameState::init() {
+    //delete previously loaded stuff if any
+    if (current_level) {
+        delete current_level;
+        current_level = nullptr;
+    }
+    if (player) {
+        delete player;
+        player = nullptr;
+    }
+
     if (!menu_skipped)
     {
         graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
-        if (current_level)
-            current_level->~Level();
         current_level = new main_menu();
     }
     else
     {
-        if (current_level)
-        {
-            current_level->~Level();
-        }
-        if (player) {
-            player->~Player();
-        }
         player = new Player("Player");
         player->init();
         current_level = new Level();
