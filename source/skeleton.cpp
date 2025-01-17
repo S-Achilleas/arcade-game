@@ -9,7 +9,6 @@ std::vector<std::string> Skeleton::left_assets = {};
 
 Skeleton::Skeleton(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets);
-    Enemy::init();
 }
 void Skeleton::initt() {
     Skeleton::my_brush.fill_opacity = 1.0f;
