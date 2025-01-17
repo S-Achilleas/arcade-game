@@ -171,16 +171,10 @@ void Player::brushesInit()
 void Player::drawDebug()
 {
     if (state->debugging) { 
-        //draw player hitbox
-        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, player_brush_debug);
-
+        ObjectWithMovement::drawDebug(player_brush_debug, text);
         //draw feet hitbox
         graphics::drawRect(playerfeet->m_pos_x, playerfeet->m_pos_y,
             playerfeet->m_width, playerfeet->m_height, playerfeet->returnbrush());
-
-        //draw text: player position
-        graphics::drawText(m_pos_x - 0.3f, m_pos_y - 1.2f, 0.4f, "X: " + std::to_string(m_pos_x)
-            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), text);
 
         //print projectiles GameObject::ID (maybe move this to projectile draw)
         for (int i = 0; i < projectiles.size(); i++)

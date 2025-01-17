@@ -2,6 +2,7 @@
 #include "ObjectWithMovement.h"
 
 class Enemy : public ObjectWithMovement{
+    void brushInit();
     graphics::Brush debug_text;
     graphics::Brush enemy_brush_debug;
 protected:

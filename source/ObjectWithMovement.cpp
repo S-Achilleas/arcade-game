@@ -1,5 +1,5 @@
 #include "ObjectWithMovement.h"
-
+#include "gamestate.h"
 #include "animation.h"
 #include "healthbar.h"
 #include "sgg/graphics.h"
@@ -19,4 +19,17 @@ bool ObjectWithMovement::isDead() {
 }
 
 ObjectWithMovement::~ObjectWithMovement() {
+}
+
+void ObjectWithMovement::drawDebug(graphics::Brush brush, graphics::Brush text) {
+    {
+        if (state->debugging) {
+            //draw hitbox
+            graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, brush);
+
+            //draw text: position
+            graphics::drawText(m_pos_x - 0.3f, m_pos_y - 1.2f, 0.4f, "X " + std::to_string(m_pos_x)
+                + "  Y " + std::to_string(m_pos_y) + "  ID " + std::to_string(id) + ")", text);
+        }
+    }
 }

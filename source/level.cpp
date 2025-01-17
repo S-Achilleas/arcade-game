@@ -54,7 +54,6 @@ void Level::draw() {
         state ->getPlayer() ->draw();
 
     for (auto& enemy  : enemies) {
-        if (state->debugging) { enemy->drawDebug(); }
         enemy->draw();
     }
 }

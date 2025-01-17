@@ -21,6 +21,7 @@ void Enemy::init() {
     }
     d_pos_y = 9.35f;
     my_health = new HealthBar(9,d_pos_x,d_pos_y,"healthbars/red_health",0.2f,0.8f);
+    brushInit();
 }
 void Enemy::update(float dt) {
     float delta_time = dt / 1000.0f;
@@ -41,8 +42,6 @@ void Enemy::update(float dt) {
     }
     m_pos_x = d_pos_x;
     m_pos_y = d_pos_y;
-    m_height = d_height;
-    m_width = d_width;
 }
 
 
@@ -59,6 +58,7 @@ Enemy::~Enemy() {
 
 void Enemy::draw() {
     my_health->draw(true,m_pos_x,m_pos_y);
+    ObjectWithMovement::drawDebug(enemy_brush_debug, debug_text);
 }
 
 void Enemy::patrol(float delta_time) {
@@ -83,9 +83,7 @@ void Enemy::patrol(float delta_time) {
 
 }
 
-
-void Enemy::drawDebug()
-{
+void Enemy::brushInit() {
     debug_text.fill_opacity = 1.0f;
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
@@ -93,14 +91,4 @@ void Enemy::drawDebug()
     enemy_brush_debug.fill_opacity = 0.1f;
     SETCOLOR(enemy_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
     SETCOLOR(enemy_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
-
-    if (state->debugging) {
-        //draw player hitbox
-        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, enemy_brush_debug);
-
-        //draw text: player position
-        graphics::drawText(m_pos_x , m_pos_y , 0.4f, "X: " + std::to_string(m_pos_x)
-            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), debug_text);
-
-    }
 }

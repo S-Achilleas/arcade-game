@@ -38,6 +38,7 @@ public:
     void setWalking(bool w){walking = w;}
     void setFacingLeft(bool f){facing_left = f;}
     void setAttacking(bool a){attacking = a;}
+    void drawDebug(graphics::Brush brush, graphics::Brush text);
     //numbers are hitbox position x, y offsets
     void hbp_adj(float d_pos_x, float d_pos_y, float offset_x=0, float offset_y=0);
     //feet x,y offsets
