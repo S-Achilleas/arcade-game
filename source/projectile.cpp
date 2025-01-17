@@ -1,27 +1,33 @@
 #include "projectile.h"
 #include <iostream>
-
+#include "my_stdio.h"
 #include "gamestate.h"
 #include "timer.h"
 
-// Constructor
 Projectile::Projectile(float x, float y, float w, float h, bool left) {
     // Initialize member variables if needed
     m_pos_x = x;
     m_pos_y = y;
     m_width = w;
-    m_height = h;
+    m_height = h-0.8f; //has offset
+    spawnedLeft = left;
     if (left)
         dir = -1.0f;
     else
         dir = 1.0f;
     activeTime = Timer(3.0f, Timer::timer_type_t::TIMER_ONCE);
     activeTime.start();
+    init();
 }
 
 // init function implementation
 void Projectile::init() {
-    // Initialize or set up anything specific for the Projectile
+    projectile_brush_left.texture = state->getFullAssetPath("katanal.png");
+    projectile_brush_right.texture = state->getFullAssetPath("katanar.png");
+    projectile_brush.outline_opacity = 0.0f;
+    brush_debug.fill_opacity = 0.1f;
+    SETCOLOR(brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
+    SETCOLOR(brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
 }
 
 // update function implementation
@@ -31,11 +37,14 @@ void Projectile::update(float dt) {
 }
 
 // draw function implementation
-void Projectile::draw(bool facing_left) {
-    if (facing_left) {
-        projectile_brush.texture = state -> getFullAssetPath("katanal.png");
+void Projectile::draw() {
+    if (spawnedLeft) {
+        projectile_brush.texture = projectile_brush_left.texture;
     }else {
-        projectile_brush.texture = state -> getFullAssetPath("katanar.png");
+        projectile_brush.texture = projectile_brush_right.texture;
     }
-    graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, projectile_brush);
+    //Has offset added
+    graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height+0.8f, projectile_brush);
+    if (state->debugging)
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height , brush_debug);
 }

@@ -54,7 +54,7 @@ void Player::draw()
     //Draw projectiles
     for (int i = 0; i < projectiles.size(); i++)
     {
-        (projectiles)[i].draw(facing_left);
+        (projectiles)[i].draw();
     }
 
     drawDebug();
