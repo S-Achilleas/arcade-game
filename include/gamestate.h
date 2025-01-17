@@ -9,6 +9,7 @@ class GameState {
     float canvas_height = 10.0f;
     bool menu_skipped = false;
     bool playerDead = false;
+    int lastScore = 0.0f;
 
     Timer pauseTimer = Timer(0.5f);
     graphics::Brush pause_brush;

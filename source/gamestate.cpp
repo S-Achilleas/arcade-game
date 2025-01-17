@@ -9,6 +9,9 @@
 
 GameState* GameState::unique_instance = nullptr;
 
+GameState::GameState() {
+}
+
 GameState::~GameState() {
     if (player)
         delete player;
@@ -36,7 +39,6 @@ void GameState::init() {
         graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
         if (current_level)
             current_level->~Level();
-            delete current_level;
         current_level = new main_menu();
     }
     else
@@ -44,11 +46,9 @@ void GameState::init() {
         if (current_level)
         {
             current_level->~Level();
-            delete current_level;
         }
         if (player) {
             player->~Player();
-            delete player;
         }
         player = new Player("Player");
         player->init();
@@ -82,8 +82,10 @@ void GameState::update(float dt) {
     }
     if (player)
         if (getPlayer()->isDead() && menu_skipped) {
+            menu_skipped = false;
             playerDead = true;
             game_paused = true;
+            lastScore = player->getScore();
         }
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
@@ -111,10 +113,12 @@ void GameState::draw() {
     }
     if (playerDead)
     {
-        graphics::drawText(2.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
+        graphics::drawText(3.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
             "You are dead", pause_brush);
         graphics::drawText(1.0f, getCanvasHeight() / 2.0f + 2.0f, 0.7f,
             "Press M to return to main menu", pause_brush);
+        graphics::drawText(3.0f, getCanvasHeight() / 2.0f + 5.0f, 0.7f,
+            "Your Score is " + std::to_string(lastScore), pause_brush);
         return;
     }
     current_level->draw();

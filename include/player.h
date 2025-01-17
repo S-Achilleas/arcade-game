@@ -50,6 +50,7 @@ public:
     float getPlayerY() { return m_pos_y; }
     std::vector<Projectile>* getProjectiles() { return &projectiles; }
     void setScoreUp() { score += 100; }
+    int getScore() { return score; }
     bool shouldShootProj() { return skeletonShootProj; }
     void platformColToggle(bool input) { collideWithPlatforms = input; }
     ~Player();
