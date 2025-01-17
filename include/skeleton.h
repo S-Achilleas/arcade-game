@@ -9,8 +9,8 @@ class Skeleton: public Enemy {
     ObjectWithMovement* Proj = nullptr;
     float projVelX;
     float projVelY;
-    void Skeleton::ProjCollisionHandler();
-    void Skeleton::checkPlayerProjCollision();
+    void ProjCollisionHandler();
+    void checkPlayerProjCollision();
 public:
     class Animation* sProjAnimation;
     //Assets are public static so level can edit them
