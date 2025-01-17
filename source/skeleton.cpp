@@ -57,7 +57,6 @@ Skeleton::~Skeleton() {
         delete my_animation;
     if (Proj)
         delete Proj;
-    // kai gia healthbar
 }
 
 float Skeleton::calculateProjectileVelocityX()

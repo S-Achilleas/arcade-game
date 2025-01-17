@@ -14,7 +14,7 @@ public:
     virtual void update(float dt){}
     virtual void init(){}
     virtual void draw(){}
-    virtual ~GameObject(){}
+    virtual ~GameObject();
     bool isActive(){ return active; }
     void setActive(bool Active){ active = Active; }
 };

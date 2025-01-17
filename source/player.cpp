@@ -28,13 +28,13 @@ void Player::init()
     projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
     projectileCooldownTimer.start();
     
-    my_animation = new Animation(true, 
+    my_animation = new Animation(true,  // thelei delete
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_left")), 
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_right")),
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/idle_left")));
 
-    my_health = new HealthBar(9, 10.0f, 0.5f, "healthbars/green_health", 0.6f, 3.2f);
+    my_health = new HealthBar(9, 10.0f, 0.5f, "healthbars/green_health", 0.6f, 3.2f); // ai edo
 
     brushesInit();
     resetPlatformCollision = Timer(7.0f, Timer::TIMER_ONCE);
@@ -232,4 +232,13 @@ void Player::skeletonProjectilePlayer(float dt)
         if (resetPlatformCollision!=0)
             resetPlatformCollision = Timer(7.0f, Timer::TIMER_ONCE);
     }
+}
+
+Player::~Player() {
+    if (my_animation)
+        delete my_animation;
+    if (my_health)
+        delete my_health;
+    if (playerfeet)
+        delete playerfeet;
 }

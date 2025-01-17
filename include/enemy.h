@@ -26,7 +26,7 @@ public:
     void update(float dt) override;
     void draw() override;
     Enemy(bool r);
-    ~Enemy();
+    virtual ~Enemy();
     void patrol(float dt);
     void drawDebug();
     bool canAttack();

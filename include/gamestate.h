@@ -29,7 +29,7 @@ public:
     void update(float dt);
 
     static GameState *getInstance();
-    ~GameState() = default;
+    ~GameState();
 
     float getCanvasWidth(){return canvas_width;}
     float getCanvasHeight(){return canvas_height;}
