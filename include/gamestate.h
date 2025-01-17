@@ -8,6 +8,7 @@ class GameState {
     float canvas_width = 12.0f;
     float canvas_height = 10.0f;
     bool menu_skipped = false;
+    bool playerDead = false;
 
     Timer pauseTimer = Timer(0.5f);
     graphics::Brush pause_brush;

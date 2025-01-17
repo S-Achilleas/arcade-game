@@ -63,10 +63,22 @@ void GameState::update(float dt) {
         if (graphics::getKeyState(graphics::SCANCODE_M)) {
             game_paused = false;
             menu_skipped = false;
+            delete player;
+            delete current_level;
             GameState::init();
         }
         return; 
     }
+    if(player)
+        if (getPlayer()->isDead()) {
+            if (graphics::getKeyState(graphics::SCANCODE_M)) {
+                game_paused = false;
+                menu_skipped = false;
+                GameState::init();
+            }
+            playerDead = true;
+            return;
+        }
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
 
@@ -90,6 +102,14 @@ void GameState::draw() {
         graphics::drawText(1.0f, getCanvasHeight() / 2.0f + 2.0f, 0.7f,
             "Press M to return to main menu", pause_brush);
         return; //remove this if you want continue drawing on pause
+    }
+    if (playerDead)
+    {
+        graphics::drawText(2.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
+            "You are dead", pause_brush);
+        graphics::drawText(1.0f, getCanvasHeight() / 2.0f + 2.0f, 0.7f,
+            "Press M to return to main menu", pause_brush);
+        return;
     }
     current_level->draw();
 }
