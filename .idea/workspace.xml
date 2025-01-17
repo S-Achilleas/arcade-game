@@ -30,8 +30,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="Added a score counter">
+    <list default="true" id="0d604f87-dda5-42df-a98d-9e221eb62c00" name="Changes" comment="the enemy::init() was called twice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/my_project" beforeDir="false" afterPath="$PROJECT_DIR$/bin/my_project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/enemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/flyingenemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/flyingenemy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/goblin.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/goblin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/level.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/level.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/skeleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/skeleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/animate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/animate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/enemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/flyingenemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/flyingenemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/goblin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/goblin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/level.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/skeleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/skeleton.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,58 +85,19 @@
     <setting file="file://$PROJECT_DIR$/include/level.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/player.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/include/player.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/ObjectWithMovement.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/ObjectWithMovement.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/ObjectWithMovement.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/enemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/flyingenemy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/flyingenemy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gameobject.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/gamestate.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/goblin.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/goblin.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/level.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/main.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/platform.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/source/player.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/agapaxi/Desktop/arcade-game/source/player.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -139,28 +114,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;CMake Application.my_project.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/axilleas/Desktop/arcade-game αντίγραφο&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "CMake Application.my_project.executor": "Run",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.west.config.association.type.startup.service": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/axilleas/Desktop/arcade-game αντίγραφο",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bin/assets" />
@@ -200,7 +175,7 @@
       <workItem from="1736910019664" duration="8661000" />
       <workItem from="1736944043977" duration="13747000" />
       <workItem from="1737028943787" duration="12190000" />
-      <workItem from="1737109491531" duration="1000" />
+      <workItem from="1737109491531" duration="11760000" />
     </task>
     <task id="LOCAL-00001" summary="improved the draw function">
       <option name="closed" value="true" />
@@ -562,7 +537,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737071232402</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary=".">
+      <option name="closed" value="true" />
+      <created>1737110023707</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1737110023707</updated>
+    </task>
+    <task id="LOCAL-00047" summary="the enemy::init() was called twice">
+      <option name="closed" value="true" />
+      <created>1737115812779</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1737115812779</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,9 +576,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trying to draw and appear enemies" />
     <MESSAGE value="Ficed the goblin bug" />
-    <MESSAGE value="." />
     <MESSAGE value="updated the flying enemy pngs" />
     <MESSAGE value="change the update function in enemy so the enemies stnad till when close to player" />
     <MESSAGE value="made the enemies patrol when close to the player istead of standing" />
@@ -610,6 +599,8 @@
     <MESSAGE value="Changed the health bar animation because for some reason preloadbitmaps wont work" />
     <MESSAGE value="Found the problem in helathbar logic and adjusted the appearance of the healthbars" />
     <MESSAGE value="Added a score counter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a score counter" />
+    <MESSAGE value="." />
+    <MESSAGE value="the enemy::init() was called twice" />
+    <option name="LAST_COMMIT_MESSAGE" value="the enemy::init() was called twice" />
   </component>
 </project>

@@ -18,7 +18,7 @@ Animation::Animation(bool p,std::vector<std::string> rr,
       attack_left(std::move(al)){}
 
 void Animation::Animate(float x , float y,float w,float h,graphics:: Brush b,bool facing , bool walking,bool attacking) {
-    if(walking) {
+    if(walking && !attacking) {
         if (walkCount > run_left.size() *5 -1) {
             walkCount = 0;
         }

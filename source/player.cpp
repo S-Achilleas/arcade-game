@@ -1,4 +1,8 @@
 #include "player.h"
+
+#include <iostream>
+#include <ostream>
+
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include "gameobject.h"
@@ -20,6 +24,9 @@ void Player::init()
     hb_adj(1.0f, 1.8f);
     //feet hitbox width & height
     playerfeet->hb_adj(0.4f, 0.15f);
+    projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
+    projectileCooldownTimer.start();
+    std::cout << projectileCooldownTimer<< std::endl;
     
     my_animation = new Animation(true, 
         graphics::preloadBitmaps(state->getFullAssetPath("Samurai/run_right")),
@@ -31,7 +38,6 @@ void Player::init()
 
     brushesInit();
 
-    projCooldown.start();
 }
 
 void Player::update(float dt) 
@@ -135,10 +141,13 @@ bool Player::checkPlatformCollision()
 void Player::projectileHandler(float dt)
 {
 
-    if (graphics::getKeyState(graphics::SCANCODE_SPACE) && float(projCooldown) == 1.0f)
+    if (graphics::getKeyState(graphics::SCANCODE_SPACE))
     {
-        if (projectiles.size() < 5) {
+        std::cout << projectileCooldownTimer<< std::endl;
+        if (projectiles.size() < 5 && !projectileCooldownTimer.isRunning()) {
             projectiles.push_back(Projectile(m_pos_x, m_pos_y, 1.0f, 1.0f, facing_left));
+            projectileCooldownTimer = Timer(0.2f, Timer::TIMER_ONCE);
+            projectileCooldownTimer.start();
         }
     }
 

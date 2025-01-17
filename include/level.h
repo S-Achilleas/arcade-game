@@ -19,6 +19,7 @@ class Level : public GameObject {
     int enemyType;
     graphics::Brush m_block_brush;
     Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
+    Timer enemy_attacking_timer = Timer(3.0f, Timer::TIMER_LOOPING);
 
     void enemyInit();
 public:

@@ -4,6 +4,7 @@
 #include "player.h"
 #include "sgg/graphics.h"
 #include "my_stdio.h"
+#include "iostream"
 
 //Class static definitions
 graphics::Brush Enemy::my_brush = {};
@@ -21,6 +22,8 @@ void Enemy::init() {
     }
     d_pos_y = 9.35f;
     my_health = new HealthBar(9,d_pos_x,d_pos_y,"healthbars/red_health",0.2f,0.8f);
+    attackCooldownTimer = Timer(0.5f, Timer::TIMER_ONCE);
+    attackCooldownTimer.start();
     brushInit();
 }
 void Enemy::update(float dt) {
@@ -42,6 +45,8 @@ void Enemy::update(float dt) {
     }
     m_pos_x = d_pos_x;
     m_pos_y = d_pos_y;
+    m_height = d_height;
+    m_width = d_width;
 }
 
 
@@ -91,4 +96,28 @@ void Enemy::brushInit() {
     enemy_brush_debug.fill_opacity = 0.1f;
     SETCOLOR(enemy_brush_debug.fill_color, 1.0f, 0.1f, 0.1f);
     SETCOLOR(enemy_brush_debug.outline_color, 1.0f, 0.2f, 0.2f);
+
+    if (state->debugging) {
+        //draw player hitbox
+        graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height, enemy_brush_debug);
+
+        //draw text: player position
+        graphics::drawText(m_pos_x , m_pos_y , 0.4f, "X: " + std::to_string(m_pos_x)
+            + " Y:" + std::to_string(m_pos_y) + " ID : " + std::to_string(id), debug_text);
+
+    }
 }
+bool Enemy::canAttack() {
+    if (!attackCooldownTimer.isRunning()){
+        resetAttackCooldown();
+        return true;
+    }
+    return false;
+}
+
+void Enemy::resetAttackCooldown() {
+    // Restart the timer for the next attack
+    attackCooldownTimer = Timer(attackCooldownPeriod, Timer::TIMER_ONCE);
+    attackCooldownTimer.start();
+}
+

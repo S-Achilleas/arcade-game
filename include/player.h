@@ -9,7 +9,6 @@
 
 class Player:public ObjectWithMovement
 {
-    Timer projCooldown = Timer(3.0f);
     int jumpCount = 15;
     int neg = 1;
     float initial_y;
@@ -18,6 +17,8 @@ class Player:public ObjectWithMovement
     graphics::Brush text;
     graphics::Brush player_brush_debug;
     std::vector<Projectile> projectiles;
+    Timer projectileCooldownTimer;  // Timer for attack cooldown
+    float projectileCooldownPeriod = 0.5f; // Cooldown duration in seconds (default:)
 
     void playerMovement(float dt);
     void projectileHandler(float dt);
