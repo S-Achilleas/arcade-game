@@ -4,7 +4,6 @@
 #include "player.h"
 #include "sgg/graphics.h"
 #include "my_stdio.h"
-#include "iostream"
 
 //Class static definitions
 graphics::Brush Enemy::my_brush = {};

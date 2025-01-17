@@ -120,7 +120,6 @@ void Skeleton::checkPlayerProjCollision()
 {
     Player* player = state->getPlayer();
     if (Proj->intersect(*player)) {
-        printf("*");
         player->platformColToggle(false);
     }
 }

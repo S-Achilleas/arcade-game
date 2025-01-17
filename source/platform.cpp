@@ -1,7 +1,6 @@
 #include "platform.h"
 #include "gamestate.h"
 #include "my_stdio.h"
-#include <iostream>
 
 std::vector<Platform> Platform::platforms;
 graphics::Brush Platform::platform_brush;

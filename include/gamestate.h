@@ -13,6 +13,7 @@ class GameState {
 
     Timer pauseTimer = Timer(0.5f);
     graphics::Brush pause_brush;
+    graphics::Brush death_brush;
     bool game_paused = false;
 
     static GameState* unique_instance;

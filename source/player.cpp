@@ -1,8 +1,5 @@
 #include "player.h"
-
-#include <iostream>
 #include <ostream>
-
 #include "sgg/graphics.h"
 #include "gamestate.h"
 #include "gameobject.h"
@@ -11,7 +8,6 @@
 #include "my_stdio.h"
 #include "healthbar.h"
 #include "animation.h"
-#include <iostream>
 
 
 void Player::init() 
@@ -65,6 +61,7 @@ void Player::draw()
         (projectiles)[i].draw();
     }
     graphics::drawText(0.3f, 0.8f, 1.0f, std::to_string(score), text);
+    graphics::drawText(10.0f, 0.2f, 0.3f, "Use P to Pause", pause_text);
     if (!collideWithPlatforms) {
         graphics::drawText(d_pos_x, m_pos_y - 0.5f, 0.7f, std::to_string(9-(int)(resetPlatformCollision*10)), text);
         graphics::drawText(d_pos_x - 2.0f, m_pos_y - 1.2f, 0.5f, "Cant use platforms!", text);
@@ -182,6 +179,7 @@ void Player::brushesInit()
 {
     //text brushes and player brush init
     text.fill_opacity = 1.0f;
+    pause_text.fill_opacity = 0.3f;
     my_brush.fill_opacity = 1.0f;
     my_brush.outline_opacity = 0.0f;
 

@@ -21,6 +21,7 @@ class Player:public ObjectWithMovement
     int score = 0;
 
     graphics::Brush text;
+    graphics::Brush pause_text;
     graphics::Brush player_brush_debug;
     std::vector<Projectile> projectiles;
     Timer projectileCooldownTimer;  // Timer for attack cooldown

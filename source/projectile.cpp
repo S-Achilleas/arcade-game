@@ -1,5 +1,4 @@
 #include "projectile.h"
-#include <iostream>
 #include "my_stdio.h"
 #include "gamestate.h"
 #include "timer.h"

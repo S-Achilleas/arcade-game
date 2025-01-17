@@ -80,12 +80,13 @@ void GameState::update(float dt) {
         }
         return; 
     }
-    if (player)
+    else if (player)
         if (getPlayer()->isDead() && menu_skipped) {
             menu_skipped = false;
             playerDead = true;
             game_paused = true;
             lastScore = player->getScore();
+            death_brush.fill_opacity = 1.0f;
         }
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
@@ -114,11 +115,11 @@ void GameState::draw() {
     if (playerDead)
     {
         graphics::drawText(3.0f, getCanvasHeight() / 2.0f - 1.0f, 1.0f,
-            "You are dead", pause_brush);
+            "You are dead", death_brush);
         graphics::drawText(1.0f, getCanvasHeight() / 2.0f + 2.0f, 0.7f,
-            "Press M to return to main menu", pause_brush);
+            "Press M to return to main menu", death_brush);
         graphics::drawText(3.0f, getCanvasHeight() / 2.0f + 5.0f, 0.7f,
-            "Your Score is " + std::to_string(lastScore), pause_brush);
+            "Your Score is " + std::to_string(lastScore), death_brush);
         return;
     }
     current_level->draw();
