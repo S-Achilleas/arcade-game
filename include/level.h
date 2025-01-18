@@ -19,8 +19,10 @@ class Level : public GameObject {
     int enemyType;
     graphics::Brush m_block_brush;
     graphics::Brush timeText;
+    graphics::Brush lowHealthText;
     Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
     Timer enemy_attacking_timer = Timer(3.0f, Timer::TIMER_LOOPING);
+    Timer playerHitTimer = Timer(1.5f);
 
     int startTime = graphics::getGlobalTime();
     int secondsPlayed = 0;

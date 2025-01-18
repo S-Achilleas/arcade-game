@@ -8,6 +8,7 @@
 #include "goblin.h"
 #include <random>
 #include "healthbar.h"
+#include "my_stdio.h"
 
 Level::Level(const std::string &name) {
 }
@@ -29,6 +30,8 @@ void Level::init() {
     brush_background.texture = state->getFullAssetPath("background.png");
     m_block_brush.fill_opacity = 1.0f;
     timeText.fill_opacity = 1.0f;
+    lowHealthText.fill_opacity = 1.0f;
+    SETCOLOR(lowHealthText.fill_color, 1.0f, 0.7f, 0.7f);
 
     spawn_timer.start();
     
@@ -61,6 +64,12 @@ void Level::draw() {
     graphics::drawRect(7.5f, 0.62f, 0.06f, 0.06f, m_block_brush);
     graphics::drawRect(7.5f, 0.35f, 0.06f, 0.06f, m_block_brush);
 
+    //low player health text
+    if (state->getPlayer()->getHealthBar()->getHealth() < 3) {
+        graphics::drawText(8.4f, 1.3f, 0.7f, 
+            "LOW HEALTH", lowHealthText);
+    }
+
     //draw enemy
     for (auto& enemy  : enemies) {
         enemy->draw();
@@ -73,8 +82,10 @@ void Level::checkEnemiesCollisions() {
             if (enemy -> canAttack()) {
                 enemy -> setAttacking(true);
                 enemy -> playSound();
-                if (!state->getPlayer()->god)//is god
+                if (!state->getPlayer()->god)//if player not god
                     state -> getPlayer() -> getHealthBar() -> hit(1);
+                    brush_background.fill_opacity = 0.5f;
+                    playerHitTimer.start();
             }
         }
         else {
@@ -98,12 +109,21 @@ void Level::update(float dt) {
     if (minutesPlayed < 10) minadded0 = "0";
     else minadded0 = "";
     
+    updateEnemies(dt);
 
     checkEnemiesCollisions();
 
-    updateEnemies(dt);
-
     checkCollisionProjectiles();
+
+    //change background opacity when player is hit
+    if (float(playerHitTimer) != 1.0f && brush_background.fill_opacity < 1.0f) {
+        brush_background.fill_opacity += 0.01f;
+    } else brush_background.fill_opacity = 1.0f;
+
+    //change background color when players' health is under 4
+    if (state->getPlayer()->getHealthBar()->getHealth() < 4) {
+        SETCOLOR(brush_background.fill_color, 1.0f, 0.4f, 0.4f);
+    }
 }
 
 void Level::enemyInit()
