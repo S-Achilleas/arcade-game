@@ -4,9 +4,12 @@
 #include "timer.h"
 
 Projectile::Projectile(float x, float y, float w, float h, bool left) {
-    // Initialize member variables if needed
+    //offsets so the projectile hits exactly at the enemy
+    //they are readjusted later for drawing
+    if (left) m_pos_x = x+1.0f;
+    else m_pos_x = x-1.0f;
     m_pos_x = x;
-    m_pos_y = y;
+    m_pos_y = y+0.1f;
     m_width = w;
     m_height = h-0.8f; //has offset
     spawnedLeft = left;
@@ -39,11 +42,12 @@ void Projectile::update(float dt) {
 void Projectile::draw() {
     if (spawnedLeft) {
         projectile_brush.texture = projectile_brush_left.texture;
+        graphics::drawRect(m_pos_x - 1.0f, m_pos_y, m_width, m_height + 0.8f, projectile_brush);
     }else {
         projectile_brush.texture = projectile_brush_right.texture;
+        graphics::drawRect(m_pos_x + 1.0f, m_pos_y, m_width, m_height + 0.8f, projectile_brush);
     }
-    //Has offset added
-    graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height+0.8f, projectile_brush);
+
     if (state->debugging)
         graphics::drawRect(m_pos_x, m_pos_y, m_width, m_height , brush_debug);
 }

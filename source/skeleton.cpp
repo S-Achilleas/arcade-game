@@ -20,7 +20,7 @@ graphics::Brush Skeleton::sprojBrush = {};
 Skeleton::Skeleton(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets,idr,idl,right_attack_assets,left_attack_assets);
     m_height = 1.1f;
-    m_width = 1.4f;
+    m_width = 1.8f;
 
     sProjAnimation = new Animation(false, sproj_assets);
     Enemy::init();
