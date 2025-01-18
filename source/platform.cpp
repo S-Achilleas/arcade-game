@@ -2,9 +2,11 @@
 #include "gamestate.h"
 #include "my_stdio.h"
 
+//Class static definitions
 std::vector<Platform> Platform::platforms;
 graphics::Brush Platform::platform_brush;
 graphics::Brush Platform::platform_brush_debug;
+//Static definitions end
 
 void Platform::platformInitHandler(Platform platform) {
 	Platform::platforms.push_back(platform);
