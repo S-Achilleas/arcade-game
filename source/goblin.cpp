@@ -13,7 +13,7 @@ Goblin::Goblin(bool r) : Enemy(r) {
     my_animation = new Animation(false, right_assets, left_assets,idr,idl,right_attack_assets,left_attack_assets);
     m_height = 0.8f;
     m_width = 1.3f;
-    this->velocity = 1.7f;
+    this->velocity = 1.5f;
     Enemy::init();
 }
 
