@@ -56,10 +56,10 @@ void Level::draw() {
         state ->getPlayer() ->draw();
 
     //draw level timer
-    graphics::drawText(7.0f, 0.65f, 0.6f, std::to_string(minutesPlayed) +
-        " " + added0 + std::to_string(secondsPlayed), timeText);
-    graphics::drawRect(7.36f, 0.62f, 0.06f, 0.06f, m_block_brush);
-    graphics::drawRect(7.36f, 0.35f, 0.06f, 0.06f, m_block_brush);
+    graphics::drawText(6.8f, 0.65f, 0.6f, minadded0 + std::to_string(minutesPlayed) +
+        " " + secadded0 + std::to_string(secondsPlayed), timeText);
+    graphics::drawRect(7.5f, 0.62f, 0.06f, 0.06f, m_block_brush);
+    graphics::drawRect(7.5f, 0.35f, 0.06f, 0.06f, m_block_brush);
 
     //draw enemy
     for (auto& enemy  : enemies) {
@@ -93,10 +93,10 @@ void Level::update(float dt) {
     int realSeconds = (int(graphics::getGlobalTime()) - startTime) / 1000;
     minutesPlayed = realSeconds / 60;
     secondsPlayed = realSeconds % 60;
-    if (secondsPlayed < 10)
-        added0 = "0";
-    else
-        added0 = "";
+    if (secondsPlayed < 10) secadded0 = "0";
+    else secadded0 = "";
+    if (minutesPlayed < 10) minadded0 = "0";
+    else minadded0 = "";
     
 
     checkEnemiesCollisions();

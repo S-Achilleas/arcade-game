@@ -25,7 +25,8 @@ class Level : public GameObject {
     int startTime = graphics::getGlobalTime();
     int secondsPlayed = 0;
     int minutesPlayed = 0;
-    std::string added0 = "";
+    std::string minadded0 = "";
+    std::string secadded0 = "";
 
     void enemyInit();
 public:
