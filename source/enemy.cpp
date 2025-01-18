@@ -32,10 +32,10 @@ void Enemy::update(float dt) {
     if (distance > 0.5f) {
         // Chase the player
         if (d_pos_x < state->getPlayer()->getPlayerX()) {
-            d_pos_x += delta_time * 1.0f;
+            d_pos_x += delta_time * velocity;
             facing_left = false;
         } else {
-            d_pos_x -= delta_time * 1.0f;
+            d_pos_x -= delta_time * velocity;
             facing_left = true;
             walking = true;
         }
