@@ -46,7 +46,6 @@ void GameState::init() {
 
     if (!menu_skipped)
     {
-        graphics::preloadBitmaps(getAssetDir()); //move this somewhere it loads only once
         current_level = new main_menu();
     }
     else
