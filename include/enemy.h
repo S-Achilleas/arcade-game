@@ -15,7 +15,7 @@ protected:
 
     Timer attackCooldownTimer;  // Timer for attack cooldown
     float attackCooldownPeriod = 1.0f; // Cooldown duration in seconds (default:)
-    float velocity = 1.0f;
+    float velocity = 1.1f;
 
 public:
     //these brushes are public so enemies can
