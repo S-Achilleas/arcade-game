@@ -12,6 +12,7 @@ class Player:public ObjectWithMovement
     bool isOnGround;
     bool skeletonShootProj = false;
     bool collideWithPlatforms = true;
+    bool godToggleInProgress = false;
     Timer projCooldown = Timer(3.0f);
     Timer timeNotOnGround = Timer(5.0f);
     Timer resetPlatformCollision;
@@ -25,6 +26,7 @@ class Player:public ObjectWithMovement
     graphics::Brush player_brush_debug;
     std::vector<Projectile> projectiles;
     Timer projectileCooldownTimer;  // Timer for attack cooldown
+    Timer godTimer = Timer(1.5f); //Godmode cooldown
     float projectileCooldownPeriod = 0.5f; // Cooldown duration in seconds (default:)
 
     void playerMovement(float dt);
@@ -43,6 +45,7 @@ public:
         graphics::Brush returnbrush() { return pf_brush_debug; }
     };
     playerFeetObj* playerfeet = new playerFeetObj;
+    bool god = false;
 
     void update(float dt) override;
     void init() override;
