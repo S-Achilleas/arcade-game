@@ -101,19 +101,22 @@ float Skeleton::calculateProjectileVelocityY()
 
 void Skeleton::ProjCollisionHandler()
 {
-
     if (Proj) {
         Proj->m_pos_x += projVelX;
         Proj->m_pos_y += projVelY;
         checkPlayerProjCollision();
+        if (Proj->m_pos_y < -12.0f) {
+            delete Proj;
+            Proj = nullptr;
+        }
     }
-    else if (state->getPlayer()->shouldShootProj()) {
-        delete Proj;
+    if (state->getPlayer()->shouldShootProj()) {
+        if (Proj)
+            delete Proj;
         Proj = new ObjectWithMovement();
         projVelX = calculateProjectileVelocityX();
         projVelY = calculateProjectileVelocityY();
     }
-    
 }
 
 void Skeleton::checkPlayerProjCollision()
