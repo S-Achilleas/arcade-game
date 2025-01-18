@@ -34,6 +34,7 @@ void Player::init()
 
     brushesInit();
     resetPlatformCollision = Timer(7.0f, Timer::TIMER_ONCE);
+    godTimer.start();
 
 }
 
@@ -65,6 +66,10 @@ void Player::draw()
     if (!collideWithPlatforms) {
         graphics::drawText(d_pos_x, m_pos_y - 0.5f, 0.7f, std::to_string(9-(int)(resetPlatformCollision*10)), text);
         graphics::drawText(d_pos_x - 2.0f, m_pos_y - 1.2f, 0.5f, "Cant use platforms!", text);
+    }
+
+    if (god) {
+        graphics::drawText(0.0f, 1.0f, 0.3f, "Godmode is Enabled", text);
     }
 
     drawDebug();
@@ -121,6 +126,26 @@ void Player::playerMovement(float dt)
     }
     // draw pos_y change, where 8.5f is the ground
     d_pos_y = std::min(d_pos_y + m_vy * delta_time, 8.5f);
+
+
+    //GODMODE
+    if (graphics::getKeyState(graphics::SCANCODE_O) && 
+        graphics::getKeyState(graphics::SCANCODE_L) &&
+        float(godTimer)==1 && !godToggleInProgress)
+    {
+        godToggleInProgress = true;
+        if (god)
+        { 
+            god = false; 
+            godTimer.start();
+        }
+        else { god = true;}
+    }
+    if (!graphics::getKeyState(graphics::SCANCODE_O) ||
+        !graphics::getKeyState(graphics::SCANCODE_L))
+    {
+        godToggleInProgress = false;
+    }
 }
 
 //Returns true if player feet collide with a platform 

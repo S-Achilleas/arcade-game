@@ -27,10 +27,11 @@ void Level::init() {
 
     brush_background.outline_opacity = 0.0f;
     brush_background.texture = state->getFullAssetPath("background.png");
+    m_block_brush.fill_opacity = 1.0f;
+    timeText.fill_opacity = 1.0f;
+
     spawn_timer.start();
-
-
-
+    
     Platform::platformBrushInit();
 
     Platform::platformInitHandler(Platform(5.5f, 3.5f, 2.0f, 0.4f, "tile.png")); // platform object
@@ -54,6 +55,11 @@ void Level::draw() {
     if (state ->getPlayer()->isActive())
         state ->getPlayer() ->draw();
 
+    graphics::drawText(7.0f, 0.65f, 0.6f, std::to_string(minutesPlayed) +
+        " " + added0 + std::to_string(secondsPlayed), timeText);
+    graphics::drawRect(7.36f, 0.62f, 0.06f, 0.06f, m_block_brush);
+    graphics::drawRect(7.36f, 0.35f, 0.06f, 0.06f, m_block_brush);
+
     for (auto& enemy  : enemies) {
         enemy->draw();
     }
@@ -65,7 +71,8 @@ void Level::checkEnemiesCollisions() {
             if (enemy -> canAttack()) {
                 enemy -> setAttacking(true);
                 enemy -> playSound();
-                state -> getPlayer() -> getHealthBar() -> hit(1);
+                if (!state->getPlayer()->god)//is god
+                    state -> getPlayer() -> getHealthBar() -> hit(1);
             }
         }
         else {
@@ -80,6 +87,16 @@ void Level::update(float dt) {
     if (state->getPlayer()->isActive()) {
         state->getPlayer()->update(dt);
     }
+
+    int realSeconds = (int(graphics::getGlobalTime()) - startTime) / 1000;
+    minutesPlayed = realSeconds / 60;
+    secondsPlayed = realSeconds % 60;
+    if (secondsPlayed < 10)
+        added0 = "0";
+    else
+        added0 = "";
+    
+
     checkEnemiesCollisions();
 
     updateEnemies(dt);

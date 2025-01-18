@@ -18,8 +18,14 @@ class Level : public GameObject {
     const float m_block_size = 1.0f;
     int enemyType;
     graphics::Brush m_block_brush;
+    graphics::Brush timeText;
     Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
     Timer enemy_attacking_timer = Timer(3.0f, Timer::TIMER_LOOPING);
+
+    int startTime = graphics::getGlobalTime();
+    int secondsPlayed = 0;
+    int minutesPlayed = 0;
+    std::string added0 = "";
 
     void enemyInit();
 public:
@@ -32,5 +38,6 @@ public:
     void checkEnemiesCollisions();
     void checkCollisionProjectiles();
     void updateEnemies(float dt);
+    void pauseTimeOffset(int inputtime) { startTime += inputtime; };
     ~Level();
 };

@@ -67,8 +67,21 @@ void GameState::update(float dt) {
         && float(pauseTimer)==1 && menu_skipped)
     {
         pauseTimer.start();
-        if (game_paused) { game_paused = false; pause_brush.fill_opacity = 0.0f; }
-        else { game_paused = true; pause_brush.fill_opacity = 1.0f; }
+        if (game_paused) 
+        { 
+            game_paused = false; 
+            pause_brush.fill_opacity = 0.0f; 
+            //time paused
+            timeB = int(graphics::getGlobalTime()); 
+            getLevel()->pauseTimeOffset(timeB - timeA);
+        }
+        else 
+        { 
+            game_paused = true; 
+            pause_brush.fill_opacity = 1.0f; 
+            //time unpaused
+            timeA = int(graphics::getGlobalTime());
+        }
     }
     if (game_paused) 
     { 
