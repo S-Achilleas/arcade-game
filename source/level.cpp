@@ -55,11 +55,13 @@ void Level::draw() {
     if (state ->getPlayer()->isActive())
         state ->getPlayer() ->draw();
 
+    //draw level timer
     graphics::drawText(7.0f, 0.65f, 0.6f, std::to_string(minutesPlayed) +
         " " + added0 + std::to_string(secondsPlayed), timeText);
     graphics::drawRect(7.36f, 0.62f, 0.06f, 0.06f, m_block_brush);
     graphics::drawRect(7.36f, 0.35f, 0.06f, 0.06f, m_block_brush);
 
+    //draw enemy
     for (auto& enemy  : enemies) {
         enemy->draw();
     }
