@@ -8,7 +8,6 @@
 #include "my_stdio.h"
 #include "healthbar.h"
 #include "animation.h"
-#include <iostream>
 
 
 void Player::init() 
