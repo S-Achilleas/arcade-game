@@ -100,6 +100,7 @@ void GameState::update(float dt) {
             game_paused = true;
             lastScore = player->getScore();
             death_brush.fill_opacity = 1.0f;
+            graphics::stopMusic();
         }
 
     float sleep_time = std::max(0.0f, 17.0f - dt);
