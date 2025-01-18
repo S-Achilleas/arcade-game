@@ -184,7 +184,7 @@ void Level::checkCollisionProjectiles()
 void Level::updateEnemies(float dt) {
     float timerProgress = spawn_timer;
 
-    if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 7) {
+    if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 6) {
         static std::random_device rd;
         static std::mt19937 gen(rd());
         static std::uniform_int_distribution<> dis(0, 2);
