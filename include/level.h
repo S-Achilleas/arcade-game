@@ -5,7 +5,6 @@
 #include "box.h"
 #include "platform.h"
 #include "timer.h"
-#include <cstdlib> //for div()
 
 class Level : public GameObject {
     graphics::Brush brush_background;
