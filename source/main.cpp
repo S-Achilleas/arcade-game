@@ -4,7 +4,7 @@
 #include "gamestate.h"
 
 
-void init() { // αρχικοποιει τις τιμες των βουρτσων
+void init() {
     GameState::getInstance()->init();
 }
 
