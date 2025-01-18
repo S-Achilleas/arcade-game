@@ -20,7 +20,8 @@ class Level : public GameObject {
     graphics::Brush m_block_brush;
     graphics::Brush timeText;
     graphics::Brush lowHealthText;
-    Timer spawn_timer = Timer(3.0f, Timer::TIMER_LOOPING);
+    float spawn_timer_time = 2.8f;
+    Timer spawn_timer = Timer(spawn_timer_time, Timer::TIMER_LOOPING);
     Timer enemy_attacking_timer = Timer(3.0f, Timer::TIMER_LOOPING);
     Timer playerHitTimer = Timer(1.5f);
 

@@ -184,7 +184,15 @@ void Level::checkCollisionProjectiles()
 void Level::updateEnemies(float dt) {
     float timerProgress = spawn_timer;
 
-    if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 6) {
+    //progressive difficulty in spawns
+    if ((timerProgress) >= 0.9f && spawn_timer_time >= 1.8f)
+    {
+        spawn_timer_time = 2.8f - 0.4 * minutesPlayed - 0.4 * secondsPlayed / 60;
+        spawn_timer = Timer(spawn_timer_time, Timer::TIMER_LOOPING);
+        spawn_timer.start();
+    }
+    //do spawns
+    if (timerProgress >= 0.9f && !hasSpawnedThisCycle && enemies.size() < 4) {
         static std::random_device rd;
         static std::mt19937 gen(rd());
         static std::uniform_int_distribution<> dis(0, 2);
@@ -209,7 +217,7 @@ void Level::updateEnemies(float dt) {
             hasSpawnedThisCycle = true;
         }
     }
-
+    
     if (timerProgress < 0.1f) {
         hasSpawnedThisCycle = false;
     }
