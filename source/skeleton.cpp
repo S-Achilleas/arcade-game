@@ -70,13 +70,11 @@ float Skeleton::calculateProjectileVelocityX()
     float direction_x = p_x - m_pos_x;
     float direction_y = p_y - m_pos_y;
 
-    // Calculate the magnitude of the direction vector
     float magnitude = std::sqrt(direction_x * direction_x + direction_y * direction_y);
 
-    // Normalize the direction vector and scale by speed
     float velocity_x = (direction_x / magnitude);
 
-    return (direction_x / magnitude) * speed;  // Return the velocity as a pair
+    return (direction_x / magnitude) * speed;
 }
 
 float Skeleton::calculateProjectileVelocityY()
@@ -90,13 +88,11 @@ float Skeleton::calculateProjectileVelocityY()
     float direction_x = p_x - m_pos_x;
     float direction_y = p_y - m_pos_y;
 
-    // Calculate the magnitude of the direction vector
     float magnitude = std::sqrt(direction_x * direction_x + direction_y * direction_y);
 
-    // Normalize the direction vector and scale by speed    
     float velocity_y = (direction_y / magnitude);
 
-    return velocity_y * speed; // Return the velocity as a pair
+    return velocity_y * speed;
 }
 
 void Skeleton::ProjCollisionHandler()
