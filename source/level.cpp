@@ -65,7 +65,7 @@ void Level::draw() {
     graphics::drawRect(7.5f, 0.35f, 0.06f, 0.06f, m_block_brush);
 
     //low player health text
-    if (state->getPlayer()->getHealthBar()->getHealth() < 3) {
+    if (state->getPlayer()->getHealthBar()->getHealth() < 4) {
         graphics::drawText(8.4f, 1.3f, 0.7f, 
             "LOW HEALTH", lowHealthText);
     }
