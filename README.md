@@ -33,7 +33,7 @@ An arcade game developed in C++ leveraging the SGG library. This project showcas
 2. **Enemy AI**  
    - **State Management**:  
      - Patrol/chase logic in `Enemy::update`.  
-     - Attack cooldowns via `Timer` class (e.g., `attackCooldownPeriod = 1.0f`).  
+     - Attack cooldowns via `Timer` class 
    - **Spawn System**:  
      - Procedural enemy spawning in `Level::updateEnemies` (max 7 enemies, 3-second intervals).  
 
@@ -62,20 +62,161 @@ An arcade game developed in C++ leveraging the SGG library. This project showcas
 ---
 
 ## Code Architecture  
-### Critical Classes  
-- **Player**:  
-  - Manages movement, attacks, and health.  
-  - Handles projectile spawning (`std::vector<Projectile>`).  
+# Class Analysis  
+This document provides a detailed breakdown of all classes in the project, their responsibilities, and interactions.  
 
-- **Enemy Hierarchy**:  
-  - Base `Enemy` class with overrides:  
-    - `Skeleton`: Ranged attacks with projectile physics.  
-    - `FlyingEnemy`: Vertical interpolation for flight.  
-    - `Goblin`: Melee charge behavior.  
+---
 
-- **Level**:  
-  - Coordinates enemy spawning, collisions, and platform rendering.  
-  - Uses `std::vector<Enemy*>` for active enemy tracking.  
+## Core Framework Classes  
+
+### **1. `GameObject`**  
+- **Role**: Base class for all entities in the game.  
+- **Key Features**:  
+  - Tracks `active` state and unique `id` for object management.  
+  - Virtual methods (`update()`, `draw()`, `init()`) for polymorphism.  
+- **Usage**: Inherited by `Player`, `Enemy`, `Platform`, `Projectile`, etc.  
+
+---
+
+### **2. `GameState` (Singleton)**  
+- **Role**: Central hub for game state management.  
+- **Key Features**:  
+  - Manages `Player`, `Level`, and `main_menu` transitions.  
+  - Handles pausing (`pauseTimer`), debugging flags, and score retention.  
+  - Coordinates asset paths (e.g., `getFullAssetPath()`).  
+
+---
+
+## Physics & Collision  
+
+### **3. `Box`**  
+- **Role**: Axis-aligned bounding box (AABB) for collision detection.  
+- **Key Methods**:  
+  - `intersect()`: Checks overlap between two boxes.  
+  - `intersectDown()`: Resolves vertical collisions (e.g., landing on platforms).  
+  - `intersectSideways()`: Resolves horizontal collisions.  
+- **Usage**: Inherited by `ObjectWithMovement` and `Platform`.  
+
+---
+
+### **4. `ObjectWithMovement`**  
+- **Role**: Combines `GameObject` and `Box` for physics-based entities.  
+- **Key Features**:  
+  - Manages velocity (`m_vx`, `m_vy`), gravity, acceleration.  
+  - Hitbox adjustment methods (`hb_adj()`, `hbp_adj()`).  
+  - Debug rendering for hitboxes (`drawDebug()`).  
+- **Inherited By**: `Player`, `Enemy`.  
+
+---
+
+## Player & Combat  
+
+### **5. `Player`**  
+- **Role**: Playable character with combat and movement logic.  
+- **Key Features**:  
+  - **Movement**: WASD controls with acceleration/friction (`playerMovement()`).  
+  - **Combat**: Throws `Projectile` objects with cooldowns (`projectileHandler()`).  
+  - **Health**: Managed by `HealthBar`; god mode toggles invincibility.  
+  - **Collision**: Platform interaction via `checkPlatformCollision()`.  
+- **Dependencies**: Uses `Animation` for sprite cycling.  
+
+---
+
+### **6. `Projectile`**  
+- **Role**: Player’s thrown weapon.  
+- **Key Features**:  
+  - Directional movement based on `spawnedLeft` flag.  
+  - `Timer` for lifespan management (3-second expiry).  
+  - Collision detection with enemies (`Level::checkCollisionProjectiles`).  
+
+---
+
+## Enemy System  
+
+### **7. `Enemy` (Base Class)**  
+- **Role**: Base for all enemy types.  
+- **Key Features**:  
+  - **AI**: Patrol/chase logic (`update()`) and attack cooldowns (`attackCooldownTimer`).  
+  - **Health**: Linked to `HealthBar` for UI display.  
+  - **Derived Classes**:  
+    - `Skeleton`: Shoots homing projectiles (`calculateProjectileVelocity`).  
+    - `FlyingEnemy`: Vertical pursuit logic.  
+    - `Goblin`: Ground-based melee attacks.  
+
+---
+
+### **8. `Skeleton`, `FlyingEnemy`, `Goblin`**  
+- **Role**: Specialized enemy behaviors.  
+- **Key Differences**:  
+  - **Skeleton**: Ranged attacks with projectile physics.  
+  - **FlyingEnemy**: Overrides `update()` for Y-axis interpolation.  
+  - **Goblin**: Uses `Animation` for charge attacks.  
+
+---
+
+## Environment & UI  
+
+### **9. `Platform`**  
+- **Role**: Static collidable objects.  
+- **Key Features**:  
+  - Rendered via `platformDisplayHandler()` using preloaded sprites.  
+  - Hitbox adjustments for collision resolution.  
+
+---
+
+### **10. `HealthBar`**  
+- **Role**: Displays health for players/enemies.  
+- **Key Features**:  
+  - Preloaded bitmap frames (e.g., `red_health`, `green_health`).  
+  - Follows entities with `draw(true, x, y)` or stays fixed.  
+
+---
+
+### **11. `Animation`**  
+- **Role**: Manages sprite animations.  
+- **Key Features**:  
+  - Cycles through frames for idle/run/attack states.  
+  - Frame pacing via counters (`walkCount/5` for 5-frame delays).  
+  - Used by `Player` and `Enemy` subclasses.  
+
+---
+
+## Utility Classes  
+
+### **12. `Timer`**  
+- **Role**: Reusable time-tracking utility.  
+- **Key Features**:  
+  - Modes: One-shot, looping, ping-pong.  
+  - Used for attack cooldowns (`Enemy`), spawn intervals (`Level`), and UI effects.  
+
+---
+
+### **13. `main_menu`**  
+- **Role**: Handles main menu UI and transitions.  
+- **Key Features**:  
+  - Renders text/graphics and detects input (e.g., SPACE to start).  
+  - Inherits from `Level` to reuse rendering logic.  
+
+---
+
+## Class Interactions  
+
+1. **Game Loop Flow**:  
+   - `GameState` → `Level` → Spawns `Enemy`/`Platform` → `Player` interacts via `Projectile`.  
+
+2. **Collision Resolution**:  
+   - `Player`/`Enemy` (via `ObjectWithMovement`) → Check collisions with `Box` → Adjust positions.  
+
+3. **Rendering Pipeline**:  
+   - `GameState` → `Level::draw()` → Renders `Platform`, `Enemy`, `Player`, `HealthBar`.  
+
+---
+
+## Key Technical Patterns  
+
+- **Singleton**: `GameState` ensures a single source of truth for game state.  
+- **Inheritance**: Polymorphism via `GameObject` allows unified entity management.  
+- **Component-Based Design**: Separation of concerns (e.g., `Animation` handles visuals, `Box` handles physics).  
 
 ### Physics Logic  
 - **Movement**:  
