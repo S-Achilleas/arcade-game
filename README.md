@@ -61,9 +61,7 @@ An arcade game developed in C++ leveraging the SGG library. This project showcas
 
 ---
 
-## Code Architecture  
 # Class Analysis  
-This document provides a detailed breakdown of all classes in the project, their responsibilities, and interactions.  
 
 ---
 
