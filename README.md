@@ -105,7 +105,7 @@ This document provides a detailed breakdown of all classes in the project, their
   - Manages velocity (`m_vx`, `m_vy`), gravity, acceleration.  
   - Hitbox adjustment methods (`hb_adj()`, `hbp_adj()`).  
   - Debug rendering for hitboxes (`drawDebug()`).  
-- **Inherited By**: `Player`, `Enemy`.  
+- **Inherited By**: `Player`, `Enemy`, `Projectile`.  
 
 ---
 
@@ -218,8 +218,3 @@ This document provides a detailed breakdown of all classes in the project, their
 - **Inheritance**: Polymorphism via `GameObject` allows unified entity management.  
 - **Component-Based Design**: Separation of concerns (e.g., `Animation` handles visuals, `Box` handles physics).  
 
-### Physics Logic  
-- **Movement**:  
-  // Player::playerMovement snippet  
-  m_vx = std::min(max_velocity, m_vx + delta_time * move * accel_horizontal);  
-  m_vy += delta_time * gravity; // Apply gravity
